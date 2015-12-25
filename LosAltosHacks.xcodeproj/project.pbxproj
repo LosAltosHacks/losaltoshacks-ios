@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */; };
-		37AE68851C2DF38C00A02DF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68841C2DF38C00A02DF0 /* ViewController.swift */; };
 		37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68861C2DF38C00A02DF0 /* Main.storyboard */; };
 		37AE688A1C2DF38C00A02DF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68891C2DF38C00A02DF0 /* Assets.xcassets */; };
 		37AE688D1C2DF38C00A02DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */; };
 		37AE68981C2DF38C00A02DF0 /* LosAltosHacksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68971C2DF38C00A02DF0 /* LosAltosHacksTests.swift */; };
+		37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */; };
+		37AE68B81C2DFFF500A02DF0 /* SlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B71C2DFFF500A02DF0 /* SlackViewController.swift */; };
+		37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */; };
+		37AE68BC1C2E001200A02DF0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* MapViewController.swift */; };
+		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +67,6 @@
 /* Begin PBXFileReference section */
 		37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LosAltosHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37AE68841C2DF38C00A02DF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		37AE68871C2DF38C00A02DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37AE68891C2DF38C00A02DF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AE688C1C2DF38C00A02DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +75,11 @@
 		37AE68971C2DF38C00A02DF0 /* LosAltosHacksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosAltosHacksTests.swift; sourceTree = "<group>"; };
 		37AE68991C2DF38C00A02DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Carthage/Checkouts/SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
+		37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
+		37AE68B71C2DFFF500A02DF0 /* SlackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackViewController.swift; sourceTree = "<group>"; };
+		37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		37AE68BB1C2E001200A02DF0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +122,9 @@
 		37AE68811C2DF38C00A02DF0 /* LosAltosHacks */ = {
 			isa = PBXGroup;
 			children = (
-				37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */,
-				37AE68841C2DF38C00A02DF0 /* ViewController.swift */,
+				37AE68B31C2DFFA200A02DF0 /* Controllers */,
 				37AE68861C2DF38C00A02DF0 /* Main.storyboard */,
-				37AE68891C2DF38C00A02DF0 /* Assets.xcassets */,
-				37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */,
-				37AE688E1C2DF38C00A02DF0 /* Info.plist */,
+				37AE68B41C2DFFAB00A02DF0 /* Supporting Files */,
 			);
 			path = LosAltosHacks;
 			sourceTree = "<group>";
@@ -142,6 +147,29 @@
 				37AE68B01C2DF53A00A02DF0 /* SnapKit OSX Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		37AE68B31C2DFFA200A02DF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */,
+				37AE68B71C2DFFF500A02DF0 /* SlackViewController.swift */,
+				37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */,
+				37AE68BB1C2E001200A02DF0 /* MapViewController.swift */,
+				37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		37AE68B41C2DFFAB00A02DF0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */,
+				37AE68891C2DF38C00A02DF0 /* Assets.xcassets */,
+				37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */,
+				37AE688E1C2DF38C00A02DF0 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37AE68851C2DF38C00A02DF0 /* ViewController.swift in Sources */,
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
+				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
+				37AE68B81C2DFFF500A02DF0 /* SlackViewController.swift in Sources */,
+				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
+				37AE68BC1C2E001200A02DF0 /* MapViewController.swift in Sources */,
+				37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

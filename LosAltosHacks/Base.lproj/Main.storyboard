@@ -1,44 +1,128 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D9c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D9c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yRq-iJ-8Gc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZxJ-zz-UYb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="yRq-iJ-8Gc" sceneMemberID="viewController">
+                    <keyCommands>
+                        <keyCommand/>
+                    </keyCommands>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="dA2-lf-ev6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cv8-dX-xeu" kind="relationship" relationship="viewControllers" id="Erh-gs-zSI"/>
+                        <segue destination="kHt-oI-XSC" kind="relationship" relationship="viewControllers" id="RCi-Cu-Zxr"/>
+                        <segue destination="2P1-5y-Mov" kind="relationship" relationship="viewControllers" id="z0y-c6-ULK"/>
+                        <segue destination="bcm-9z-De5" kind="relationship" relationship="viewControllers" id="ErG-8f-0sT"/>
+                        <segue destination="bBL-oK-RVw" kind="relationship" relationship="viewControllers" id="aVn-9S-M37"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ihf-rg-Aa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="596"/>
+        </scene>
+        <!--Updates-->
+        <scene sceneID="lVe-qu-V9e">
+            <objects>
+                <viewController id="cv8-dX-xeu" customClass="UpdatesViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="K5m-6e-bzg"/>
+                        <viewControllerLayoutGuide type="bottom" id="vHm-Kc-Owf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="bTo-6g-2jI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Altos Hacks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAg-9o-31f">
-                                <rect key="frame" x="239" y="289" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aAg-9o-31f" secondAttribute="bottom" constant="290" placeholder="YES" id="IPh-CB-5N7"/>
-                            <constraint firstItem="aAg-9o-31f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="219" placeholder="YES" id="iIz-J8-ZGe"/>
-                            <constraint firstItem="aAg-9o-31f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="269" placeholder="YES" id="jOv-Nt-MOA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aAg-9o-31f" secondAttribute="trailing" constant="219" placeholder="YES" id="tmM-DA-MdQ"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="aAg-9o-31f" id="rPR-wn-ahS"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Updates" id="xCU-Gq-cHB"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RkD-x7-dZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1204" y="1373"/>
+        </scene>
+        <!--Slack-->
+        <scene sceneID="XdI-b0-gUU">
+            <objects>
+                <viewController id="kHt-oI-XSC" customClass="SlackViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ece-my-xiW"/>
+                        <viewControllerLayoutGuide type="bottom" id="pfB-SH-TZt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fAz-vb-g7q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Slack" id="10u-YS-lqg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeo-Hk-hte" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-552" y="1373"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="fcC-sU-uEI">
+            <objects>
+                <viewController id="bcm-9z-De5" customClass="MapViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d1u-kN-4xQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="lQd-UD-IrH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bfY-pS-rdK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="qha-mT-zLc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tuq-fP-EHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="1373"/>
+        </scene>
+        <!--Sponsors-->
+        <scene sceneID="Jf8-Gr-TiZ">
+            <objects>
+                <viewController id="bBL-oK-RVw" customClass="SponsorsViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dHW-f4-Lz5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ply-Ns-cbd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ORu-Wn-8C6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sponsors" id="vNQ-hs-CDP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aey-Vw-0BS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="1373"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="TPH-PY-EtM">
+            <objects>
+                <viewController id="2P1-5y-Mov" customClass="DashboardViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KJb-fw-uCa"/>
+                        <viewControllerLayoutGuide type="bottom" id="9dP-vD-vSB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KhX-kS-WcJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Dashboard" id="DAN-lr-KHZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtb-xA-TE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="1373"/>
         </scene>
     </scenes>
 </document>
