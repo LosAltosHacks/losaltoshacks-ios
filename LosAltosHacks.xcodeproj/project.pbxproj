@@ -13,10 +13,10 @@
 		37AE688D1C2DF38C00A02DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */; };
 		37AE68981C2DF38C00A02DF0 /* LosAltosHacksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68971C2DF38C00A02DF0 /* LosAltosHacksTests.swift */; };
 		37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */; };
-		37AE68B81C2DFFF500A02DF0 /* SlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B71C2DFFF500A02DF0 /* SlackViewController.swift */; };
 		37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */; };
 		37AE68BC1C2E001200A02DF0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* MapViewController.swift */; };
 		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
+		D00853831C2E052300B31BE7 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00853821C2E052300B31BE7 /* FAQViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,10 +76,10 @@
 		37AE68991C2DF38C00A02DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Carthage/Checkouts/SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
 		37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
-		37AE68B71C2DFFF500A02DF0 /* SlackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackViewController.swift; sourceTree = "<group>"; };
 		37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		37AE68BB1C2E001200A02DF0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
+		D00853821C2E052300B31BE7 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,10 +153,10 @@
 			isa = PBXGroup;
 			children = (
 				37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */,
-				37AE68B71C2DFFF500A02DF0 /* SlackViewController.swift */,
 				37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */,
 				37AE68BB1C2E001200A02DF0 /* MapViewController.swift */,
 				37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */,
+				D00853821C2E052300B31BE7 /* FAQViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,8 +313,8 @@
 			files = (
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
-				37AE68B81C2DFFF500A02DF0 /* SlackViewController.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
+				D00853831C2E052300B31BE7 /* FAQViewController.swift in Sources */,
 				37AE68BC1C2E001200A02DF0 /* MapViewController.swift in Sources */,
 				37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */,
 			);
@@ -452,7 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LosAltosHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.dvappel.LosAltosHacks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -463,7 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LosAltosHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.dvappel.LosAltosHacks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -511,6 +511,7 @@
 				37AE689E1C2DF38C00A02DF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37AE689F1C2DF38C00A02DF0 /* Build configuration list for PBXNativeTarget "LosAltosHacksTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +520,7 @@
 				37AE68A11C2DF38C00A02DF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

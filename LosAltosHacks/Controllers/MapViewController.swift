@@ -3,7 +3,7 @@
 //  LosAltosHacks
 //
 //  Created by Dan Appel on 12/25/15.
-//  Copyright © 2015 Dan Appel. All rights reserved.
+//  Copyright © 2015 Los Altos Hacks. All rights reserved.
 //
 
 import UIKit
