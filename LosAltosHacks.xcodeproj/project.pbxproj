@@ -23,6 +23,41 @@
 			remoteGlobalIDString = 37AE687E1C2DF38C00A02DF0;
 			remoteInfo = LosAltosHacks;
 		};
+		37AE68A91C2DF53A00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
+			remoteInfo = "SnapKit iOS";
+		};
+		37AE68AB1C2DF53A00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EECDB37A1AC0C9D4006BBC11;
+			remoteInfo = "SnapKit OSX";
+		};
+		37AE68AD1C2DF53A00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
+			remoteInfo = "SnapKit iOS Tests";
+		};
+		37AE68AF1C2DF53A00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EECDB3841AC0C9D4006BBC11;
+			remoteInfo = "SnapKit OSX Tests";
+		};
+		37AE68B11C2DF54500A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = "SnapKit iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +71,7 @@
 		37AE68931C2DF38C00A02DF0 /* LosAltosHacksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LosAltosHacksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE68971C2DF38C00A02DF0 /* LosAltosHacksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosAltosHacksTests.swift; sourceTree = "<group>"; };
 		37AE68991C2DF38C00A02DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Carthage/Checkouts/SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +98,7 @@
 				37AE68811C2DF38C00A02DF0 /* LosAltosHacks */,
 				37AE68961C2DF38C00A02DF0 /* LosAltosHacksTests */,
 				37AE68801C2DF38C00A02DF0 /* Products */,
+				37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +133,17 @@
 			path = LosAltosHacksTests;
 			sourceTree = "<group>";
 		};
+		37AE68A31C2DF53A00A02DF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */,
+				37AE68AC1C2DF53A00A02DF0 /* SnapKit.framework */,
+				37AE68AE1C2DF53A00A02DF0 /* SnapKit iOS Tests.xctest */,
+				37AE68B01C2DF53A00A02DF0 /* SnapKit OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +158,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				37AE68B21C2DF54500A02DF0 /* PBXTargetDependency */,
 			);
 			name = LosAltosHacks;
 			productName = LosAltosHacks;
@@ -164,6 +213,12 @@
 			mainGroup = 37AE68761C2DF38C00A02DF0;
 			productRefGroup = 37AE68801C2DF38C00A02DF0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 37AE68A31C2DF53A00A02DF0 /* Products */;
+					ProjectRef = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				37AE687E1C2DF38C00A02DF0 /* LosAltosHacks */,
@@ -171,6 +226,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = 37AE68A91C2DF53A00A02DF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37AE68AC1C2DF53A00A02DF0 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = 37AE68AB1C2DF53A00A02DF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37AE68AE1C2DF53A00A02DF0 /* SnapKit iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit iOS Tests.xctest";
+			remoteRef = 37AE68AD1C2DF53A00A02DF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37AE68B01C2DF53A00A02DF0 /* SnapKit OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit OSX Tests.xctest";
+			remoteRef = 37AE68AF1C2DF53A00A02DF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		37AE687D1C2DF38C00A02DF0 /* Resources */ = {
@@ -217,6 +303,11 @@
 			isa = PBXTargetDependency;
 			target = 37AE687E1C2DF38C00A02DF0 /* LosAltosHacks */;
 			targetProxy = 37AE68941C2DF38C00A02DF0 /* PBXContainerItemProxy */;
+		};
+		37AE68B21C2DF54500A02DF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SnapKit iOS";
+			targetProxy = 37AE68B11C2DF54500A02DF0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

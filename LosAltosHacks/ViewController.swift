@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        label.snp_makeConstraints { make in
+            make.center.equalTo(self.view.snp_center)
+        }
     }
 
     override func didReceiveMemoryWarning() {
