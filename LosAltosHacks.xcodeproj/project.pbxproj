@@ -14,7 +14,7 @@
 		37AE68981C2DF38C00A02DF0 /* LosAltosHacksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68971C2DF38C00A02DF0 /* LosAltosHacksTests.swift */; };
 		37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */; };
 		37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */; };
-		37AE68BC1C2E001200A02DF0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* MapViewController.swift */; };
+		37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */; };
 		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
 		D00853831C2E052300B31BE7 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00853821C2E052300B31BE7 /* FAQViewController.swift */; };
 /* End PBXBuildFile section */
@@ -77,7 +77,7 @@
 		37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Carthage/Checkouts/SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
 		37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
 		37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		37AE68BB1C2E001200A02DF0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
 		D00853821C2E052300B31BE7 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,7 +154,7 @@
 			children = (
 				37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */,
 				37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */,
-				37AE68BB1C2E001200A02DF0 /* MapViewController.swift */,
+				37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */,
 				37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */,
 				D00853821C2E052300B31BE7 /* FAQViewController.swift */,
 			);
@@ -315,7 +315,7 @@
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
 				D00853831C2E052300B31BE7 /* FAQViewController.swift in Sources */,
-				37AE68BC1C2E001200A02DF0 /* MapViewController.swift in Sources */,
+				37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */,
 				37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

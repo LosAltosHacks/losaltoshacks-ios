@@ -1,5 +1,5 @@
 //
-//  MapViewController.swift
+//  ScheduleViewController.swift
 //  LosAltosHacks
 //
 //  Created by Dan Appel on 12/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapViewController: UIViewController {
+class ScheduleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
