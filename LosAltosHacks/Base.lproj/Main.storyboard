@@ -8,7 +8,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ZxJ-zz-UYb">
             <objects>
-                <tabBarController id="yRq-iJ-8Gc" sceneMemberID="viewController">
+                <tabBarController id="yRq-iJ-8Gc" customClass="TabBarController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
                     <keyCommands>
                         <keyCommand/>
                     </keyCommands>
