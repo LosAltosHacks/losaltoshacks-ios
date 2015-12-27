@@ -69,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JOg-G2-ii6"/>
+                    <navigationItem key="navigationItem" title="SCHEDULE" id="JOg-G2-ii6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y99-YC-Gc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hEd-OH-NwD"/>
+                    <navigationItem key="navigationItem" title="UPDATES" id="hEd-OH-NwD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSa-C7-W3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +229,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eMb-WG-FQ1"/>
+                    <navigationItem key="navigationItem" title="SPONSORS" id="eMb-WG-FQ1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoM-1L-ccq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="0.0"/>
                             <color key="textColor" red="0.50246247629999996" green="0.67487330590000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -269,6 +269,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="0.0"/>
+                            <color key="textColor" red="0.50246247629999996" green="0.67487330590000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -289,6 +293,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="0.0"/>
+                            <color key="textColor" red="0.50246247629999996" green="0.67487330590000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -310,7 +318,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="0.0"/>
                             <color key="textColor" red="0.50246247629999996" green="0.67487330590000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -333,6 +341,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="0.0"/>
+                            <color key="textColor" red="0.50246247629999996" green="0.67487330590000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct FAQ {
+    var question: String
+    var answer: String
+}
+
 class FAQViewController: UIViewController {
 
     static let CELL_IDENTIFIER = "FAQCell"
