@@ -17,6 +17,7 @@
 		37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */; };
 		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
 		D00853831C2E052300B31BE7 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00853821C2E052300B31BE7 /* FAQViewController.swift */; };
+		D093A74C1C2F852B00570708 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A74B1C2F852B00570708 /* FAQTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
 		D00853821C2E052300B31BE7 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		D093A74B1C2F852B00570708 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		37AE68811C2DF38C00A02DF0 /* LosAltosHacks */ = {
 			isa = PBXGroup;
 			children = (
+				D093A7481C2F84CD00570708 /* Views */,
 				37AE68B31C2DFFA200A02DF0 /* Controllers */,
 				37AE68861C2DF38C00A02DF0 /* Main.storyboard */,
 				37AE68B41C2DFFAB00A02DF0 /* Supporting Files */,
@@ -170,6 +173,14 @@
 				37AE688E1C2DF38C00A02DF0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D093A7481C2F84CD00570708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D093A74B1C2F852B00570708 /* FAQTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D093A74C1C2F852B00570708 /* FAQTableViewCell.swift in Sources */,
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
