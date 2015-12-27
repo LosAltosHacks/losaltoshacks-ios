@@ -17,6 +17,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.50246247629999996" green="0.67487330590000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                <color key="value" red="0.70286736736214395" green="0.80020031561261651" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="hIi-mi-WmA" kind="relationship" relationship="viewControllers" id="g75-oY-voa"/>
@@ -43,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="rPt-vD-kYL"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="rPt-vD-kYL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNT-Xg-odY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Schedule" id="tNb-8o-R42"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="schedule" id="tNb-8o-R42"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y99-YC-Gc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Updates" id="IJ4-f4-hTC"/>
+                    <tabBarItem key="tabBarItem" title="Updates" image="updates" id="IJ4-f4-hTC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSa-C7-W3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +106,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="FAQ" id="qYN-cc-Bin"/>
+                    <tabBarItem key="tabBarItem" title="FAQ" image="faq" id="qYN-cc-Bin"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIB-bo-vLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,11 +125,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sponsors" id="54C-Bm-52f"/>
+                    <tabBarItem key="tabBarItem" title="Sponsors" image="sponsors" id="54C-Bm-52f"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoM-1L-ccq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-310" y="1185"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dashboard" width="30" height="30"/>
+        <image name="faq" width="25" height="25"/>
+        <image name="schedule" width="25" height="25"/>
+        <image name="sponsors" width="25" height="25"/>
+        <image name="updates" width="25" height="25"/>
+    </resources>
+    <color key="tintColor" red="0.50246247633687413" green="0.6748733059172225" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
