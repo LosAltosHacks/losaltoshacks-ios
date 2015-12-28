@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import SnapKit
 
 class SponsorsViewController: UIViewController {
-
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableContainer: UIView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setupConstraints()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +28,34 @@ class SponsorsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupConstraints() {
+        
+        scrollView.snp_makeConstraints { make in
+            
+            // 1/5 of view
+            make.height.equalTo(view.snp_height)
+                .dividedBy(5)
+            make.width.equalTo(view.snp_width)
+            
+            make.centerX.equalTo(view.snp_centerX)
+        }
+        
+        pageControl.snp_makeConstraints { make in
+            make.top.equalTo(scrollView.snp_bottom)
+            make.width.equalTo(view.snp_width)
+        }
+        
+        tableContainer.snp_makeConstraints { make in
+            
+            // 4/5 of view
+            make.height.equalTo(view.snp_height)
+                .dividedBy(5)
+                .multipliedBy(4)
+            make.width.equalTo(view.snp_width)
+            
+            make.top.equalTo(pageControl.snp_bottom)
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -232,7 +232,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqR-Ib-IeD">
                                 <rect key="frame" x="0.0" y="64" width="600" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="IaF-8q-gmS"/>
+                                    <constraint firstAttribute="height" constant="128" placeholder="YES" id="r9d-Gn-IcX"/>
                                 </constraints>
                             </scrollView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7c9-ob-MVl">
@@ -244,18 +244,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CqR-Ib-IeD" firstAttribute="leading" secondItem="Udd-lI-42R" secondAttribute="leading" id="3o6-AB-gRj"/>
-                            <constraint firstItem="7c9-ob-MVl" firstAttribute="top" secondItem="CqR-Ib-IeD" secondAttribute="bottom" id="Ixg-f6-Thj"/>
-                            <constraint firstItem="7c9-ob-MVl" firstAttribute="bottom" secondItem="dLq-uw-Zbw" secondAttribute="top" id="Lal-2J-IC0"/>
-                            <constraint firstItem="7oo-Jl-eUk" firstAttribute="centerX" secondItem="CqR-Ib-IeD" secondAttribute="centerX" id="PGv-LE-97w"/>
-                            <constraint firstItem="7oo-Jl-eUk" firstAttribute="bottom" secondItem="CqR-Ib-IeD" secondAttribute="bottom" id="Qgn-em-LqC"/>
-                            <constraint firstItem="7c9-ob-MVl" firstAttribute="leading" secondItem="CqR-Ib-IeD" secondAttribute="leading" id="Wv3-gj-u4H"/>
-                            <constraint firstItem="CqR-Ib-IeD" firstAttribute="top" secondItem="t4E-Tw-o7m" secondAttribute="bottom" id="aYP-vl-yhl"/>
-                            <constraint firstItem="7c9-ob-MVl" firstAttribute="trailing" secondItem="CqR-Ib-IeD" secondAttribute="trailing" id="dYD-6q-lm8"/>
-                            <constraint firstAttribute="trailing" secondItem="CqR-Ib-IeD" secondAttribute="trailing" id="uhd-aF-gbE"/>
+                            <constraint firstItem="7c9-ob-MVl" firstAttribute="top" secondItem="7oo-Jl-eUk" secondAttribute="bottom" placeholder="YES" id="Amo-df-Kae"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CqR-Ib-IeD" secondAttribute="trailing" constant="-20" placeholder="YES" id="CPh-nX-xVg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7c9-ob-MVl" secondAttribute="trailing" constant="-20" placeholder="YES" id="JPf-ww-wxA"/>
+                            <constraint firstItem="7c9-ob-MVl" firstAttribute="top" secondItem="CqR-Ib-IeD" secondAttribute="bottom" placeholder="YES" id="NSU-tj-1JU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7oo-Jl-eUk" secondAttribute="trailing" constant="261" placeholder="YES" id="RBc-d9-ou2"/>
+                            <constraint firstItem="7oo-Jl-eUk" firstAttribute="leading" secondItem="Udd-lI-42R" secondAttribute="leadingMargin" constant="260" placeholder="YES" id="fcx-n5-yeO"/>
+                            <constraint firstItem="CqR-Ib-IeD" firstAttribute="leading" secondItem="Udd-lI-42R" secondAttribute="leadingMargin" constant="-20" placeholder="YES" id="ftf-DV-XOV"/>
+                            <constraint firstItem="7oo-Jl-eUk" firstAttribute="top" secondItem="t4E-Tw-o7m" secondAttribute="bottom" constant="91" placeholder="YES" id="jAu-LI-ThT"/>
+                            <constraint firstItem="CqR-Ib-IeD" firstAttribute="top" secondItem="t4E-Tw-o7m" secondAttribute="bottom" placeholder="YES" id="kDc-Uw-HhL"/>
+                            <constraint firstItem="7c9-ob-MVl" firstAttribute="leading" secondItem="Udd-lI-42R" secondAttribute="leadingMargin" constant="-20" placeholder="YES" id="rAD-lO-nrn"/>
+                            <constraint firstItem="dLq-uw-Zbw" firstAttribute="top" secondItem="7c9-ob-MVl" secondAttribute="bottom" placeholder="YES" id="waW-UN-5hm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SPONSORS" id="eMb-WG-FQ1"/>
+                    <connections>
+                        <outlet property="pageControl" destination="7oo-Jl-eUk" id="iAe-qI-2bt"/>
+                        <outlet property="scrollView" destination="CqR-Ib-IeD" id="PHe-WD-Gt1"/>
+                        <outlet property="tableContainer" destination="7c9-ob-MVl" id="nix-w8-8ix"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoM-1L-ccq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -384,6 +391,7 @@
         <!--Table View Controller-->
         <scene sceneID="MbM-Vm-Dll">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oG-7H-aD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="g7R-wL-Skr" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XJC-Rq-O4I">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="359"/>
@@ -446,7 +454,6 @@
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0oG-7H-aD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-114" y="2596.5"/>
         </scene>
