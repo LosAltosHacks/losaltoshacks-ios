@@ -18,6 +18,9 @@
 		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
 		37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE831C31E60800998CB1 /* MentorView.swift */; };
 		37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE891C31E86000998CB1 /* SlackButton.swift */; };
+		37CCFE921C31EE0800998CB1 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE911C31EE0800998CB1 /* Update.swift */; };
+		37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */; };
+		37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE951C31F09400998CB1 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
 		37CCFE831C31E60800998CB1 /* MentorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorView.swift; sourceTree = "<group>"; };
 		37CCFE891C31E86000998CB1 /* SlackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackButton.swift; sourceTree = "<group>"; };
+		37CCFE911C31EE0800998CB1 /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
+		37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewCell.swift; sourceTree = "<group>"; };
+		37CCFE951C31F09400998CB1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 		37AE68811C2DF38C00A02DF0 /* LosAltosHacks */ = {
 			isa = PBXGroup;
 			children = (
+				37CCFE8D1C31EDFF00998CB1 /* Models */,
 				D093A7481C2F84CD00570708 /* Views */,
 				37AE68B31C2DFFA200A02DF0 /* Controllers */,
 				37AE68861C2DF38C00A02DF0 /* Main.storyboard */,
@@ -175,11 +182,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		37CCFE8D1C31EDFF00998CB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37CCFE911C31EE0800998CB1 /* Update.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D093A7481C2F84CD00570708 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				37CCFE831C31E60800998CB1 /* MentorView.swift */,
 				37CCFE891C31E86000998CB1 /* SlackButton.swift */,
+				37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,7 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
+				37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */,
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
+				37CCFE921C31EE0800998CB1 /* Update.swift in Sources */,
 				37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */,
 				37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,

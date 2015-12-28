@@ -8,7 +8,11 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+protocol SnapKitView {
+    func setupConstraints()
+}
+
+class BaseViewController: UIViewController, SnapKitView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
