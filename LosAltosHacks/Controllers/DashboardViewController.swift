@@ -9,14 +9,12 @@
 import UIKit
 import SnapKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: BaseViewController {
 
     @IBOutlet weak var mentorView: MentorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupConstraints()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +22,7 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setupConstraints() {
+    override func setupConstraints() {
         
         // Mentor View
         mentorView.snp_makeConstraints { make in

@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SponsorsViewController: UIViewController {
+class SponsorsViewController: BaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableContainer: UIView!
@@ -19,8 +19,6 @@ class SponsorsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        setupConstraints()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +26,7 @@ class SponsorsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setupConstraints() {
+    override func setupConstraints() {
         
         scrollView.snp_makeConstraints { make in
             

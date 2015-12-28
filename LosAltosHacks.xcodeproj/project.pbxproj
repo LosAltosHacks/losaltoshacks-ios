@@ -155,6 +155,7 @@
 		37AE68B31C2DFFA200A02DF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				37CCFE951C31F09400998CB1 /* BaseViewController.swift */,
 				37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */,
 				37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */,
 				37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */,
@@ -325,6 +326,7 @@
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
 				37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */,
+				37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
 				37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */,
 				37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */,
