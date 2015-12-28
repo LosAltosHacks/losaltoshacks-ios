@@ -32,9 +32,7 @@ class SponsorsViewController: UIViewController {
         
         scrollView.snp_makeConstraints { make in
             
-            // 1/5 of view
-            make.height.equalTo(view.snp_height)
-                .dividedBy(5)
+            make.height.equalTo(view.snp_height).multipliedBy(0.2)
             make.width.equalTo(view.snp_width)
             
             make.centerX.equalTo(view.snp_centerX)
@@ -47,10 +45,7 @@ class SponsorsViewController: UIViewController {
         
         tableContainer.snp_makeConstraints { make in
             
-            // 4/5 of view
-            make.height.equalTo(view.snp_height)
-                .dividedBy(5)
-                .multipliedBy(4)
+            make.height.equalTo(view.snp_height).multipliedBy(0.8)
             make.width.equalTo(view.snp_width)
             
             make.top.equalTo(pageControl.snp_bottom)

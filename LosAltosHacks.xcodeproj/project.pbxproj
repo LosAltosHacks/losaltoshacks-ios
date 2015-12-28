@@ -16,8 +16,8 @@
 		37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */; };
 		37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */; };
 		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
-		D00853831C2E052300B31BE7 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00853821C2E052300B31BE7 /* FAQViewController.swift */; };
-		D093A74C1C2F852B00570708 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A74B1C2F852B00570708 /* FAQTableViewCell.swift */; };
+		37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE831C31E60800998CB1 /* MentorView.swift */; };
+		37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE891C31E86000998CB1 /* SlackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +80,8 @@
 		37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
-		D00853821C2E052300B31BE7 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
-		D093A74B1C2F852B00570708 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		37CCFE831C31E60800998CB1 /* MentorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorView.swift; sourceTree = "<group>"; };
+		37CCFE891C31E86000998CB1 /* SlackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,6 @@
 				37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */,
 				37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */,
 				37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */,
-				D00853821C2E052300B31BE7 /* FAQViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,7 +177,8 @@
 		D093A7481C2F84CD00570708 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D093A74B1C2F852B00570708 /* FAQTableViewCell.swift */,
+				37CCFE831C31E60800998CB1 /* MentorView.swift */,
+				37CCFE891C31E86000998CB1 /* SlackButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,11 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D093A74C1C2F852B00570708 /* FAQTableViewCell.swift in Sources */,
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
+				37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
-				D00853831C2E052300B31BE7 /* FAQViewController.swift in Sources */,
+				37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */,
 				37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */,
 				37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */,
 			);

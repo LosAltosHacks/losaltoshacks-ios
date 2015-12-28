@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SnapKit
 
 class DashboardViewController: UIViewController {
 
+    @IBOutlet weak var mentorView: MentorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupConstraints()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,19 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupConstraints() {
+        
+        // Mentor View
+        mentorView.snp_makeConstraints { make in
+            make.height.equalTo(view.snp_height)
+                .dividedBy(5)
+            
+            make.centerX.equalTo(view.snp_centerX)
+            
+            make.leading.equalTo(view.snp_leading)
+            make.top.equalTo(snp_topLayoutGuideBottom)
+        }
+    }
 
     /*
     // MARK: - Navigation
