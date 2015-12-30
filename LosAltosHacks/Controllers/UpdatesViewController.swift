@@ -10,37 +10,38 @@ import UIKit
 import SnapKit
 
 class UpdatesViewController: BaseViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     static let cellIdentifier = "updateCell"
+    
+    let refreshControl = UIRefreshControl()
     
     var updates = [Update]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
+        
         tableView.dataSource = self
         
-        fetchUpdates()
+        refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
+        
+        refresh()
     }
-
+    
+    func refresh() {
+        self.updates = Update.getUpdates()
+        self.tableView.reloadData()
+        
+        self.refreshControl.endRefreshing()
+    }
+    
     override func setupConstraints() {
         tableView.snp_makeConstraints { make in
             make.margins.equalTo(view.snp_margins).priorityMedium()
             make.topMargin.equalTo(view.snp_topMargin).offset(9).priorityHigh()
         }
     }
-    
-    func fetchUpdates() {
-
-        // fetch updates (this is temporary)
-        self.updates = [Update(date: NSDate(), description: "Nothing yet...")]
-        
-        self.tableView.reloadData()
-    }
-
 }
 
 extension UpdatesViewController: UITableViewDataSource {
@@ -52,14 +53,9 @@ extension UpdatesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(UpdatesViewController.cellIdentifier)! as! UpdateTableViewCell
         
         let update = updates[indexPath.row]
-
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        let date = formatter.stringFromDate(update.date)
         
         cell.descriptionLabel.text = update.description
-        cell.dateLabel.text = date
-        
+        cell.dateLabel.text = update.date.LAHPreferredDisplay
         
         return cell
     }
