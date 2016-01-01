@@ -73,4 +73,36 @@ extension NSDate {
         
         return "\(Int(time.amount)) \(time.typeDescription) ago"
     }
+
+    static func specificDate(month: Int, day: Int, year: Int, hour: Int) -> NSDate {
+        let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let components = NSDateComponents()
+        components.month = month
+        components.day = day
+        components.year = year
+        components.hour = hour
+        return gregorian!.dateFromComponents(components)!
+    }
+
+//    static func stringFromTimeInterval(interval: NSTimeInterval) -> String {
+//        let interval = Int(interval)
+//        let seconds = interval % 60
+//        let minutes = (interval / 60) % 60
+//        let hours = (interval / 3600)
+//        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+//    }
+}
+
+extension NSTimeInterval {
+    var hourString: String {
+        return "\(Int(self / 3600))"
+    }
+    var minuteString: String {
+        return "\(Int((self / 60) % 60))"
+    }
+    var secondString: String {
+//        return "\(Int(self % 60))"
+        let seconds = Int(self % 60)
+        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
+    }
 }
