@@ -1,21 +1,28 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DFEB44D812BB6372AD837DE8B163C69310545D34",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2B37A6B7C6884264154281A7A2D2189C0AFC7583",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "3AF18F9C6F5D633BAA0B3F935459E0C777C82047" : 0,
-    "DFEB44D812BB6372AD837DE8B163C69310545D34" : 0
+    "DFEB44D812BB6372AD837DE8B163C69310545D34" : 0,
+    "2B37A6B7C6884264154281A7A2D2189C0AFC7583" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ABF54ED7-A8AF-4BF1-9C73-436E690F01FE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "3AF18F9C6F5D633BAA0B3F935459E0C777C82047" : "LosAltosHacks\/Carthage\/Checkouts\/SnapKit\/",
-    "DFEB44D812BB6372AD837DE8B163C69310545D34" : "LosAltosHacks\/"
+    "DFEB44D812BB6372AD837DE8B163C69310545D34" : "LosAltosHacks\/",
+    "2B37A6B7C6884264154281A7A2D2189C0AFC7583" : "losaltoshacks-ios\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LosAltosHacks",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LosAltosHacks.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/losaltoshacks\/losaltoshacks-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B37A6B7C6884264154281A7A2D2189C0AFC7583"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SnapKit\/SnapKit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
