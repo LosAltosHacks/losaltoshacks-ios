@@ -24,6 +24,7 @@
 		37EC36481C34468600B9480B /* LAHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC36471C34468600B9480B /* LAHExtensions.swift */; };
 		D093A77F1C370CB400570708 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A77E1C370CB400570708 /* ProgressView.swift */; };
 		D093A7851C3721D800570708 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D093A79F1C3731CF00570708 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A79E1C3731CF00570708 /* TopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,20 +62,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = EECDB3841AC0C9D4006BBC11;
 			remoteInfo = "SnapKit OSX Tests";
-		};
-		37AE68B11C2DF54500A02DF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
-			remoteInfo = "SnapKit iOS";
-		};
-		D093A7861C3721D800570708 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
-			remoteInfo = "SnapKit iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -114,6 +101,7 @@
 		37CCFE951C31F09400998CB1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		37EC36471C34468600B9480B /* LAHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHExtensions.swift; sourceTree = "<group>"; };
 		D093A77E1C370CB400570708 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		D093A79E1C3731CF00570708 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +216,7 @@
 		D093A7481C2F84CD00570708 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D093A79E1C3731CF00570708 /* TopView.swift */,
 				37CCFE831C31E60800998CB1 /* MentorView.swift */,
 				37CCFE891C31E86000998CB1 /* SlackButton.swift */,
 				37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */,
@@ -252,8 +241,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				37AE68B21C2DF54500A02DF0 /* PBXTargetDependency */,
-				D093A7871C3721D800570708 /* PBXTargetDependency */,
 			);
 			name = LosAltosHacks;
 			productName = LosAltosHacks;
@@ -394,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D093A79F1C3731CF00570708 /* TopView.swift in Sources */,
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
 				37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */,
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
@@ -424,16 +412,6 @@
 			isa = PBXTargetDependency;
 			target = 37AE687E1C2DF38C00A02DF0 /* LosAltosHacks */;
 			targetProxy = 37AE68941C2DF38C00A02DF0 /* PBXContainerItemProxy */;
-		};
-		37AE68B21C2DF54500A02DF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SnapKit iOS";
-			targetProxy = 37AE68B11C2DF54500A02DF0 /* PBXContainerItemProxy */;
-		};
-		D093A7871C3721D800570708 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SnapKit iOS";
-			targetProxy = D093A7861C3721D800570708 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

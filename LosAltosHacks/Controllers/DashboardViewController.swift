@@ -11,8 +11,9 @@ import SnapKit
 
 class DashboardViewController: BaseViewController {
 
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var mentorView: MentorView!
-    @IBOutlet weak var scrollView: UIScrollView!
+//    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var timeLeftView: UIView!
     @IBOutlet weak var timeRemainingLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
@@ -40,26 +41,33 @@ class DashboardViewController: BaseViewController {
     }
     
     override func setupConstraints() {
-        
+
+//        scrollView.snp_makeConstraints { make in
+//            make.top.equalTo(snp_topLayoutGuideBottom)
+//            make.bottom.equalTo(snp_bottomLayoutGuideBottom)
+//            make.left.equalTo(view.snp_left)
+//            make.right.equalTo(view.snp_right)
+//        }
+
+        topView.snp_makeConstraints { make in
+            make.height.equalTo(125)
+            make.top.equalTo(snp_topLayoutGuideBottom)
+            make.left.equalTo(view.snp_left)
+            make.right.equalTo(view.snp_right)
+        }
+
         mentorView.snp_makeConstraints { make in
             make.height.equalTo(view.snp_height)
                 .dividedBy(5)
             
             make.centerX.equalTo(view.snp_centerX)
             
-            make.leading.equalTo(view.snp_leading)
-            make.top.equalTo(snp_topLayoutGuideBottom)
-        }
-
-        scrollView.snp_makeConstraints { make in
-            make.top.equalTo(mentorView.snp_bottom)
-            make.bottom.equalTo(snp_bottomLayoutGuideBottom)
             make.left.equalTo(view.snp_left)
-            make.right.equalTo(view.snp_right)
+            make.top.equalTo(topView.snp_bottom)
         }
 
         timeLeftView.snp_makeConstraints { make in
-            make.top.equalTo(scrollView.snp_top)
+            make.top.equalTo(mentorView.snp_bottom)
             make.height.equalTo(200)
             make.left.equalTo(view.snp_left)
             make.right.equalTo(view.snp_right)

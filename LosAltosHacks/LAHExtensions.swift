@@ -90,22 +90,16 @@ extension NSDate {
         components.hour = hour
         return gregorian!.dateFromComponents(components)!
     }
-
-//    static func stringFromTimeInterval(interval: NSTimeInterval) -> String {
-//        let interval = Int(interval)
-//        let seconds = interval % 60
-//        let minutes = (interval / 60) % 60
-//        let hours = (interval / 3600)
-//        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-//    }
 }
 
 extension NSTimeInterval {
     var hourString: String {
-        return "\(Int(self / 3600))"
+        let hours = Int(self / 3600)
+        return hours < 10 ? "0\(hours)" : "\(hours)"
     }
     var minuteString: String {
-        return "\(Int((self / 60) % 60))"
+        let minutes = Int((self / 60) % 60)
+        return minutes < 10 ? "0\(minutes)" : "\(minutes)"
     }
     var secondString: String {
 //        return "\(Int(self % 60))"
