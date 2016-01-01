@@ -7,6 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+struct LAHConstants {
+    static let defaultColor = UIColor(red: 126.0/255.0, green: 170.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    static let defaultGreyColor = UIColor(white: 0.6, alpha: 1.0)
+    static let defaultDarkGreyColor = UIColor(white: 0.3, alpha: 1.0)
+}
 
 extension Double {
     var sAtEnd: String {

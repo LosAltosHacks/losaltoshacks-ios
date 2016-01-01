@@ -106,17 +106,45 @@
                                                     <constraint firstAttribute="width" constant="239" id="BMA-rG-qwm"/>
                                                     <constraint firstAttribute="height" constant="96" id="esE-ZQ-Gt6"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
                                                 <color key="textColor" red="0.27114583333333331" green="0.27114583333333331" blue="0.27114583333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwh-PH-lM5" customClass="ProgressView" customModule="LosAltosHacks" customModuleProvider="target">
+                                                <rect key="frame" x="106" y="132" width="388" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YY-ZM-EGq">
+                                                        <rect key="frame" x="182" y="14" width="24" height="21"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="24" id="jYv-kI-GZb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="6YY-ZM-EGq" firstAttribute="top" secondItem="Xwh-PH-lM5" secondAttribute="top" constant="14" placeholder="YES" id="1BQ-iP-YZS"/>
+                                                    <constraint firstItem="6YY-ZM-EGq" firstAttribute="centerY" secondItem="Xwh-PH-lM5" secondAttribute="centerY" placeholder="YES" id="2GX-xh-Pos"/>
+                                                    <constraint firstItem="6YY-ZM-EGq" firstAttribute="centerX" secondItem="Xwh-PH-lM5" secondAttribute="centerX" placeholder="YES" id="TFp-6M-sCb"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="percentLabel" destination="6YY-ZM-EGq" id="VMq-wM-hgD"/>
+                                                </connections>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="198" id="8rb-J2-f2r"/>
+                                            <constraint firstAttribute="height" constant="198" placeholder="YES" id="8rb-J2-f2r"/>
                                             <constraint firstItem="4gx-zD-6yY" firstAttribute="top" secondItem="Hls-e0-vMY" secondAttribute="top" constant="18" placeholder="YES" id="BJ4-9H-wuJ"/>
                                             <constraint firstItem="YbS-xf-BbY" firstAttribute="centerX" secondItem="Hls-e0-vMY" secondAttribute="centerX" placeholder="YES" id="CfC-Yw-Qzb"/>
+                                            <constraint firstItem="Xwh-PH-lM5" firstAttribute="centerX" secondItem="YbS-xf-BbY" secondAttribute="centerX" placeholder="YES" id="TyN-OT-mb3"/>
+                                            <constraint firstItem="Xwh-PH-lM5" firstAttribute="leading" secondItem="Hls-e0-vMY" secondAttribute="leading" constant="106" placeholder="YES" id="ZGN-Lq-Kbh"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xwh-PH-lM5" secondAttribute="bottom" constant="16" placeholder="YES" id="np8-wf-dLO"/>
                                             <constraint firstAttribute="bottom" secondItem="YbS-xf-BbY" secondAttribute="bottom" constant="57" placeholder="YES" id="qUr-wK-BL5"/>
+                                            <constraint firstItem="Xwh-PH-lM5" firstAttribute="top" secondItem="4gx-zD-6yY" secondAttribute="bottom" constant="93" placeholder="YES" id="qYu-6q-hhK"/>
                                             <constraint firstItem="4gx-zD-6yY" firstAttribute="centerX" secondItem="YbS-xf-BbY" secondAttribute="centerX" placeholder="YES" id="v19-lL-yBM"/>
                                             <constraint firstItem="YbS-xf-BbY" firstAttribute="top" secondItem="4gx-zD-6yY" secondAttribute="bottom" constant="6" placeholder="YES" id="zcP-Zz-fN9"/>
                                         </constraints>
@@ -147,6 +175,7 @@
                     <connections>
                         <outlet property="countdownLabel" destination="YbS-xf-BbY" id="TgB-bT-azw"/>
                         <outlet property="mentorView" destination="ftQ-Hc-Qn2" id="ymq-ah-59N"/>
+                        <outlet property="progressView" destination="Xwh-PH-lM5" id="qed-MK-4tt"/>
                         <outlet property="scrollView" destination="v5t-9U-h0o" id="SjH-vd-qic"/>
                         <outlet property="timeLeftView" destination="Hls-e0-vMY" id="kAa-kw-k6R"/>
                         <outlet property="timeRemainingLabel" destination="4gx-zD-6yY" id="9Hu-Di-f6A"/>

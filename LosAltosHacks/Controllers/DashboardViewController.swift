@@ -16,23 +16,22 @@ class DashboardViewController: BaseViewController {
     @IBOutlet weak var timeLeftView: UIView!
     @IBOutlet weak var timeRemainingLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
+    @IBOutlet weak var progressView: ProgressView!
 
     var timer: NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tick(NSTimer()) // initial update
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,
             selector: "tick:", userInfo: nil, repeats: true)
     }
 
     func tick(timer: NSTimer) {
-
         let endDate = NSDate.specificDate(1, day: 31, year: 2016, hour: 18)
-//        print(NSDate.stringFromTimeInterval(endDate.timeIntervalSinceNow))
         let timeLeft = endDate.timeIntervalSinceNow
         countdownLabel.text = "\(timeLeft.hourString):\(timeLeft.minuteString)"
-//        let timeToFinish =
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,6 +75,15 @@ class DashboardViewController: BaseViewController {
             make.centerX.equalTo(timeLeftView.snp_centerX)
             make.width.equalTo(240)
             make.height.equalTo(96)
+        }
+
+        progressView.snp_makeConstraints { make in
+            make.top.equalTo(countdownLabel.snp_bottomMargin)
+            make.centerX.equalTo(timeLeftView.snp_centerX)
+            make.width.equalTo(timeLeftView.snp_width)
+                .dividedBy(1.2)
+            make.height.equalTo(timeLeftView.snp_height)
+                .dividedBy(4)
         }
 
     }
