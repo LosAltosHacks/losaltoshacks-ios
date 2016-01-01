@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */; };
+		37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68861C2DF38C00A02DF0 /* Main.storyboard */; };
+		37AE688A1C2DF38C00A02DF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68891C2DF38C00A02DF0 /* Assets.xcassets */; };
+		37AE688D1C2DF38C00A02DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */; };
+		37AE68981C2DF38C00A02DF0 /* LosAltosHacksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68971C2DF38C00A02DF0 /* LosAltosHacksTests.swift */; };
+		37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */; };
+		37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */; };
+		37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */; };
+		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
+		37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE831C31E60800998CB1 /* MentorView.swift */; };
+		37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE891C31E86000998CB1 /* SlackButton.swift */; };
+		37CCFE921C31EE0800998CB1 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE911C31EE0800998CB1 /* Update.swift */; };
+		37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */; };
+		37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE951C31F09400998CB1 /* BaseViewController.swift */; };
+		37EC36481C34468600B9480B /* LAHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC36471C34468600B9480B /* LAHExtensions.swift */; };
+		D093A77F1C370CB400570708 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A77E1C370CB400570708 /* ProgressView.swift */; };
+		D093A7851C3721D800570708 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37AE68941C2DF38C00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68771C2DF38C00A02DF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37AE687E1C2DF38C00A02DF0;
+			remoteInfo = LosAltosHacks;
+		};
+		37AE68A91C2DF53A00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
+			remoteInfo = "SnapKit iOS";
+		};
+		37AE68AB1C2DF53A00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EECDB37A1AC0C9D4006BBC11;
+			remoteInfo = "SnapKit OSX";
+		};
+		37AE68AD1C2DF53A00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
+			remoteInfo = "SnapKit iOS Tests";
+		};
+		37AE68AF1C2DF53A00A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EECDB3841AC0C9D4006BBC11;
+			remoteInfo = "SnapKit OSX Tests";
+		};
+		37AE68B11C2DF54500A02DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = "SnapKit iOS";
+		};
+		D093A7861C3721D800570708 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = "SnapKit iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D093A7881C3721D800570708 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D093A7851C3721D800570708 /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LosAltosHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37AE68871C2DF38C00A02DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		37AE68891C2DF38C00A02DF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37AE688C1C2DF38C00A02DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37AE688E1C2DF38C00A02DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37AE68931C2DF38C00A02DF0 /* LosAltosHacksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LosAltosHacksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37AE68971C2DF38C00A02DF0 /* LosAltosHacksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosAltosHacksTests.swift; sourceTree = "<group>"; };
+		37AE68991C2DF38C00A02DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Carthage/Checkouts/SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
+		37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
+		37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
+		37CCFE831C31E60800998CB1 /* MentorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorView.swift; sourceTree = "<group>"; };
+		37CCFE891C31E86000998CB1 /* SlackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackButton.swift; sourceTree = "<group>"; };
+		37CCFE911C31EE0800998CB1 /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
+		37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewCell.swift; sourceTree = "<group>"; };
+		37CCFE951C31F09400998CB1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		37EC36471C34468600B9480B /* LAHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHExtensions.swift; sourceTree = "<group>"; };
+		D093A77E1C370CB400570708 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37AE687C1C2DF38C00A02DF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37AE68901C2DF38C00A02DF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37AE68761C2DF38C00A02DF0 = {
+			isa = PBXGroup;
+			children = (
+				37AE68811C2DF38C00A02DF0 /* LosAltosHacks */,
+				37AE68961C2DF38C00A02DF0 /* LosAltosHacksTests */,
+				37AE68801C2DF38C00A02DF0 /* Products */,
+				37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		37AE68801C2DF38C00A02DF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */,
+				37AE68931C2DF38C00A02DF0 /* LosAltosHacksTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37AE68811C2DF38C00A02DF0 /* LosAltosHacks */ = {
+			isa = PBXGroup;
+			children = (
+				37EC36431C34467A00B9480B /* Misc */,
+				37CCFE8D1C31EDFF00998CB1 /* Models */,
+				D093A7481C2F84CD00570708 /* Views */,
+				37AE68B31C2DFFA200A02DF0 /* Controllers */,
+				37AE68861C2DF38C00A02DF0 /* Main.storyboard */,
+				37AE68B41C2DFFAB00A02DF0 /* Supporting Files */,
+			);
+			path = LosAltosHacks;
+			sourceTree = "<group>";
+		};
+		37AE68961C2DF38C00A02DF0 /* LosAltosHacksTests */ = {
+			isa = PBXGroup;
+			children = (
+				37AE68971C2DF38C00A02DF0 /* LosAltosHacksTests.swift */,
+				37AE68991C2DF38C00A02DF0 /* Info.plist */,
+			);
+			path = LosAltosHacksTests;
+			sourceTree = "<group>";
+		};
+		37AE68A31C2DF53A00A02DF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */,
+				37AE68AC1C2DF53A00A02DF0 /* SnapKit.framework */,
+				37AE68AE1C2DF53A00A02DF0 /* SnapKit iOS Tests.xctest */,
+				37AE68B01C2DF53A00A02DF0 /* SnapKit OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37AE68B31C2DFFA200A02DF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				37CCFE951C31F09400998CB1 /* BaseViewController.swift */,
+				37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */,
+				37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */,
+				37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */,
+				37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		37AE68B41C2DFFAB00A02DF0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */,
+				37AE68891C2DF38C00A02DF0 /* Assets.xcassets */,
+				37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */,
+				37AE688E1C2DF38C00A02DF0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37CCFE8D1C31EDFF00998CB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37CCFE911C31EE0800998CB1 /* Update.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		37EC36431C34467A00B9480B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				37EC36471C34468600B9480B /* LAHExtensions.swift */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		D093A7481C2F84CD00570708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37CCFE831C31E60800998CB1 /* MentorView.swift */,
+				37CCFE891C31E86000998CB1 /* SlackButton.swift */,
+				37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */,
+				D093A77E1C370CB400570708 /* ProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37AE687E1C2DF38C00A02DF0 /* LosAltosHacks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37AE689C1C2DF38C00A02DF0 /* Build configuration list for PBXNativeTarget "LosAltosHacks" */;
+			buildPhases = (
+				37AE687B1C2DF38C00A02DF0 /* Sources */,
+				37AE687C1C2DF38C00A02DF0 /* Frameworks */,
+				37AE687D1C2DF38C00A02DF0 /* Resources */,
+				D093A7881C3721D800570708 /* Embed Frameworks */,
+				D093A78B1C37284F00570708 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37AE68B21C2DF54500A02DF0 /* PBXTargetDependency */,
+				D093A7871C3721D800570708 /* PBXTargetDependency */,
+			);
+			name = LosAltosHacks;
+			productName = LosAltosHacks;
+			productReference = 37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37AE68921C2DF38C00A02DF0 /* LosAltosHacksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37AE689F1C2DF38C00A02DF0 /* Build configuration list for PBXNativeTarget "LosAltosHacksTests" */;
+			buildPhases = (
+				37AE688F1C2DF38C00A02DF0 /* Sources */,
+				37AE68901C2DF38C00A02DF0 /* Frameworks */,
+				37AE68911C2DF38C00A02DF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37AE68951C2DF38C00A02DF0 /* PBXTargetDependency */,
+			);
+			name = LosAltosHacksTests;
+			productName = LosAltosHacksTests;
+			productReference = 37AE68931C2DF38C00A02DF0 /* LosAltosHacksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37AE68771C2DF38C00A02DF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Dan Appel";
+				TargetAttributes = {
+					37AE687E1C2DF38C00A02DF0 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					37AE68921C2DF38C00A02DF0 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 37AE687E1C2DF38C00A02DF0;
+					};
+				};
+			};
+			buildConfigurationList = 37AE687A1C2DF38C00A02DF0 /* Build configuration list for PBXProject "LosAltosHacks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37AE68761C2DF38C00A02DF0;
+			productRefGroup = 37AE68801C2DF38C00A02DF0 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 37AE68A31C2DF53A00A02DF0 /* Products */;
+					ProjectRef = 37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				37AE687E1C2DF38C00A02DF0 /* LosAltosHacks */,
+				37AE68921C2DF38C00A02DF0 /* LosAltosHacksTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = 37AE68A91C2DF53A00A02DF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37AE68AC1C2DF53A00A02DF0 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = 37AE68AB1C2DF53A00A02DF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37AE68AE1C2DF53A00A02DF0 /* SnapKit iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit iOS Tests.xctest";
+			remoteRef = 37AE68AD1C2DF53A00A02DF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37AE68B01C2DF53A00A02DF0 /* SnapKit OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit OSX Tests.xctest";
+			remoteRef = 37AE68AF1C2DF53A00A02DF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37AE687D1C2DF38C00A02DF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37AE688D1C2DF38C00A02DF0 /* LaunchScreen.storyboard in Resources */,
+				37AE688A1C2DF38C00A02DF0 /* Assets.xcassets in Resources */,
+				37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37AE68911C2DF38C00A02DF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D093A78B1C37284F00570708 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37AE687B1C2DF38C00A02DF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
+				37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */,
+				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
+				37CCFE921C31EE0800998CB1 /* Update.swift in Sources */,
+				37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */,
+				D093A77F1C370CB400570708 /* ProgressView.swift in Sources */,
+				37EC36481C34468600B9480B /* LAHExtensions.swift in Sources */,
+				37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */,
+				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
+				37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */,
+				37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */,
+				37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37AE688F1C2DF38C00A02DF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37AE68981C2DF38C00A02DF0 /* LosAltosHacksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37AE68951C2DF38C00A02DF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37AE687E1C2DF38C00A02DF0 /* LosAltosHacks */;
+			targetProxy = 37AE68941C2DF38C00A02DF0 /* PBXContainerItemProxy */;
+		};
+		37AE68B21C2DF54500A02DF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SnapKit iOS";
+			targetProxy = 37AE68B11C2DF54500A02DF0 /* PBXContainerItemProxy */;
+		};
+		D093A7871C3721D800570708 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SnapKit iOS";
+			targetProxy = D093A7861C3721D800570708 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37AE68861C2DF38C00A02DF0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37AE68871C2DF38C00A02DF0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37AE688C1C2DF38C00A02DF0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37AE689A1C2DF38C00A02DF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37AE689B1C2DF38C00A02DF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37AE689D1C2DF38C00A02DF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = LosAltosHacks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37AE689E1C2DF38C00A02DF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = LosAltosHacks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		37AE68A01C2DF38C00A02DF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LosAltosHacksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.dvappel.LosAltosHacksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LosAltosHacks.app/LosAltosHacks";
+			};
+			name = Debug;
+		};
+		37AE68A11C2DF38C00A02DF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LosAltosHacksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.dvappel.LosAltosHacksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LosAltosHacks.app/LosAltosHacks";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37AE687A1C2DF38C00A02DF0 /* Build configuration list for PBXProject "LosAltosHacks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37AE689A1C2DF38C00A02DF0 /* Debug */,
+				37AE689B1C2DF38C00A02DF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37AE689C1C2DF38C00A02DF0 /* Build configuration list for PBXNativeTarget "LosAltosHacks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37AE689D1C2DF38C00A02DF0 /* Debug */,
+				37AE689E1C2DF38C00A02DF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37AE689F1C2DF38C00A02DF0 /* Build configuration list for PBXNativeTarget "LosAltosHacksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37AE68A01C2DF38C00A02DF0 /* Debug */,
+				37AE68A11C2DF38C00A02DF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37AE68771C2DF38C00A02DF0 /* Project object */;
+}
