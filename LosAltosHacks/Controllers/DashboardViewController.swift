@@ -28,17 +28,35 @@ class DashboardViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tick(NSTimer()) // initial update
+        // Time leading up to LAH
+        if NSDate().isEarlierThanDate(LAHConstants.LAHStartDate) {
+            timeRemainingLabel.text = "TIME UNTIL LOS ALTOS HACKS"
+        }
+
+        if NSDate().isEarlierThanDate(LAHConstants.LAHEndDate) {
+            tick(NSTimer()) // initial update
+        }
+
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,
             selector: "tick:", userInfo: nil, repeats: true)
     }
 
     func tick(timer: NSTimer) {
-        let timeLeft = LAHConstants.LAHEndDate.timeIntervalSinceNow
-        countdownLabel.text = "\(timeLeft.hourString):\(timeLeft.minuteString)"
+
+        if !NSDate().isEarlierThanDate(LAHConstants.LAHEndDate) && timer.valid {
+            timer.invalidate()
+        }
+        var timeLeft = LAHConstants.LAHEndDate.timeIntervalSinceNow
 
         // Update progress view
-        progressView.updateProgressWithTimer(timer, startDate: LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate)
+        if NSDate().isEarlierThanDate(LAHConstants.LAHStartDate) {
+            timeLeft = LAHConstants.LAHStartDate.timeIntervalSinceNow
+        } else {
+            progressView.updateProgressWithTimer(timer, startDate: LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate)
+        }
+
+        // Update label
+        countdownLabel.text = "\(timeLeft.hours):\(timeLeft.minutes)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +99,7 @@ class DashboardViewController: BaseViewController {
         timeRemainingLabel.snp_makeConstraints { make in
             make.top.equalTo(12)
             make.centerX.equalTo(timeLeftView.snp_centerX)
+            make.width.equalTo(view.snp_width).dividedBy(1.5)
         }
 
         countdownLabel.snp_makeConstraints { make in

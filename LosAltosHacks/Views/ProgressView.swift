@@ -16,9 +16,11 @@ class ProgressView: UIView {
     let BorderWidth: CGFloat = 1.5
 
     var progress: CGFloat = 0.0 {
-        willSet(newProgress) {
-            if newProgress < 0.0 || newProgress > 1.0 {
-                return
+        didSet {
+            if progress < 0.0 {
+                progress = 0.0
+            } else if progress > 1.0 {
+                progress = 1.0
             }
         }
     }
@@ -32,6 +34,7 @@ class ProgressView: UIView {
 
     var cornerRadius: CGFloat = 8.0
 
+    var originalWidth: CGFloat!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,7 +46,7 @@ class ProgressView: UIView {
             make.width.equalTo(self.snp_width).dividedBy(4.8)
         }
 
-//        maskingView.layer.cornerRadius = 8.0
+//        maskingView.backgroundColor = UIColor.blackColor()
         maskingView.snp_makeConstraints { make in
             make.center.equalTo(self.snp_center)
             make.left.equalTo(self.snp_left).offset(9)
@@ -61,6 +64,10 @@ class ProgressView: UIView {
             return
         }
 
+        if originalWidth == nil {
+            originalWidth = maskingView.frame.size.width
+        }
+
         cornerRadius = rect.size.height / 2 // rounded rect effect
         percentLabel.text = "\(Int(progress * 100))%"
         percentLabel.textColor = LAHConstants.defaultDarkGreyColor
@@ -75,15 +82,17 @@ class ProgressView: UIView {
 
         // Inner Rect
 
-//        maskingView.snp_updateConstraints { make in
-//            let offset: CGFloat = progress * maskingView.frame.size.width
-//            make.left.equalTo(self.snp_left).offset(offset)
-//        }
+//        let offset = progress * originalWidth
+//        print(progress, originalWidth, offset)
+//        maskingView.frame = CGRectMake(originalOrigin.x + offset,
+//                                       originalOrigin.y,
+//                                       maskingView.frame.size.width,
+//                                       maskingView.frame.size.height)
 
-        let offset = progress * maskingView.frame.size.width
-        maskingView.frame = CGRectMake(maskingView.frame.origin.x + offset,
+        let offset = Int(progress * originalWidth) + 20 // correction
+        maskingView.frame = CGRectMake(CGFloat(offset),
                                        maskingView.frame.origin.y,
-                                       maskingView.frame.size.width - offset,
+                                       maskingView.frame.size.width,
                                        maskingView.frame.size.height)
 
         let innerRect = CGRectMake(ProgressBarInset + 1,
@@ -103,8 +112,12 @@ class ProgressView: UIView {
 
     func updateProgressWithTimer(timer: NSTimer, startDate: NSDate, endDate: NSDate) {
 
-        if NSDate().compare(startDate) == NSComparisonResult.OrderedAscending {
+        if !NSDate().isEarlierThanDate(startDate) {
+            let interval = endDate.timeIntervalSinceDate(startDate)
+            let progressedInterval = NSDate().timeIntervalSinceDate(startDate)
 
+            progress = CGFloat(progressedInterval / interval)
+            self.setNeedsDisplay()
         }
     }
 

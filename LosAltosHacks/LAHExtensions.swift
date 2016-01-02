@@ -14,8 +14,8 @@ struct LAHConstants {
     static let defaultGreyColor = UIColor(white: 0.6, alpha: 1.0)
     static let defaultDarkGreyColor = UIColor(white: 0.3, alpha: 1.0)
 
-    static let LAHStartDate = NSDate.specificDate(1, day: 30, year: 2016, hour: 18)
-    static let LAHEndDate = NSDate.specificDate(1, day: 30, year: 2016, hour: 18)
+    static let LAHStartDate = NSDate.specificDate(1, day: 1, year: 2016, hour: 20)
+    static let LAHEndDate = NSDate.specificDate(1, day: 1, year: 2016, hour: 21)
 }
 
 extension Double {
@@ -95,24 +95,22 @@ extension NSDate {
     }
 
     func isEarlierThanDate(date: NSDate) -> Bool {
-        print( self.timeIntervalSinceDate(date) )
-
-        return true
+        return (self.compare(date) == .OrderedAscending)
     }
 }
 
 extension NSTimeInterval {
-    var hourString: String {
-        let hours = Int(self / 3600)
-        return hours < 10 ? "0\(hours)" : "\(hours)"
+    var hours: Int {
+        return Int(self) / 3600
+//        return hours < 10 ? "0\(hours)" : "\(hours)"
     }
-    var minuteString: String {
-        let minutes = Int((self / 60) % 60)
-        return minutes < 10 ? "0\(minutes)" : "\(minutes)"
+    var minutes: Int {
+        return Int(self / 60) % 60
+//        return minutes < 10 ? "0\(minutes)" : "\(minutes)"
     }
-    var secondString: String {
+    var seconds: Int  {
 //        return "\(Int(self % 60))"
-        let seconds = Int(self % 60)
-        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
+        return Int(self) % 60
+//        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
 }
