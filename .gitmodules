@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/Alamofire"]
+	path = Carthage/Checkouts/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "Carthage/Checkouts/Snapkit"]
+	path = Carthage/Checkouts/Snapkit
+	url = https://github.com/Snapkit/Snapkit.git
