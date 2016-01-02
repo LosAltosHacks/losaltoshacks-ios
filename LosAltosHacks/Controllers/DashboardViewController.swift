@@ -34,14 +34,15 @@ class DashboardViewController: BaseViewController {
     }
 
     func tick(timer: NSTimer) {
-        let endDate = NSDate.specificDate(1, day: 31, year: 2016, hour: 18)
-        let timeLeft = endDate.timeIntervalSinceNow
+        let timeLeft = LAHConstants.LAHEndDate.timeIntervalSinceNow
         countdownLabel.text = "\(timeLeft.hourString):\(timeLeft.minuteString)"
+
+        // Update progress view
+        progressView.updateProgressWithTimer(timer, startDate: LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func setupConstraints() {

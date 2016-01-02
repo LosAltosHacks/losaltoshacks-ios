@@ -153,6 +153,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwh-PH-lM5" customClass="ProgressView" customModule="LosAltosHacks" customModuleProvider="target">
                                         <rect key="frame" x="106" y="132" width="388" height="50"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkT-mP-Lv3">
+                                                <rect key="frame" x="8" y="4" width="370" height="42"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YY-ZM-EGq">
                                                 <rect key="frame" x="182" y="14" width="24" height="21"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,11 +170,16 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="6YY-ZM-EGq" firstAttribute="centerX" secondItem="Xwh-PH-lM5" secondAttribute="centerX" id="7dF-ei-BFU"/>
-                                            <constraint firstItem="6YY-ZM-EGq" firstAttribute="centerY" secondItem="Xwh-PH-lM5" secondAttribute="centerY" id="D2i-6k-g1I"/>
-                                            <constraint firstItem="6YY-ZM-EGq" firstAttribute="top" secondItem="Xwh-PH-lM5" secondAttribute="top" constant="14" id="X0j-LW-urF"/>
+                                            <constraint firstItem="6YY-ZM-EGq" firstAttribute="centerX" secondItem="Xwh-PH-lM5" secondAttribute="centerX" placeholder="YES" id="7dF-ei-BFU"/>
+                                            <constraint firstItem="VkT-mP-Lv3" firstAttribute="centerY" secondItem="6YY-ZM-EGq" secondAttribute="centerY" placeholder="YES" id="CZL-Fa-wxw"/>
+                                            <constraint firstItem="6YY-ZM-EGq" firstAttribute="centerY" secondItem="Xwh-PH-lM5" secondAttribute="centerY" placeholder="YES" id="D2i-6k-g1I"/>
+                                            <constraint firstItem="6YY-ZM-EGq" firstAttribute="top" secondItem="Xwh-PH-lM5" secondAttribute="top" constant="14" placeholder="YES" id="X0j-LW-urF"/>
+                                            <constraint firstAttribute="trailing" secondItem="VkT-mP-Lv3" secondAttribute="trailing" constant="10" placeholder="YES" id="axH-bc-wOc"/>
+                                            <constraint firstItem="VkT-mP-Lv3" firstAttribute="top" secondItem="Xwh-PH-lM5" secondAttribute="top" constant="4" placeholder="YES" id="lea-S3-Oqz"/>
+                                            <constraint firstItem="VkT-mP-Lv3" firstAttribute="leading" secondItem="Xwh-PH-lM5" secondAttribute="leadingMargin" placeholder="YES" id="nEK-LY-UTx"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="maskingView" destination="VkT-mP-Lv3" id="rMH-k2-o8C"/>
                                             <outlet property="percentLabel" destination="6YY-ZM-EGq" id="VMq-wM-hgD"/>
                                         </connections>
                                     </view>
