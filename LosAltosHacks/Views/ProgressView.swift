@@ -39,7 +39,7 @@ class ProgressView: UIView {
         }
 
         cornerRadius = rect.size.height / 2 // rounded rect effect
-        percentLabel.text = "\(progress * 100)%"
+        percentLabel.text = "\(Int(progress * 100))%"
         percentLabel.textColor = LAHConstants.defaultDarkGreyColor
         percentLabel.clipsToBounds = true
         percentLabel.layer.cornerRadius = percentLabel.frame.size.height / 2

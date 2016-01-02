@@ -25,6 +25,7 @@
 		D093A77F1C370CB400570708 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A77E1C370CB400570708 /* ProgressView.swift */; };
 		D093A7851C3721D800570708 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D093A79F1C3731CF00570708 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A79E1C3731CF00570708 /* TopView.swift */; };
+		D093A7A11C37499800570708 /* SocialMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7A01C37499800570708 /* SocialMediaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		37EC36471C34468600B9480B /* LAHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHExtensions.swift; sourceTree = "<group>"; };
 		D093A77E1C370CB400570708 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		D093A79E1C3731CF00570708 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		D093A7A01C37499800570708 /* SocialMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				37CCFE891C31E86000998CB1 /* SlackButton.swift */,
 				37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */,
 				D093A77E1C370CB400570708 /* ProgressView.swift */,
+				D093A7A01C37499800570708 /* SocialMediaView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D093A7A11C37499800570708 /* SocialMediaView.swift in Sources */,
 				D093A79F1C3731CF00570708 /* TopView.swift in Sources */,
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
 				37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */,

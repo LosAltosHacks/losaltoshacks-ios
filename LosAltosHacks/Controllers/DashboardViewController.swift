@@ -18,6 +18,10 @@ class DashboardViewController: BaseViewController {
     @IBOutlet weak var timeRemainingLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var progressView: ProgressView!
+    @IBOutlet weak var socialMediaView: SocialMediaView!
+    @IBOutlet weak var socialMediaLabel: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var minuteLabel: UILabel!
 
     var timer: NSTimer!
     
@@ -50,7 +54,7 @@ class DashboardViewController: BaseViewController {
 //        }
 
         topView.snp_makeConstraints { make in
-            make.height.equalTo(125)
+            make.height.equalTo(115)
             make.top.equalTo(snp_topLayoutGuideBottom)
             make.left.equalTo(view.snp_left)
             make.right.equalTo(view.snp_right)
@@ -74,15 +78,25 @@ class DashboardViewController: BaseViewController {
         }
 
         timeRemainingLabel.snp_makeConstraints { make in
-            make.top.equalTo(20)
+            make.top.equalTo(12)
             make.centerX.equalTo(timeLeftView.snp_centerX)
         }
 
         countdownLabel.snp_makeConstraints { make in
-            make.top.equalTo(timeRemainingLabel.snp_bottomMargin)
+            make.top.equalTo(timeRemainingLabel.snp_bottomMargin).offset(-4)
             make.centerX.equalTo(timeLeftView.snp_centerX)
             make.width.equalTo(240)
-            make.height.equalTo(96)
+            make.height.equalTo(80)
+        }
+
+        hourLabel.snp_makeConstraints { make in
+            make.centerY.equalTo(countdownLabel.snp_centerY)
+            make.right.equalTo(countdownLabel.snp_left).offset(16)
+        }
+
+        minuteLabel.snp_makeConstraints { make in
+            make.centerY.equalTo(countdownLabel.snp_centerY)
+            make.left.equalTo(countdownLabel.snp_right).offset(-18)
         }
 
         progressView.snp_makeConstraints { make in
@@ -92,6 +106,18 @@ class DashboardViewController: BaseViewController {
                 .dividedBy(1.2)
             make.height.equalTo(timeLeftView.snp_height)
                 .dividedBy(4)
+        }
+
+        socialMediaView.snp_makeConstraints { make in
+            make.bottom.equalTo(snp_bottomLayoutGuideTop)
+            make.left.equalTo(view.snp_left)
+            make.right.equalTo(view.snp_right)
+            make.height.equalTo(45)
+        }
+
+        socialMediaLabel.snp_makeConstraints { make in
+            make.centerX.equalTo(view.snp_centerX)
+            make.bottom.equalTo(socialMediaView.snp_topMargin).offset(-10)
         }
 
     }

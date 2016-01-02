@@ -24,8 +24,8 @@ class MentorView: UIView {
             make.width.equalTo(self.snp_width).multipliedBy(0.75)
             make.height.equalTo(21)
             
-            make.centerX.equalTo(self.snp_centerX)
-            make.top.equalTo(self.snp_top).offset(24)
+            make.center.equalTo(self.snp_center).offset(CGPoint(x: 0, y: -30))
+//            make.top.equalTo(self.snp_top).offset(10)
         }
         
         // Slack button
@@ -34,7 +34,7 @@ class MentorView: UIView {
             make.height.equalTo(44)
             
             make.centerX.equalTo(helpLabel.snp_centerX)
-            make.top.equalTo(helpLabel.snp_bottom).offset(16)
+            make.top.equalTo(helpLabel.snp_bottom).offset(15)
         }
     }
 }
