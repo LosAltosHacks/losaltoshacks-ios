@@ -9,96 +9,101 @@
 import UIKit
 import SnapKit
 
-class SponsorsViewController: BaseViewController, UIScrollViewDelegate {
+class SponsorsViewController: BaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableContainer: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    
-    var pagedSponsorImages: [UIImage] = []//holds the image of each sponsor's logo
-    var pagedSponsorImageViews: [UIImageView?] = []//array of views equal in size to pagedSponsorImages, used to display the images in pagedSponsorImages
-    
-    
+    // used to display the images sponsored images
+    var pagedSponsorImages: [(image: UIImage, view: UIImageView?)]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pagedSponsorImages = [UIImage(named: "moxtra")!,UIImage(named: "moxtra")!]//don't have other images to use, but this will just be a long ass array of sponsor images
-        let pageCount = pagedSponsorImages.count//get the number of pages we have to display to tell the page control
-        pageControl.currentPage = 0
-        pageControl.numberOfPages = pageCount
-        for _ in 0..<pageCount {
-            pagedSponsorImageViews.append(nil)
-        }
-        let pagesScrollViewSize = scrollView.frame.size
-        scrollView.contentSize = CGSize(width: view.frame.width*CGFloat(pagedSponsorImages.count), height: pagesScrollViewSize.height)//tell the scrollview what dimensions it has to work with
-        loadVisiblePages()//load initial pages
+        
+        // images that will be displayed
+        let images = [
+            UIImage(named: "moxtra")!,
+            UIImage(named: "moxtra")!
+        ]
+        
+        // create an array of pairs of images and image views
+        self.pagedSponsorImages = images.map { ($0, nil) }
+        
+        //tell the scrollview what dimensions it has to work with
+        scrollView.contentSize = CGSize(
+            width: view.frame.width * CGFloat(pagedSponsorImages.count),
+            height: scrollView.frame.size.height
+        )
+        
+        // load initial pages
+        loadVisiblePages()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    func loadPage(page: Int)
-    {
-        if (page < 0 || page >= pagedSponsorImages.count) {
-            //check if we are trying to access an image that is out of range, and quit if so
-            return
-        }
-        if let pageView = pagedSponsorImageViews[page] {
-            //nada, image already loaded
-        } else {
-            var frame = scrollView.bounds
-            //set the bounds of the image
-            frame.origin.x = view.frame.size.width * CGFloat(page)
-            frame.origin.y = 64
-            frame.size.width = view.frame.size.width
-            //TODO: fix the fact that full screen can't be used
-            frame.size.height = 60 //full size gets cut off, so i have to shrink it
-            
-            let newPageView = UIImageView(image:pagedSponsorImages[page]/*resizedImage*/)
-            newPageView.contentMode = .ScaleToFill
-            newPageView.frame = frame
-            scrollView.addSubview(newPageView)
-            pagedSponsorImageViews[page] = newPageView
-        }
+    func loadPage(page: Int) {
+        
+        // if page is out of range, dont load it
+        guard (0..<pagedSponsorImages.count).contains(page) else { return }
+        
+        // if image is already loaded, dont load it
+        guard pagedSponsorImages[page].view == nil else { return }
+        
+        
+        var frame = scrollView.bounds
+        
+        //set the bounds of the image
+        frame.origin.x = view.frame.size.width * CGFloat(page)
+        frame.origin.y = 64
+        frame.size.width = view.frame.size.width
+        
+        //TODO: fix the fact that full screen can't be used
+        frame.size.height = 60 //full size gets cut off, so i have to shrink it
+        
+        let newPage = UIImageView(image: pagedSponsorImages[page].image)
+        newPage.contentMode = .ScaleToFill
+        newPage.frame = frame
+        
+        scrollView.addSubview(newPage)
+        
+        pagedSponsorImages[page].view = newPage
     }
     
     func purgePage(page: Int) {
+        
         //don't try and remove a page that doesn't exist
-        if page < 0 || page >= pagedSponsorImages.count {
-            return
-        }
+        guard (0..<pagedSponsorImages.count).contains(page) else { return }
+        
         //if the view isn't already cleared, clear it
-        if let pageView = pagedSponsorImageViews[page] {
+        if let pageView = pagedSponsorImages[page].view {
             pageView.removeFromSuperview()
-            pagedSponsorImageViews[page] = nil
+            pagedSponsorImages[page].view = nil
         }
+    }
+    
+    func getVisiblePage() -> Int {
+        let pageWidth = view.frame.size.width
+
+        return Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth)/(pageWidth * 2.0)))
     }
     
     func loadVisiblePages() {
-        let pageWidth = view.frame.size.width
-        let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth)/(pageWidth * 2.0)))
+        
+        let page = getVisiblePage()
+        
         pageControl.currentPage = page
+        
         let firstPage = page - 1
         let lastPage = page + 1
-        for var index = 0; index < firstPage; ++index {
-            purgePage(index)
-        }
-        for index in firstPage...lastPage {
-            loadPage(index)
-        }
         
-        for var index = lastPage + 1; index < pagedSponsorImages.count; ++index {
-            purgePage(index)
-        }
+        // purge all pages until firstPage
+        if firstPage >= 0 { (0..<firstPage).forEach { purgePage($0) } }
         
+        // load the pages
+        (firstPage...lastPage).forEach { loadPage($0) }
         
-    }
-    
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        loadVisiblePages()
+        // purge all images from the last page onwards
+        (lastPage+1..<pagedSponsorImages.count).forEach { purgePage($0) }
+        
     }
     
     override func setupConstraints() {
@@ -124,15 +129,11 @@ class SponsorsViewController: BaseViewController, UIScrollViewDelegate {
             make.top.equalTo(pageControl.snp_bottom)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+}
+
+
+extension SponsorsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        loadVisiblePages()
     }
-    */
-    
 }
