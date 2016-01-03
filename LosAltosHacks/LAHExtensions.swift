@@ -15,7 +15,9 @@ struct LAHConstants {
     static let defaultDarkGreyColor = UIColor(white: 0.3, alpha: 1.0)
 
     static let LAHStartDate = NSDate.specificDate(1, day: 1, year: 2016, hour: 17)
-    static let LAHEndDate = NSDate.specificDate(1, day: 3, year: 2016, hour: 17)
+    static let LAHEndDate = NSDate.specificDate(1, day: 3, year: 2016, hour: 0)
+
+    static let BaseAPIURLString = "http://www.losaltoshacks.com/api/"
 }
 
 extension Double {

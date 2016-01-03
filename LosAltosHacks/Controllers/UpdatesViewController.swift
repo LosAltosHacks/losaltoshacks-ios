@@ -30,10 +30,11 @@ class UpdatesViewController: BaseViewController {
     }
     
     func refresh() {
-        self.updates = Update.getUpdates()
-        self.tableView.reloadData()
-        
-        self.refreshControl.endRefreshing()
+        Update.getUpdates() { updates in
+            self.updates = updates
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
     }
     
     override func setupConstraints() {
