@@ -22,46 +22,23 @@ class DashboardViewController: BaseViewController {
     @IBOutlet weak var socialMediaLabel: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var minuteLabel: UILabel!
-
-    var timer: NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         initializeTimer()
     }
 
     func initializeTimer() {
+
         // Time leading up to LAH
         if NSDate().isEarlierThanDate(LAHConstants.LAHStartDate) {
             timeRemainingLabel.text = "TIME UNTIL LOS ALTOS HACKS"
         }
 
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,
-            selector: "tick:", userInfo: nil, repeats: true)
-        tick(timer) // initial update
-    }
-
-    func tick(timer: NSTimer) {
-
-        var timeLeft = LAHConstants.LAHEndDate.timeIntervalSinceNow
-
-        // Update progress view
-        if NSDate().isEarlierThanDate(LAHConstants.LAHStartDate) {
-            timeLeft = LAHConstants.LAHStartDate.timeIntervalSinceNow
-        } else {
-            progressView.updateProgressWithTimer(timer, startDate: LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate)
+        progressView.startProgress(LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate) {
+            self.countdownLabel.text = $0.hour + ":" + $0.minute
         }
-
-        if !NSDate().isEarlierThanDate(LAHConstants.LAHEndDate) && timer.valid {
-            timer.invalidate()
-            countdownLabel.text = "00:00"
-            return
-        }
-
-        // Update label
-        let hourString = timeLeft.hours < 10 ? "0\(timeLeft.hours)" : "\(timeLeft.hours)"
-        let minuteString = timeLeft.minutes < 10 ? "0\(timeLeft.minutes)" : "\(timeLeft.minutes)"
-        countdownLabel.text = hourString + ":" + minuteString
     }
 
     override func didReceiveMemoryWarning() {

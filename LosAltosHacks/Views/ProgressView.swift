@@ -108,5 +108,43 @@ class ProgressView: BaseView {
             self.setNeedsDisplay()
         }
     }
+    
+    typealias countdownInfo = (hour: String, minute: String)
+    
+    var onUpdate: (countdownInfo -> Void)!
+    func startProgress(startDate: NSDate, endDate: NSDate, onUpdate: countdownInfo -> Void) {
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,
+            selector: "tick:", userInfo: nil, repeats: true)
+        
+        self.onUpdate = onUpdate
+        
+        tick(timer) // initial update
+        
+    }
+    
+    func tick(timer: NSTimer) {
+        
+        var timeLeft = LAHConstants.LAHEndDate.timeIntervalSinceNow
+        
+        // Update progress view
+        if NSDate().isEarlierThanDate(LAHConstants.LAHStartDate) {
+            timeLeft = LAHConstants.LAHStartDate.timeIntervalSinceNow
+        } else {
+            updateProgressWithTimer(timer, startDate: LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate)
+        }
+        
+        if !NSDate().isEarlierThanDate(LAHConstants.LAHEndDate) && timer.valid {
+            timer.invalidate()
+            onUpdate((hour: "00", minute: "00"))
+            return
+        }
+        
+        // Update label
+        let hourString = timeLeft.hours < 10 ? "0\(timeLeft.hours)" : "\(timeLeft.hours)"
+        let minuteString = timeLeft.minutes < 10 ? "0\(timeLeft.minutes)" : "\(timeLeft.minutes)"
+        
+        onUpdate((hour: hourString, minute: minuteString))
+    }
 
 }
