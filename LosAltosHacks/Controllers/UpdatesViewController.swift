@@ -26,6 +26,8 @@ class UpdatesViewController: BaseViewController {
         refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refreshControl)
         
+        
+        refreshControl.beginRefreshing()
         refresh()
     }
     

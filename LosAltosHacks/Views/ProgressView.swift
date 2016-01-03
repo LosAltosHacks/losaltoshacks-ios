@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProgressView: UIView {
+class ProgressView: BaseView {
 
     // MARK: Properties
 
@@ -35,18 +35,14 @@ class ProgressView: UIView {
     var cornerRadius: CGFloat = 8.0
 
     var originalWidth: CGFloat!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-        // Constraints
-
+    
+    override func setupConstraints() {
         percentLabel.snp_makeConstraints { make in
             make.center.equalTo(self.snp_center)
             make.width.equalTo(self.snp_width).dividedBy(4.8)
         }
-
-//        maskingView.backgroundColor = UIColor.blackColor()
+        
+        //        maskingView.backgroundColor = UIColor.blackColor()
         maskingView.snp_makeConstraints { make in
             make.center.equalTo(self.snp_center)
             make.left.equalTo(self.snp_left).offset(4)
@@ -55,6 +51,7 @@ class ProgressView: UIView {
             make.bottom.equalTo(self.snp_bottom).offset(-6)
         }
     }
+    
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
 

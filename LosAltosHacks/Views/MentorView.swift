@@ -9,16 +9,12 @@
 import UIKit
 import SnapKit
 
-class MentorView: UIView {
+class MentorView: BaseView {
 
     @IBOutlet weak var slackButton: SlackButton!
     @IBOutlet weak var helpLabel: UILabel!
 
-    override func awakeFromNib() {
-        setupConstraints()
-    }
-
-    func setupConstraints() {
+    override func setupConstraints() {
         // Help text
         helpLabel.snp_makeConstraints { make in
             make.width.equalTo(self.snp_width).multipliedBy(0.75)

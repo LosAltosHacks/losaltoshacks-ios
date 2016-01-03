@@ -8,28 +8,26 @@
 
 import UIKit
 
-class SocialMediaView: UIView {
+class SocialMediaView: BaseView {
 
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var instagramButton: UIButton!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
+    override func setupConstraints() {
         facebookButton.snp_makeConstraints { make in
             make.width.equalTo(self.snp_width).dividedBy(3)
             make.height.equalTo(self.snp_height)
             make.left.equalTo(self.snp_left)
             make.centerY.equalTo(self.snp_centerY)
         }
-
+        
         twitterButton.snp_makeConstraints { make in
             make.width.equalTo(self.snp_width).dividedBy(3)
             make.height.equalTo(self.snp_height)
             make.center.equalTo(self.snp_center)
         }
-
+        
         instagramButton.snp_makeConstraints { make in
             make.width.equalTo(self.snp_width).dividedBy(3)
             make.height.equalTo(self.snp_height)
@@ -37,5 +35,4 @@ class SocialMediaView: UIView {
             make.centerY.equalTo(self.snp_centerY)
         }
     }
-
 }

@@ -22,3 +22,14 @@ class BaseViewController: UIViewController, SnapKitView {
     
     func setupConstraints() { }
 }
+
+class BaseView: UIView, SnapKitView {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupConstraints()
+    }
+    
+    func setupConstraints() { }
+}
