@@ -14,8 +14,8 @@ struct LAHConstants {
     static let defaultGreyColor = UIColor(white: 0.6, alpha: 1.0)
     static let defaultDarkGreyColor = UIColor(white: 0.3, alpha: 1.0)
 
-    static let LAHStartDate = NSDate.specificDate(1, day: 1, year: 2016, hour: 20)
-    static let LAHEndDate = NSDate.specificDate(1, day: 1, year: 2016, hour: 21)
+    static let LAHStartDate = NSDate.specificDate(1, day: 1, year: 2016, hour: 17)
+    static let LAHEndDate = NSDate.specificDate(1, day: 3, year: 2016, hour: 17)
 }
 
 extension Double {

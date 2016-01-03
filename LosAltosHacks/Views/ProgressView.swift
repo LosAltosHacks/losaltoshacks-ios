@@ -49,8 +49,8 @@ class ProgressView: UIView {
 //        maskingView.backgroundColor = UIColor.blackColor()
         maskingView.snp_makeConstraints { make in
             make.center.equalTo(self.snp_center)
-            make.left.equalTo(self.snp_left).offset(9)
-            make.right.equalTo(self.snp_right).offset(-9)
+            make.left.equalTo(self.snp_left).offset(4)
+            make.right.equalTo(self.snp_right).offset(-4)
             make.top.equalTo(self.snp_top).offset(6)
             make.bottom.equalTo(self.snp_bottom).offset(-6)
         }
@@ -65,7 +65,7 @@ class ProgressView: UIView {
         }
 
         if originalWidth == nil {
-            originalWidth = maskingView.frame.size.width
+            originalWidth = maskingView.frame.size.width - ProgressBarInset
         }
 
         cornerRadius = rect.size.height / 2 // rounded rect effect
@@ -82,14 +82,7 @@ class ProgressView: UIView {
 
         // Inner Rect
 
-//        let offset = progress * originalWidth
-//        print(progress, originalWidth, offset)
-//        maskingView.frame = CGRectMake(originalOrigin.x + offset,
-//                                       originalOrigin.y,
-//                                       maskingView.frame.size.width,
-//                                       maskingView.frame.size.height)
-
-        let offset = Int(progress * originalWidth) + 20 // correction
+        let offset = Int(progress * originalWidth) + Int(ProgressBarInset)
         maskingView.frame = CGRectMake(CGFloat(offset),
                                        maskingView.frame.origin.y,
                                        maskingView.frame.size.width,
@@ -103,11 +96,9 @@ class ProgressView: UIView {
     }
 
     func drawInnerRect(rect innerRect: CGRect) {
-
-            let bezier = UIBezierPath(roundedRect: innerRect, cornerRadius: innerRect.size.height / 2)
-            barTintColor.setFill()
-            bezier.fill()
-
+        let bezier = UIBezierPath(roundedRect: innerRect, cornerRadius: innerRect.size.height / 2)
+        barTintColor.setFill()
+        bezier.fill()
     }
 
     func updateProgressWithTimer(timer: NSTimer, startDate: NSDate, endDate: NSDate) {
