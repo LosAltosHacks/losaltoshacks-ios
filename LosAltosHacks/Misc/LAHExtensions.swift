@@ -58,34 +58,7 @@ extension NSDate {
             }
         }
     }
-    
-    
-    /// ```
-    /// <1-60/1-24/1-infinity> <minute(s)/hour(s)/day(s)> ago
-    /// ```
-    /// ex: 34 minutes ago
-    ///
-    /// ex: 1 hour ago
-    ///
-    /// ex: 98 days ago
-    var LAHPreferredDisplay: String {
         
-        let secondsSinceUpdate = -timeIntervalSinceNow
-        
-        let time: Time
-        
-        switch secondsSinceUpdate {
-        case 0..<3600:
-            time = .Minute(secondsSinceUpdate/60)
-        case 3600..<86400:
-            time = .Hour(secondsSinceUpdate/3600)
-        default:
-            time = .Day(secondsSinceUpdate/86400)
-        }
-        
-        return "\(Int(time.amount)) \(time.typeDescription) ago"
-    }
-
     static func specificDate(month: Int, day: Int, year: Int, hour: Int) -> NSDate {
         let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         let components = NSDateComponents()
@@ -96,6 +69,7 @@ extension NSDate {
         return gregorian!.dateFromComponents(components)!
     }
 
+    // TODO: move this to a `<` overload
     func isEarlierThanDate(date: NSDate) -> Bool {
         return (self.compare(date) == .OrderedAscending)
     }

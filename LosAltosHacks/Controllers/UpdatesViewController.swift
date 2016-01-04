@@ -58,7 +58,7 @@ extension UpdatesViewController: UITableViewDataSource {
         let update = updates[indexPath.row]
         
         cell.descriptionLabel.text = update.description
-        cell.dateLabel.text = update.date.LAHPreferredDisplay
+        cell.dateLabel.text = LAHPreferredDisplay.from(update.date)
         
         return cell
     }

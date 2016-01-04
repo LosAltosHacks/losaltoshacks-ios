@@ -18,6 +18,7 @@
 		37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */; };
 		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
 		37AF9B341C385177000C3D1D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37AF9B231C385160000C3D1D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37C182C41C3AAC8500D931EC /* LAHPreferredDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C182C31C3AAC8500D931EC /* LAHPreferredDisplay.swift */; };
 		37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE831C31E60800998CB1 /* MentorView.swift */; };
 		37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE891C31E86000998CB1 /* SlackButton.swift */; };
 		37CCFE921C31EE0800998CB1 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE911C31EE0800998CB1 /* Update.swift */; };
@@ -148,6 +149,7 @@
 		37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
 		37AF9B181C385160000C3D1D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Carthage/Checkouts/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		37C182C31C3AAC8500D931EC /* LAHPreferredDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHPreferredDisplay.swift; sourceTree = "<group>"; };
 		37CCFE831C31E60800998CB1 /* MentorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorView.swift; sourceTree = "<group>"; };
 		37CCFE891C31E86000998CB1 /* SlackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackButton.swift; sourceTree = "<group>"; };
 		37CCFE911C31EE0800998CB1 /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				3795756E1C3941C000C4DFB5 /* LAHExtensions.swift */,
+				37C182C31C3AAC8500D931EC /* LAHPreferredDisplay.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
 				3795756F1C3941C000C4DFB5 /* LAHExtensions.swift in Sources */,
 				37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */,
+				37C182C41C3AAC8500D931EC /* LAHPreferredDisplay.swift in Sources */,
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
 				37CCFE921C31EE0800998CB1 /* Update.swift in Sources */,
 				37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */,
