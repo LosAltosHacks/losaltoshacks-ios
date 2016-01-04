@@ -17,6 +17,7 @@ class UpdatesViewController: BaseViewController {
     let refreshControl = UIRefreshControl()
     
     var updates = [Update]()
+    var estimatedHeights = [Int:CGFloat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,9 @@ class UpdatesViewController: BaseViewController {
         refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refreshControl)
         
-        
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+
         refreshControl.beginRefreshing()
         refresh()
     }
@@ -47,7 +50,7 @@ class UpdatesViewController: BaseViewController {
     }
 }
 
-extension UpdatesViewController: UITableViewDataSource {
+extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return updates.count
     }
@@ -59,7 +62,21 @@ extension UpdatesViewController: UITableViewDataSource {
         
         cell.descriptionLabel.text = update.description
         cell.dateLabel.text = LAHPreferredDisplay.from(update.date)
-        
+        cell.splotchView.backgroundColor = LAHConstants.LAHFunnyColors[indexPath.row % LAHConstants.LAHFunnyColors.count]
+
         return cell
     }
+
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        let height = cell.frame.size.height
+//        estimatedHeights[indexPath.row] = height
+//    }
+//
+//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        let height = estimatedHeights[indexPath.row]
+//        if height != nil {
+//            return height!
+//        }
+//        return UITableViewAutomaticDimension
+//    }
 }

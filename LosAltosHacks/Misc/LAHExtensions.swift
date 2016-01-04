@@ -18,6 +18,14 @@ struct LAHConstants {
     static let LAHEndDate = NSDate.specificDate(1, day: 3, year: 2016, hour: 0)
 
     static let BaseAPIURLString = "http://www.losaltoshacks.com/api/"
+
+    static let LAHFunnyColors = [
+        UIColor(red: 62/255, green: 209/255, blue: 140/255, alpha: 1.0),
+        UIColor(red: 245/255, green: 124/255, blue: 125/255, alpha: 1.0),
+        UIColor(red: 10/255, green: 96/255, blue: 201/255, alpha: 1.0),
+        UIColor(red: 122/255, green: 208/255, blue: 254/255, alpha: 1.0),
+
+    ]
 }
 
 extension Double {

@@ -11,30 +11,38 @@ import SnapKit
 
 class UpdateTableViewCell: UITableViewCell, SnapKitView {
 
+    @IBOutlet weak var splotchView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
+        splotchView.layer.cornerRadius = splotchView.frame.size.height / 2
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.sizeToFit()
+
         setupConstraints()
     }
 
     func setupConstraints() {
-        descriptionLabel.snp_makeConstraints { make in
-            make.width.equalTo(self.snp_width)
 
-            make.leftMargin.equalTo(self.snp_leftMargin).offset(10)
-            make.topMargin.equalTo(self.snp_topMargin)
-        }
-        
-        dateLabel.snp_makeConstraints { make in
-            make.width.equalTo(self.snp_width)
-            
-            make.leftMargin.equalTo(descriptionLabel.snp_leftMargin)
-            make.top.equalTo(descriptionLabel.snp_bottom)
-        }
+        // TODO: Make this work
+//        dateLabel.snp_makeConstraints { make in
+//            make.width.equalTo(self.snp_width)
+//            
+//            make.leftMargin.equalTo(descriptionLabel.snp_leftMargin)
+//            make.top.equalTo(self.snp_topMargin)
+//        }
+//
+//        descriptionLabel.snp_makeConstraints { make in
+//            make.width.equalTo(self.snp_width)
+//
+//            make.leftMargin.equalTo(self.snp_leftMargin).offset(10)
+//            make.top.equalTo(dateLabel.snp_bottom)
+//            make.bottom.equalTo(self.snp_bottom)
+//        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
