@@ -25,6 +25,12 @@ struct LAHConstants {
         "Food" : UIColor(red: 245/255, green: 124/255, blue: 125/255, alpha: 1.0),
         "Workshop" : UIColor(red: 10/255, green: 96/255, blue: 201/255, alpha: 1.0)
     ]
+
+    static let SocialMediaURLs = [
+        "Twitter" : "https://twitter.com/losaltoshacks",
+        "Facebook" : "https://www.facebook.com/events/584690041683677",
+        "Website" : "https://www.losaltoshacks.com"
+    ]
 }
 
 extension UIImage {

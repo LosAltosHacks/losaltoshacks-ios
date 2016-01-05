@@ -366,10 +366,10 @@
             </objects>
             <point key="canvasLocation" x="-2780" y="1905"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="Q0u-OC-TAP">
             <objects>
-                <viewController id="ALv-ht-NFq" sceneMemberID="viewController">
+                <viewController id="ALv-ht-NFq" customClass="WebViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rnd-od-Mmq"/>
                         <viewControllerLayoutGuide type="bottom" id="Ut5-f3-aEi"/>
@@ -377,8 +377,23 @@
                     <view key="view" contentMode="scaleToFill" id="WHp-Xi-mjF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kq3-Nb-ZzT">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kq3-Nb-ZzT" firstAttribute="leading" secondItem="WHp-Xi-mjF" secondAttribute="leading" placeholder="YES" id="E6F-ZT-q07"/>
+                            <constraint firstItem="Kq3-Nb-ZzT" firstAttribute="bottom" secondItem="Ut5-f3-aEi" secondAttribute="top" placeholder="YES" id="JSF-Sj-wro"/>
+                            <constraint firstItem="Kq3-Nb-ZzT" firstAttribute="top" secondItem="rnd-od-Mmq" secondAttribute="bottom" placeholder="YES" id="ciF-9z-maX"/>
+                            <constraint firstAttribute="trailing" secondItem="Kq3-Nb-ZzT" secondAttribute="trailing" placeholder="YES" id="kmL-jB-oB6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="Kq3-Nb-ZzT" id="jIE-n7-vhE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I83-OR-9Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,6 +11,10 @@ import SnapKit
 
 class DashboardViewController: BaseViewController {
 
+    static let ShowTwitterSegueID = "showTwitter"
+    static let ShowFacebookSegueID = "showFacebook"
+    static let ShowInstagramSegueID = "showInstagram"
+
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var mentorView: MentorView!
 //    @IBOutlet weak var scrollView: UIScrollView!
@@ -124,6 +128,24 @@ class DashboardViewController: BaseViewController {
             make.bottom.equalTo(socialMediaView.snp_topMargin).offset(-10)
         }
 
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let webVC = segue.destinationViewController as? WebViewController {
+            var request: NSURLRequest!
+            switch(segue.identifier!) {
+                // TODO: Make this cleaner
+            case DashboardViewController.ShowFacebookSegueID:
+                request = NSURLRequest(URL: NSURL(string: LAHConstants.SocialMediaURLs["Facebook"]!)!)
+            case DashboardViewController.ShowTwitterSegueID:
+                request = NSURLRequest(URL: NSURL(string: LAHConstants.SocialMediaURLs["Twitter"]!)!)
+            case DashboardViewController.ShowInstagramSegueID:
+                request = NSURLRequest(URL: NSURL(string: LAHConstants.SocialMediaURLs["Website"]!)!)
+            default:
+                request = NSURLRequest(URL: NSURL(string: LAHConstants.SocialMediaURLs["Website"]!)!)
+            }
+            webVC.request = request
+        }
     }
 
 }
