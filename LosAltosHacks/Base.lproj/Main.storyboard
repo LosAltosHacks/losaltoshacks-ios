@@ -462,15 +462,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zth-98-Aq3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zth-98-Aq3">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateCell" rowHeight="109" id="658-eU-zNd" customClass="UpdateTableViewCell" customModule="LosAltosHacks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="109"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateCell" rowHeight="102" id="658-eU-zNd" customClass="UpdateTableViewCell" customModule="LosAltosHacks" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="658-eU-zNd" id="bZt-J3-RgI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLs-An-11I">
@@ -485,7 +485,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXb-vo-dZq">
                                                     <rect key="frame" x="61" y="32" width="518" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovr-gv-aP0">
@@ -511,7 +511,7 @@
                                                 <constraint firstItem="ovr-gv-aP0" firstAttribute="top" secondItem="bZt-J3-RgI" secondAttribute="topMargin" constant="11" id="Ghf-ZP-S4b"/>
                                                 <constraint firstItem="TXb-vo-dZq" firstAttribute="trailing" secondItem="KLs-An-11I" secondAttribute="trailing" id="QWP-vq-3gQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="KLs-An-11I" secondAttribute="trailing" constant="13" id="SZH-un-bMR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="TXb-vo-dZq" secondAttribute="bottom" constant="21" id="XXt-w0-87d"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="TXb-vo-dZq" secondAttribute="bottom" constant="14" id="XXt-w0-87d"/>
                                                 <constraint firstItem="ovr-gv-aP0" firstAttribute="leading" secondItem="bZt-J3-RgI" secondAttribute="leadingMargin" constant="5" id="alr-gE-LxZ"/>
                                                 <constraint firstAttribute="topMargin" secondItem="KLs-An-11I" secondAttribute="top" constant="3" id="f4T-RG-7oy"/>
                                                 <constraint firstItem="KLs-An-11I" firstAttribute="leading" secondItem="ovr-gv-aP0" secondAttribute="trailing" constant="13" id="kRO-NN-ErK"/>
@@ -772,7 +772,7 @@
         <image name="fb" width="22" height="22"/>
         <image name="header" width="125" height="34"/>
         <image name="instagram" width="22" height="22"/>
-        <image name="map" width="21" height="21"/>
+        <image name="map" width="22" height="22"/>
         <image name="moxtra" width="1300" height="271"/>
         <image name="schedule" width="25" height="25"/>
         <image name="slack" width="30" height="30"/>

@@ -26,6 +26,7 @@ class SponsorsViewController: BaseViewController {
         ]
         
         // tell the scrollview what dimensions it has to work with
+        scrollView.bounces = false
         scrollView.contentSize = CGSize(
             width: view.frame.width * CGFloat(images.count),
             height: scrollView.frame.size.height

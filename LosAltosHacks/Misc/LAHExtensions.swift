@@ -29,7 +29,7 @@ struct LAHConstants {
     static let SocialMediaURLs = [
         "Twitter" : "https://twitter.com/losaltoshacks",
         "Facebook" : "https://www.facebook.com/events/584690041683677",
-        "Website" : "https://www.losaltoshacks.com"
+        "Website" : "http://www.losaltoshacks.com"
     ]
 }
 

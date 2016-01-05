@@ -36,7 +36,7 @@ class UpdatesViewController: BaseViewController {
     
     func refresh() {
         Update.getUpdates() { updates in
-            self.updates = updates
+//            self.updates = updates
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
@@ -67,6 +67,37 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.splotchView.backgroundColor = LAHConstants.LAHFunnyColors[update.tag]
 
         return cell
+    }
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if updates.count <= 0 {
+            let container = UIView(frame: CGRectMake(0, 0, 200, 200))
+
+            container.center = tableView.center
+
+            let image = UIImageView(image: UIImage(named: "empty")!)
+
+            image.contentMode = .ScaleAspectFill
+            image.frame = CGRectMake(0, 0, 60, 60)
+            image.center = CGPointMake(container.center.x, container.center.y - 30)
+            
+            container.addSubview(image)
+
+            let label = UILabel(frame: CGRectMake(0, 0, 200, 44))
+
+            label.center = CGPointMake(container.center.x, container.center.y + 30)
+            label.text = "Check back later for updates."
+            label.numberOfLines = 0
+            label.textAlignment = .Center
+            label.font = UIFont.systemFontOfSize(18)
+            label.textColor = LAHConstants.defaultGreyColor
+
+            container.addSubview(label)
+
+            tableView.backgroundView = container
+            return 0
+        }
+        return 1
     }
 
 //    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
