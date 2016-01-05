@@ -267,16 +267,25 @@
                                             <constraint firstAttribute="width" constant="200" id="fmA-l2-PvT"/>
                                         </constraints>
                                         <state key="normal" image="fb"/>
+                                        <connections>
+                                            <segue destination="ALv-ht-NFq" kind="show" identifier="showFacebook" id="Q4s-NR-aWf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTg-pm-ypa">
                                         <rect key="frame" x="200" y="0.0" width="200" height="58"/>
                                         <color key="backgroundColor" red="0.25882352941176473" green="0.59215686274509804" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="twitter"/>
+                                        <connections>
+                                            <segue destination="ALv-ht-NFq" kind="show" identifier="showTwitter" id="G6V-CT-GIP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9U-Ya-gZ3">
                                         <rect key="frame" x="400" y="1" width="200" height="55"/>
                                         <color key="backgroundColor" red="0.69019607843137254" green="0.43529411764705883" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="instagram"/>
+                                        <connections>
+                                            <segue destination="ALv-ht-NFq" kind="show" identifier="showInstagram" id="ee1-nG-FQg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -331,7 +340,15 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="DASHBOARD" id="ug5-0d-Uyp"/>
+                    <navigationItem key="navigationItem" title="DASHBOARD" id="ug5-0d-Uyp">
+                        <barButtonItem key="backBarButtonItem" title="Dashboard" id="k91-83-eHe"/>
+                        <barButtonItem key="rightBarButtonItem" image="map" id="1u7-bN-tjY">
+                            <color key="tintColor" red="1" green="0.51981036219999999" blue="0.47570986739999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="tN6-bE-W8O" kind="show" id="cbq-7g-PPC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="countdownLabel" destination="YbS-xf-BbY" id="TgB-bT-azw"/>
                         <outlet property="hourLabel" destination="IUZ-DN-WuB" id="69X-GO-d0l"/>
@@ -348,6 +365,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNT-Xg-odY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2780" y="1905"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Q0u-OC-TAP">
+            <objects>
+                <viewController id="ALv-ht-NFq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rnd-od-Mmq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ut5-f3-aEi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WHp-Xi-mjF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I83-OR-9Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3420" y="2589"/>
+        </scene>
+        <!--MAP-->
+        <scene sceneID="kwz-g8-7ag">
+            <objects>
+                <viewController title="MAP" id="tN6-bE-W8O" customClass="MapViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="73b-aV-Pfj"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q9h-q5-24e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nvw-7q-9YY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eXL-rj-bAF">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eXL-rj-bAF" firstAttribute="leading" secondItem="nvw-7q-9YY" secondAttribute="leading" placeholder="YES" id="cFd-fE-NZZ"/>
+                            <constraint firstItem="eXL-rj-bAF" firstAttribute="top" secondItem="73b-aV-Pfj" secondAttribute="bottom" placeholder="YES" id="e4n-pE-Sa7"/>
+                            <constraint firstAttribute="trailing" secondItem="eXL-rj-bAF" secondAttribute="trailing" placeholder="YES" id="kLP-Cc-fw5"/>
+                            <constraint firstItem="eXL-rj-bAF" firstAttribute="bottom" secondItem="Q9h-q5-24e" secondAttribute="top" placeholder="YES" id="qXh-cr-8dp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="eXL-rj-bAF" id="9Dy-WJ-RMT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bc-k8-cRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2780" y="2589"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="XKN-7P-K1B">
@@ -690,6 +757,7 @@
         <image name="fb" width="22" height="22"/>
         <image name="header" width="125" height="34"/>
         <image name="instagram" width="22" height="22"/>
+        <image name="map" width="21" height="21"/>
         <image name="moxtra" width="1300" height="271"/>
         <image name="schedule" width="25" height="25"/>
         <image name="slack" width="30" height="30"/>
@@ -698,5 +766,8 @@
         <image name="updates" width="25" height="25"/>
         <image name="workshop" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ee1-nG-FQg"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.50246247633687413" green="0.6748733059172225" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

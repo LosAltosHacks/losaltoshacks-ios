@@ -14,6 +14,8 @@ class DashboardViewController: BaseViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var mentorView: MentorView!
 //    @IBOutlet weak var scrollView: UIScrollView!
+
+    // TODO: Put this all in a view
     @IBOutlet weak var timeLeftView: UIView!
     @IBOutlet weak var timeRemainingLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
