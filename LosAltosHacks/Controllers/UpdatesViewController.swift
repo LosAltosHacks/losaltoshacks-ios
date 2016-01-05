@@ -46,6 +46,7 @@ class UpdatesViewController: BaseViewController {
         tableView.snp_makeConstraints { make in
             make.margins.equalTo(view.snp_margins).priorityMedium()
             make.topMargin.equalTo(view.snp_topMargin).offset(9).priorityHigh()
+//            make.bottomMargin.equalTo(snp_bottomLayoutGuideTop).offset(-9).priorityHigh()
         }
     }
 }
@@ -62,7 +63,8 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.descriptionLabel.text = update.description
         cell.dateLabel.text = LAHPreferredDisplay.from(update.date)
-        cell.splotchView.backgroundColor = LAHConstants.LAHFunnyColors[indexPath.row % LAHConstants.LAHFunnyColors.count]
+        cell.iconView.image = UIImage(named: update.tag)
+        cell.splotchView.backgroundColor = LAHConstants.LAHFunnyColors[update.tag]
 
         return cell
     }

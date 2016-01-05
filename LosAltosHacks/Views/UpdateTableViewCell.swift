@@ -12,6 +12,7 @@ import SnapKit
 class UpdateTableViewCell: UITableViewCell, SnapKitView {
 
     @IBOutlet weak var splotchView: UIView!
+    @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -20,6 +21,10 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
         // Initialization code
 
         splotchView.layer.cornerRadius = splotchView.frame.size.height / 2
+
+        splotchView.contentMode = .ScaleAspectFill
+        splotchView.clipsToBounds = true
+
         descriptionLabel.numberOfLines = 0
         descriptionLabel.sizeToFit()
 

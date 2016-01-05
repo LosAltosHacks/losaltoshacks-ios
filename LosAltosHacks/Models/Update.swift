@@ -12,6 +12,7 @@ import Alamofire
 struct Update {
     let date: NSDate
     let description: String
+    let tag: String
     
     /**
      Makes an asynchronous request to the LAH API to fetch the latest updates,
@@ -32,8 +33,6 @@ struct Update {
         let url = LAHConstants.BaseAPIURLString + "updates.json"
         
         Alamofire.request(.GET, url).responseJSON { response in
-            print(response)
-            
             guard let rawUpdates = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments) else {
                 // recurse
                 getUpdates(recursiveDepth: recursiveDepth+1, callback: callback)
@@ -44,7 +43,8 @@ struct Update {
                 .map {
                     Update(
                         date: NSDate(timeIntervalSince1970: NSTimeInterval($0["date"]!.intValue)),
-                        description: $0["description"] as! String
+                        description: $0["description"] as! String,
+                        tag: $0["tag"] as! String
                     )
             }
             callback(updates)
