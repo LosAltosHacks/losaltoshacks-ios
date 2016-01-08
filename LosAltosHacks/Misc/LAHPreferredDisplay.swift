@@ -35,4 +35,9 @@ struct LAHPreferredDisplay {
         
         return "\(Int(time.amount)) \(time.typeDescription) ago"
     }
+    static func range(dateFrom: NSDate, dateTo: NSDate) -> String {
+        
+        return "From \(dateFrom) to \(dateTo)"
+    }
+    
 }
