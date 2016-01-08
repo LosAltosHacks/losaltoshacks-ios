@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< 135bba20f8ded398c051f089b18d775b90fa20c9
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yRq-iJ-8Gc">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D9c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yRq-iJ-8Gc">
+>>>>>>> Use SafariVC instead of WebView, cleanup
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -267,25 +271,16 @@
                                             <constraint firstAttribute="width" constant="200" id="fmA-l2-PvT"/>
                                         </constraints>
                                         <state key="normal" image="fb"/>
-                                        <connections>
-                                            <segue destination="ALv-ht-NFq" kind="show" identifier="showFacebook" id="Q4s-NR-aWf"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTg-pm-ypa">
                                         <rect key="frame" x="200" y="0.0" width="200" height="58"/>
                                         <color key="backgroundColor" red="0.25882352941176473" green="0.59215686274509804" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="twitter"/>
-                                        <connections>
-                                            <segue destination="ALv-ht-NFq" kind="show" identifier="showTwitter" id="G6V-CT-GIP"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9U-Ya-gZ3">
                                         <rect key="frame" x="400" y="1" width="200" height="55"/>
                                         <color key="backgroundColor" red="0.69019607843137254" green="0.43529411764705883" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="instagram"/>
-                                        <connections>
-                                            <segue destination="ALv-ht-NFq" kind="show" identifier="showInstagram" id="ee1-nG-FQg"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -366,39 +361,6 @@
             </objects>
             <point key="canvasLocation" x="-2780" y="1905"/>
         </scene>
-        <!--Web View Controller-->
-        <scene sceneID="Q0u-OC-TAP">
-            <objects>
-                <viewController id="ALv-ht-NFq" customClass="WebViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rnd-od-Mmq"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ut5-f3-aEi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WHp-Xi-mjF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kq3-Nb-ZzT">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Kq3-Nb-ZzT" firstAttribute="leading" secondItem="WHp-Xi-mjF" secondAttribute="leading" placeholder="YES" id="E6F-ZT-q07"/>
-                            <constraint firstItem="Kq3-Nb-ZzT" firstAttribute="bottom" secondItem="Ut5-f3-aEi" secondAttribute="top" placeholder="YES" id="JSF-Sj-wro"/>
-                            <constraint firstItem="Kq3-Nb-ZzT" firstAttribute="top" secondItem="rnd-od-Mmq" secondAttribute="bottom" placeholder="YES" id="ciF-9z-maX"/>
-                            <constraint firstAttribute="trailing" secondItem="Kq3-Nb-ZzT" secondAttribute="trailing" placeholder="YES" id="kmL-jB-oB6"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="Kq3-Nb-ZzT" id="jIE-n7-vhE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I83-OR-9Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3420" y="2589"/>
-        </scene>
         <!--MAP-->
         <scene sceneID="kwz-g8-7ag">
             <objects>
@@ -429,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bc-k8-cRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2780" y="2589"/>
+            <point key="canvasLocation" x="-2780" y="2603"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="XKN-7P-K1B">
@@ -827,8 +789,5 @@
         <image name="updates" width="25" height="25"/>
         <image name="workshop" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ee1-nG-FQg"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.50246247633687413" green="0.6748733059172225" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

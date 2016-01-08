@@ -8,17 +8,14 @@
 
 import UIKit
 import SnapKit
+import SafariServices
 
 class DashboardViewController: BaseViewController {
-
-    static let ShowTwitterSegueID = "showTwitter"
-    static let ShowFacebookSegueID = "showFacebook"
-    static let ShowInstagramSegueID = "showInstagram"
-
+    
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var mentorView: MentorView!
 //    @IBOutlet weak var scrollView: UIScrollView!
-
+    
     // TODO: Put this all in a view
     @IBOutlet weak var timeLeftView: UIView!
     @IBOutlet weak var timeRemainingLabel: UILabel!
@@ -31,7 +28,9 @@ class DashboardViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        socialMediaView.delegate = self
+        
         initializeTimer()
     }
 
@@ -45,10 +44,6 @@ class DashboardViewController: BaseViewController {
         progressView.startProgress(LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate) {
             self.countdownLabel.text = $0.hour + ":" + $0.minute
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     override func setupConstraints() {
@@ -129,23 +124,13 @@ class DashboardViewController: BaseViewController {
         }
 
     }
+}
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let webVC = segue.destinationViewController as? WebViewController {
-            var request: NSURLRequest!
-            switch(segue.identifier!) {
-                // TODO: Make this cleaner
-            case DashboardViewController.ShowFacebookSegueID:
-                request = NSURLRequest(URL: NSURL(string: LAHConstants.SocialMediaURLs["Facebook"]!)!)
-            case DashboardViewController.ShowTwitterSegueID:
-                request = NSURLRequest(URL: NSURL(string: LAHConstants.SocialMediaURLs["Twitter"]!)!)
-            case DashboardViewController.ShowInstagramSegueID:
-                request = NSURLRequest(URL: NSURL(string: LAHConstants.SocialMediaURLs["Website"]!)!)
-            default:
-                request = NSURLRequest(URL: NSURL(string: LAHConstants.SocialMediaURLs["Website"]!)!)
-            }
-            webVC.request = request
-        }
+extension BaseViewController: SocialMediaViewDelegate {
+    func onTap(socialMedia: SocialMedia) {
+        
+        let safari = SFSafariViewController(URL: socialMedia.url)
+        
+        self.presentViewController(safari, animated: true, completion: nil)
     }
-
 }
