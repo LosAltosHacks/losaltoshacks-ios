@@ -64,7 +64,7 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.descriptionLabel.text = update.description
         cell.dateLabel.text = LAHPreferredDisplay.from(update.date)
         cell.iconView.image = UIImage(named: update.tag)
-        cell.splotchView.backgroundColor = LAHConstants.LAHFunnyColors[update.tag]
+        cell.splotchView.backgroundColor = LAHConstants.Color(from: update.tag)!.value
 
         return cell
     }
@@ -90,7 +90,7 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
             label.numberOfLines = 0
             label.textAlignment = .Center
             label.font = UIFont.systemFontOfSize(18)
-            label.textColor = LAHConstants.defaultGreyColor
+            label.textColor = LAHConstants.Color.DefaultGreyColor.value
 
             container.addSubview(label)
 

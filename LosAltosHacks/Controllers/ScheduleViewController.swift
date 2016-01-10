@@ -111,7 +111,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
             label.numberOfLines = 0
             label.textAlignment = .Center
             label.font = UIFont.systemFontOfSize(18)
-            label.textColor = LAHConstants.defaultGreyColor
+            label.textColor = LAHConstants.Color.DefaultGreyColor.value
             
             container.addSubview(label)
             

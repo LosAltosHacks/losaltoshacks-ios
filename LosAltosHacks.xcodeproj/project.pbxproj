@@ -10,6 +10,8 @@
 		141012D71C3F86B900706495 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141012D61C3F86B900706495 /* Event.swift */; };
 		141012E41C3F92B800706495 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141012E31C3F92B800706495 /* ScheduleTableViewCell.swift */; };
 		3795756F1C3941C000C4DFB5 /* LAHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795756E1C3941C000C4DFB5 /* LAHExtensions.swift */; };
+		37977A9F1C3FD22E003869F0 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37977A9E1C3FD22E003869F0 /* SocialMedia.swift */; };
+		37977AAC1C3FD658003869F0 /* LAHConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37977AAB1C3FD658003869F0 /* LAHConstants.swift */; };
 		37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */; };
 		37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68861C2DF38C00A02DF0 /* Main.storyboard */; };
 		37AE688A1C2DF38C00A02DF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68891C2DF38C00A02DF0 /* Assets.xcassets */; };
@@ -31,7 +33,6 @@
 		D093A79F1C3731CF00570708 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A79E1C3731CF00570708 /* TopView.swift */; };
 		D093A7A11C37499800570708 /* SocialMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7A01C37499800570708 /* SocialMediaView.swift */; };
 		D093A7B91C3B6FF900570708 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7B81C3B6FF900570708 /* MapViewController.swift */; };
-		D093A7BB1C3B7AFE00570708 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7BA1C3B7AFE00570708 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		141012D61C3F86B900706495 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		141012E31C3F92B800706495 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		3795756E1C3941C000C4DFB5 /* LAHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHExtensions.swift; sourceTree = "<group>"; };
+		37977A9E1C3FD22E003869F0 /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
+		37977AAB1C3FD658003869F0 /* LAHConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHConstants.swift; sourceTree = "<group>"; };
 		37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LosAltosHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AE68871C2DF38C00A02DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,7 +168,6 @@
 		D093A79E1C3731CF00570708 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		D093A7A01C37499800570708 /* SocialMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaView.swift; sourceTree = "<group>"; };
 		D093A7B81C3B6FF900570708 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		D093A7BA1C3B7AFE00570708 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				3795756E1C3941C000C4DFB5 /* LAHExtensions.swift */,
+				37977AAB1C3FD658003869F0 /* LAHConstants.swift */,
 				37C182C31C3AAC8500D931EC /* LAHPreferredDisplay.swift */,
+				37977A9E1C3FD22E003869F0 /* SocialMedia.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -257,7 +261,6 @@
 				37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */,
 				37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */,
 				D093A7B81C3B6FF900570708 /* MapViewController.swift */,
-				D093A7BA1C3B7AFE00570708 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -523,7 +526,9 @@
 				D093A79F1C3731CF00570708 /* TopView.swift in Sources */,
 				141012E41C3F92B800706495 /* ScheduleTableViewCell.swift in Sources */,
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
+				37977A9F1C3FD22E003869F0 /* SocialMedia.swift in Sources */,
 				3795756F1C3941C000C4DFB5 /* LAHExtensions.swift in Sources */,
+				37977AAC1C3FD658003869F0 /* LAHConstants.swift in Sources */,
 				37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */,
 				37C182C41C3AAC8500D931EC /* LAHPreferredDisplay.swift in Sources */,
 				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
@@ -533,7 +538,6 @@
 				141012D71C3F86B900706495 /* Event.swift in Sources */,
 				37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
-				D093A7BB1C3B7AFE00570708 /* WebViewController.swift in Sources */,
 				37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */,
 				37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */,
 				37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */,
