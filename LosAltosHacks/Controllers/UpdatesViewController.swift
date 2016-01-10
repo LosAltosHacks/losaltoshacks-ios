@@ -36,7 +36,7 @@ class UpdatesViewController: BaseViewController {
     
     func refresh() {
         Update.getUpdates() { updates in
-//            self.updates = updates
+            self.updates = updates
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }

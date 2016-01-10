@@ -31,7 +31,7 @@ class ScheduleViewController: BaseViewController {
     
     func refresh() {
         Event.getEvents() { events in
-            //            self.updates = updates
+            self.events = events
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
@@ -44,7 +44,14 @@ class ScheduleViewController: BaseViewController {
     }
     
     
-    
+    override func setupConstraints() {
+        tableView.snp_makeConstraints { make in
+            make.margins.equalTo(view.snp_margins).priorityMedium()
+            make.topMargin.equalTo(view.snp_topMargin).offset(9).priorityHigh()
+            //            make.bottomMargin.equalTo(snp_bottomLayoutGuideTop).offset(-9).priorityHigh()
+        }
+    }
+
     
     /*
     // MARK: - Navigation
@@ -71,9 +78,15 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.descriptionLabel.text = event.description
         cell.dateLabel.text = LAHPreferredDisplay.range(event.from, dateTo: event.to)
+        cell.locationLabel.text = event.location
         //cell.iconView.image = UIImage(named: event.tag)
         //cell.splotchView.backgroundColor = LAHConstants.LAHFunnyColors[event.tag]
-        
+        var date = NSDate()
+        var timestamp = UInt64(floor(date.timeIntervalSince1970 * 1000))
+        //if date <= event.to && date >= event.from {
+            //we are in the time of the event
+          //  cell.splotchView.backgroundColor = UIColor.greenColor()
+      //  }
         return cell
     }
     
