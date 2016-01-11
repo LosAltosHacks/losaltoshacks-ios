@@ -28,6 +28,7 @@
 		37CCFE921C31EE0800998CB1 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE911C31EE0800998CB1 /* Update.swift */; };
 		37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */; };
 		37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE951C31F09400998CB1 /* BaseViewController.swift */; };
+		D00D96811C4382BF00D9A912 /* TimeLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D96801C4382BF00D9A912 /* TimeLeftView.swift */; };
 		D093A77F1C370CB400570708 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A77E1C370CB400570708 /* ProgressView.swift */; };
 		D093A7851C3721D800570708 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D093A79F1C3731CF00570708 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A79E1C3731CF00570708 /* TopView.swift */; };
@@ -164,6 +165,7 @@
 		37CCFE911C31EE0800998CB1 /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewCell.swift; sourceTree = "<group>"; };
 		37CCFE951C31F09400998CB1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D00D96801C4382BF00D9A912 /* TimeLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLeftView.swift; sourceTree = "<group>"; };
 		D093A77E1C370CB400570708 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		D093A79E1C3731CF00570708 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		D093A7A01C37499800570708 /* SocialMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaView.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				D093A79E1C3731CF00570708 /* TopView.swift */,
 				37CCFE831C31E60800998CB1 /* MentorView.swift */,
+				D00D96801C4382BF00D9A912 /* TimeLeftView.swift */,
 				37CCFE891C31E86000998CB1 /* SlackButton.swift */,
 				37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */,
 				141012E31C3F92B800706495 /* ScheduleTableViewCell.swift */,
@@ -536,6 +539,7 @@
 				37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */,
 				D093A77F1C370CB400570708 /* ProgressView.swift in Sources */,
 				141012D71C3F86B900706495 /* Event.swift in Sources */,
+				D00D96811C4382BF00D9A912 /* TimeLeftView.swift in Sources */,
 				37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
 				37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */,
