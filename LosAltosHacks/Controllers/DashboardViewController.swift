@@ -18,11 +18,14 @@ class DashboardViewController: BaseViewController {
 
     @IBOutlet weak var timeLeftView: TimeLeftView!
     @IBOutlet weak var socialMediaView: SocialMediaView!
+    @IBOutlet weak var upcomingView: UpcomingEventView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         socialMediaView.delegate = self
+        scrollView.contentSize = CGSizeMake(view.frame.size.width,
+            115 * 2 + 150 * 2) // TODO: make this not static
     }
     
     override func setupConstraints() {
@@ -30,7 +33,7 @@ class DashboardViewController: BaseViewController {
             make.bottom.equalTo(snp_bottomLayoutGuideTop)
             make.left.equalTo(view.snp_left)
             make.right.equalTo(view.snp_right)
-            make.height.equalTo(view.snp_height).dividedBy(12)
+            make.height.equalTo(44)
         }
 
         scrollView.snp_makeConstraints { make in
@@ -62,10 +65,14 @@ class DashboardViewController: BaseViewController {
             make.left.equalTo(view.snp_left)
             make.right.equalTo(view.snp_right)
         }
-        
-        scrollView.contentSize = CGSizeMake(view.frame.size.width,
-            timeLeftView.frame.origin.y + timeLeftView.frame.size.height - 40) // account for navbar
-                                            
+
+        upcomingView.snp_makeConstraints { make in
+            make.top.equalTo(timeLeftView.snp_bottom)
+            make.height.equalTo(150)
+            make.left.equalTo(view.snp_left)
+            make.right.equalTo(view.snp_right)
+        }
+
     }
 }
 
