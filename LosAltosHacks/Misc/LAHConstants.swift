@@ -28,20 +28,18 @@ struct LAHConstants {
             
             let c: UIColor
             switch self {
-                
             case .DefaultColor:
                 c = UIColor(red: 126.0/255.0, green: 170.0/255.0, blue: 255.0/255.0, alpha: 1.0)
             case .DefaultGreyColor:
                 c = UIColor(white: 0.6, alpha: 1.0)
             case .DefaultDarkGreyColor:
                 c = UIColor(white: 0.3, alpha: 1.0)
-                
             case .Logistics:
-                c = UIColor(red: 165/255, green: 188/255, blue: 62/255, alpha: 1.0)
+                c = UIColor(red: 244/255, green: 208/255, blue: 63/255, alpha: 1.0)
             case .Food:
-                c = UIColor(red: 245/255, green: 124/255, blue: 125/255, alpha: 1.0)
+                c = UIColor(red: 246/255, green: 71/255, blue: 71/255, alpha: 1.0)
             case .Workshop:
-                c = UIColor(red: 10/255, green: 96/255, blue: 201/255, alpha: 1.0)
+                c = UIColor(red: 65/255, green: 131/255, blue: 215/255, alpha: 1.0)
                 
             }
             

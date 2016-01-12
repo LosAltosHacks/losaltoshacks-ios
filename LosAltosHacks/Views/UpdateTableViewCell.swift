@@ -15,7 +15,7 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,6 +27,11 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
 
         descriptionLabel.numberOfLines = 0
         descriptionLabel.sizeToFit()
+
+//        self.layer.masksToBounds = false
+//        self.layer.shadowOffset = CGSizeMake(0, 1)
+//        self.layer.shadowRadius = 6
+//        self.layer.shadowOpacity = 0.08
 
         setupConstraints()
     }
