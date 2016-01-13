@@ -72,7 +72,6 @@ class DashboardViewController: BaseViewController {
             make.left.equalTo(view.snp_left)
             make.right.equalTo(view.snp_right)
         }
-
     }
 }
 

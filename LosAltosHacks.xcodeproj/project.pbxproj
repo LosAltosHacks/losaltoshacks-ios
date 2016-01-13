@@ -28,6 +28,7 @@
 		37CCFE921C31EE0800998CB1 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE911C31EE0800998CB1 /* Update.swift */; };
 		37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */; };
 		37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE951C31F09400998CB1 /* BaseViewController.swift */; };
+		B63F90AAFE55EB26ACCEEDCD /* Pods_LosAltosHacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56BC82D31FA61B155102F33F /* Pods_LosAltosHacks.framework */; };
 		D00D96811C4382BF00D9A912 /* TimeLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D96801C4382BF00D9A912 /* TimeLeftView.swift */; };
 		D00D968E1C44CD7C00D9A912 /* UpcomingEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D968D1C44CD7C00D9A912 /* UpcomingEventView.swift */; };
 		D093A77F1C370CB400570708 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A77E1C370CB400570708 /* ProgressView.swift */; };
@@ -35,6 +36,7 @@
 		D093A79F1C3731CF00570708 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A79E1C3731CF00570708 /* TopView.swift */; };
 		D093A7A11C37499800570708 /* SocialMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7A01C37499800570708 /* SocialMediaView.swift */; };
 		D093A7B91C3B6FF900570708 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7B81C3B6FF900570708 /* MapViewController.swift */; };
+		D0AEE6931C45F9000062025D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0AEE6921C45F9000062025D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,7 @@
 /* Begin PBXFileReference section */
 		141012D61C3F86B900706495 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		141012E31C3F92B800706495 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		1D32D04B96395C7583E62D91 /* Pods-LosAltosHacks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LosAltosHacks.release.xcconfig"; path = "Pods/Target Support Files/Pods-LosAltosHacks/Pods-LosAltosHacks.release.xcconfig"; sourceTree = "<group>"; };
 		3795756E1C3941C000C4DFB5 /* LAHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHExtensions.swift; sourceTree = "<group>"; };
 		37977A9E1C3FD22E003869F0 /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
 		37977AAB1C3FD658003869F0 /* LAHConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHConstants.swift; sourceTree = "<group>"; };
@@ -166,12 +169,15 @@
 		37CCFE911C31EE0800998CB1 /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		37CCFE931C31EF9F00998CB1 /* UpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewCell.swift; sourceTree = "<group>"; };
 		37CCFE951C31F09400998CB1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4771F3A9F1A44398DBDF0815 /* Pods-LosAltosHacks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LosAltosHacks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LosAltosHacks/Pods-LosAltosHacks.debug.xcconfig"; sourceTree = "<group>"; };
+		56BC82D31FA61B155102F33F /* Pods_LosAltosHacks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LosAltosHacks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00D96801C4382BF00D9A912 /* TimeLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLeftView.swift; sourceTree = "<group>"; };
 		D00D968D1C44CD7C00D9A912 /* UpcomingEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingEventView.swift; sourceTree = "<group>"; };
 		D093A77E1C370CB400570708 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		D093A79E1C3731CF00570708 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		D093A7A01C37499800570708 /* SocialMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaView.swift; sourceTree = "<group>"; };
 		D093A7B81C3B6FF900570708 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D0AEE6921C45F9000062025D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B63F90AAFE55EB26ACCEEDCD /* Pods_LosAltosHacks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +218,8 @@
 				37AE68801C2DF38C00A02DF0 /* Products */,
 				37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */,
 				37AF9B181C385160000C3D1D /* Alamofire.xcodeproj */,
+				F57758611F3E7BBFA98DEB61 /* Pods */,
+				A1D89CA2898646B1DF4AFB4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,6 +284,7 @@
 				37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */,
 				37AE68891C2DF38C00A02DF0 /* Assets.xcassets */,
 				37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */,
+				D0AEE6921C45F9000062025D /* GoogleService-Info.plist */,
 				37AE688E1C2DF38C00A02DF0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -303,6 +313,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A1D89CA2898646B1DF4AFB4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56BC82D31FA61B155102F33F /* Pods_LosAltosHacks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D093A7481C2F84CD00570708 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +337,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F57758611F3E7BBFA98DEB61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4771F3A9F1A44398DBDF0815 /* Pods-LosAltosHacks.debug.xcconfig */,
+				1D32D04B96395C7583E62D91 /* Pods-LosAltosHacks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,11 +353,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37AE689C1C2DF38C00A02DF0 /* Build configuration list for PBXNativeTarget "LosAltosHacks" */;
 			buildPhases = (
+				E569CE84AB573B7C043638DE /* Check Pods Manifest.lock */,
 				37AE687B1C2DF38C00A02DF0 /* Sources */,
 				37AE687C1C2DF38C00A02DF0 /* Frameworks */,
 				37AE687D1C2DF38C00A02DF0 /* Resources */,
 				D093A7881C3721D800570708 /* Embed Frameworks */,
 				D093A78B1C37284F00570708 /* ShellScript */,
+				C0137E176B8FE6BD9791BC47 /* Embed Pods Frameworks */,
+				A4295105E84158D7D9EB0A5A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -493,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37AE688D1C2DF38C00A02DF0 /* LaunchScreen.storyboard in Resources */,
+				D0AEE6931C45F9000062025D /* GoogleService-Info.plist in Resources */,
 				37AE688A1C2DF38C00A02DF0 /* Assets.xcassets in Resources */,
 				37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */,
 			);
@@ -508,6 +539,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A4295105E84158D7D9EB0A5A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LosAltosHacks/Pods-LosAltosHacks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0137E176B8FE6BD9791BC47 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LosAltosHacks/Pods-LosAltosHacks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D093A78B1C37284F00570708 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,6 +581,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		E569CE84AB573B7C043638DE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -676,6 +752,7 @@
 		};
 		37AE689D1C2DF38C00A02DF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4771F3A9F1A44398DBDF0815 /* Pods-LosAltosHacks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -688,6 +765,7 @@
 		};
 		37AE689E1C2DF38C00A02DF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D32D04B96395C7583E62D91 /* Pods-LosAltosHacks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
