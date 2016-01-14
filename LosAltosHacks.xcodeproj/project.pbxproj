@@ -12,6 +12,7 @@
 		3795756F1C3941C000C4DFB5 /* LAHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795756E1C3941C000C4DFB5 /* LAHExtensions.swift */; };
 		37977A9F1C3FD22E003869F0 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37977A9E1C3FD22E003869F0 /* SocialMedia.swift */; };
 		37977AAC1C3FD658003869F0 /* LAHConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37977AAB1C3FD658003869F0 /* LAHConstants.swift */; };
+		379B066A1C474E76000808BF /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379B06691C474E76000808BF /* Fetchable.swift */; };
 		37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */; };
 		37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68861C2DF38C00A02DF0 /* Main.storyboard */; };
 		37AE688A1C2DF38C00A02DF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68891C2DF38C00A02DF0 /* Assets.xcassets */; };
@@ -145,6 +146,7 @@
 		3795756E1C3941C000C4DFB5 /* LAHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHExtensions.swift; sourceTree = "<group>"; };
 		37977A9E1C3FD22E003869F0 /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
 		37977AAB1C3FD658003869F0 /* LAHConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHConstants.swift; sourceTree = "<group>"; };
+		379B06691C474E76000808BF /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LosAltosHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AE68871C2DF38C00A02DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			children = (
 				37CCFE911C31EE0800998CB1 /* Update.swift */,
 				141012D61C3F86B900706495 /* Event.swift */,
+				379B06691C474E76000808BF /* Fetchable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */,
 				D093A77F1C370CB400570708 /* ProgressView.swift in Sources */,
 				141012D71C3F86B900706495 /* Event.swift in Sources */,
+				379B066A1C474E76000808BF /* Fetchable.swift in Sources */,
 				D00D96811C4382BF00D9A912 /* TimeLeftView.swift in Sources */,
 				37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,

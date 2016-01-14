@@ -30,13 +30,12 @@ class ScheduleViewController: BaseViewController {
     }
     
     func refresh() {
-        Event.getEvents() { events in
+        Event.fetch({[weak self] in self?.refreshControl.endRefreshing()}) { events  in
             self.events = events
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

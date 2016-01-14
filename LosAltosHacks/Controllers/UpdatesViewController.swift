@@ -35,7 +35,7 @@ class UpdatesViewController: BaseViewController {
     }
     
     func refresh() {
-        Update.getUpdates() { updates in
+        Update.fetch({[weak self] in self?.refreshControl.endRefreshing()}) { updates in
             self.updates = updates
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
@@ -99,17 +99,4 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return 1
     }
-
-//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        let height = cell.frame.size.height
-//        estimatedHeights[indexPath.row] = height
-//    }
-//
-//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        let height = estimatedHeights[indexPath.row]
-//        if height != nil {
-//            return height!
-//        }
-//        return UITableViewAutomaticDimension
-//    }
 }

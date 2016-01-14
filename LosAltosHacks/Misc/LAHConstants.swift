@@ -13,7 +13,7 @@ struct LAHConstants {
     static let LAHStartDate = NSDate.specificDate(1, day: 10, year: 2016, hour: 12)
     static let LAHEndDate = NSDate.specificDate(1, day: 11, year: 2016, hour: 12)
     
-    static let BaseAPIURLString = "http://www.losaltoshacks.com/api/"
+    static let BaseAPIURLString = "https://raw.githubusercontent.com/asdflosaltoshacks/losaltoshacks-api/master/"
     
     enum Color {
         case DefaultColor
