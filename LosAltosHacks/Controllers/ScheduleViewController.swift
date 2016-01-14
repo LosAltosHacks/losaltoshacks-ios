@@ -15,6 +15,7 @@ class ScheduleViewController: BaseViewController {
     let refreshControl = UIRefreshControl()
     var events = [Event]()
     var estimatedHeights = [Int:CGFloat]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -36,31 +37,14 @@ class ScheduleViewController: BaseViewController {
             self.refreshControl.endRefreshing()
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
+
     override func setupConstraints() {
         tableView.snp_makeConstraints { make in
             make.margins.equalTo(view.snp_margins).priorityMedium()
             make.topMargin.equalTo(view.snp_topMargin).offset(9).priorityHigh()
-            //            make.bottomMargin.equalTo(snp_bottomLayoutGuideTop).offset(-9).priorityHigh()
+//            make.bottomMargin.equalTo(snp_bottomLayoutGuideTop).offset(-9).priorityHigh()
         }
     }
-
-    
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }
 
 
@@ -78,8 +62,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         cell.descriptionLabel.text = event.description
         cell.dateLabel.text = LAHPreferredDisplay.range(event.from, dateTo: event.to)
         cell.locationLabel.text = event.location
-        //cell.iconView.image = UIImage(named: event.tag)
-        //cell.splotchView.backgroundColor = LAHConstants.LAHFunnyColors[event.tag]
+
         var date = NSDate()
         var timestamp = UInt64(floor(date.timeIntervalSince1970 * 1000))
         //if date <= event.to && date >= event.from {
@@ -90,7 +73,11 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+
         if events.count <= 0 {
+
+            tableView.tableFooterView = UIView()
+ 
             let container = UIView(frame: CGRectMake(0, 0, 200, 200))
             
             container.center = tableView.center
@@ -106,7 +93,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
             let label = UILabel(frame: CGRectMake(0, 0, 200, 44))
             
             label.center = CGPointMake(container.center.x, container.center.y + 30)
-            label.text = "Check back later for upcoming events."
+            label.text = "Check back later for updates."
             label.numberOfLines = 0
             label.textAlignment = .Center
             label.font = UIFont.systemFontOfSize(18)
@@ -117,6 +104,10 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.backgroundView = container
             return 0
         }
+
+        tableView.tableFooterView = nil
+        tableView.backgroundView = nil
+        
         return 1
     }
 }
