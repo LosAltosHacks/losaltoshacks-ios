@@ -20,7 +20,7 @@ struct LAHPreferredDisplay {
     /// ex: 98 days ago
     static func from(date: NSDate) -> String {
         
-        let seconds = -date.timeIntervalSinceNow
+        let seconds = date.timeIntervalSinceNow
         
         let time: NSDate.Time
         
