@@ -4,3 +4,8 @@
 [submodule "Carthage/Checkouts/Snapkit"]
 	path = Carthage/Checkouts/Snapkit
 	url = https://github.com/Snapkit/Snapkit.git
+[submodule "Carthage/Checkouts/Bolts-iOS"]
+	url = https://github.com/BoltsFramework/Bolts-iOS.git
+[submodule "Carthage/Checkouts/Parse-SDK-iOS-OSX"]
+	path = Carthage/Checkouts/Parse-SDK-iOS-OSX
+	url = https://github.com/ParsePlatform/Parse-SDK-iOS-OSX.git

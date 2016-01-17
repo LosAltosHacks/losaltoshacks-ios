@@ -36,6 +36,9 @@
 		D093A79F1C3731CF00570708 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A79E1C3731CF00570708 /* TopView.swift */; };
 		D093A7A11C37499800570708 /* SocialMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7A01C37499800570708 /* SocialMediaView.swift */; };
 		D093A7B91C3B6FF900570708 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7B81C3B6FF900570708 /* MapViewController.swift */; };
+		D0AEE6F61C4B51B00062025D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6D71C4B39720062025D /* Parse.framework */; };
+		D0AEE6F71C4B51B00062025D /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6D71C4B39720062025D /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0AEE6FD1C4B51DE0062025D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6FC1C4B51DE0062025D /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,76 @@
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
+		D0AEE6D41C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81C3821C19CCA89E0066284A;
+			remoteInfo = "Parse-iOS";
+		};
+		D0AEE6D61C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81C5845D1C3B0A98000063C6;
+			remoteInfo = "Parse-iOS-Dynamic";
+		};
+		D0AEE6D81C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 816F449B1A8E8933009CDB32;
+			remoteInfo = "ParseUnitTests-iOS";
+		};
+		D0AEE6DA1C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 97010FAC1630B18F00AB761E;
+			remoteInfo = "Parse-OSX";
+		};
+		D0AEE6DC1C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81C09F861AF97A490043B49C;
+			remoteInfo = "ParseUnitTests-OSX";
+		};
+		D0AEE6DE1C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 815F24151BD04D150054659F;
+			remoteInfo = "Parse-tvOS";
+		};
+		D0AEE6E01C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81C585BF1C3B0AA1000063C6;
+			remoteInfo = "Parse-tvOS-Dynamic";
+		};
+		D0AEE6E21C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 810156691BB3832700D7C7BD;
+			remoteInfo = "Parse-watchOS";
+		};
+		D0AEE6E41C4B39720062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81C5870F1C3B0AA9000063C6;
+			remoteInfo = "Parse-watchOS-Dynamic";
+		};
+		D0AEE6F81C4B51B00062025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 81C582E11C3B0A98000063C6;
+			remoteInfo = "Parse-iOS-Dynamic";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +206,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				37AF9B341C385177000C3D1D /* Alamofire.framework in Embed Frameworks */,
+				D0AEE6F71C4B51B00062025D /* Parse.framework in Embed Frameworks */,
 				D093A7851C3721D800570708 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -174,6 +248,8 @@
 		D093A79E1C3731CF00570708 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		D093A7A01C37499800570708 /* SocialMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaView.swift; sourceTree = "<group>"; };
 		D093A7B81C3B6FF900570708 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Parse.xcodeproj; path = "Carthage/Checkouts/Parse-SDK-iOS-OSX/Parse.xcodeproj"; sourceTree = "<group>"; };
+		D0AEE6FC1C4B51DE0062025D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Carthage/Checkouts/Parse-SDK-iOS-OSX/Carthage/Checkouts/Bolts-iOS/build/Debug-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +257,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AEE6FD1C4B51DE0062025D /* Bolts.framework in Frameworks */,
+				D0AEE6F61C4B51B00062025D /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +289,8 @@
 				37AE68811C2DF38C00A02DF0 /* LosAltosHacks */,
 				37AE68961C2DF38C00A02DF0 /* LosAltosHacksTests */,
 				37AE68801C2DF38C00A02DF0 /* Products */,
+				D0AEE6FC1C4B51DE0062025D /* Bolts.framework */,
+				D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */,
 				37AE68A21C2DF53A00A02DF0 /* SnapKit.xcodeproj */,
 				37AF9B181C385160000C3D1D /* Alamofire.xcodeproj */,
 			);
@@ -322,6 +402,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D0AEE6C01C4B39720062025D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0AEE6D51C4B39720062025D /* Parse.framework */,
+				D0AEE6D71C4B39720062025D /* Parse.framework */,
+				D0AEE6D91C4B39720062025D /* ParseUnitTests-iOS.xctest */,
+				D0AEE6DB1C4B39720062025D /* Parse.framework */,
+				D0AEE6DD1C4B39720062025D /* ParseUnitTests-OSX.xctest */,
+				D0AEE6DF1C4B39720062025D /* Parse.framework */,
+				D0AEE6E11C4B39720062025D /* Parse.framework */,
+				D0AEE6E31C4B39720062025D /* Parse.framework */,
+				D0AEE6E51C4B39720062025D /* Parse.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +434,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D0AEE6F91C4B51B00062025D /* PBXTargetDependency */,
 			);
 			name = LosAltosHacks;
 			productName = LosAltosHacks;
@@ -374,6 +471,12 @@
 				TargetAttributes = {
 					37AE687E1C2DF38C00A02DF0 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7GWWSZ3ZW4;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					37AE68921C2DF38C00A02DF0 = {
 						CreatedOnToolsVersion = 7.2;
@@ -396,6 +499,10 @@
 				{
 					ProductGroup = 37AF9B191C385160000C3D1D /* Products */;
 					ProjectRef = 37AF9B181C385160000C3D1D /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = D0AEE6C01C4B39720062025D /* Products */;
+					ProjectRef = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
 				},
 				{
 					ProductGroup = 37AE68A31C2DF53A00A02DF0 /* Products */;
@@ -488,6 +595,69 @@
 			remoteRef = 37AF9B2E1C385160000C3D1D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		D0AEE6D51C4B39720062025D /* Parse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Parse.framework;
+			remoteRef = D0AEE6D41C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0AEE6D71C4B39720062025D /* Parse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Parse.framework;
+			remoteRef = D0AEE6D61C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0AEE6D91C4B39720062025D /* ParseUnitTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ParseUnitTests-iOS.xctest";
+			remoteRef = D0AEE6D81C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0AEE6DB1C4B39720062025D /* Parse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Parse.framework;
+			remoteRef = D0AEE6DA1C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0AEE6DD1C4B39720062025D /* ParseUnitTests-OSX.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ParseUnitTests-OSX.xctest";
+			remoteRef = D0AEE6DC1C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0AEE6DF1C4B39720062025D /* Parse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Parse.framework;
+			remoteRef = D0AEE6DE1C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0AEE6E11C4B39720062025D /* Parse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Parse.framework;
+			remoteRef = D0AEE6E01C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0AEE6E31C4B39720062025D /* Parse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Parse.framework;
+			remoteRef = D0AEE6E21C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0AEE6E51C4B39720062025D /* Parse.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Parse.framework;
+			remoteRef = D0AEE6E41C4B39720062025D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -572,6 +742,11 @@
 			isa = PBXTargetDependency;
 			target = 37AE687E1C2DF38C00A02DF0 /* LosAltosHacks */;
 			targetProxy = 37AE68941C2DF38C00A02DF0 /* PBXContainerItemProxy */;
+		};
+		D0AEE6F91C4B51B00062025D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Parse-iOS-Dynamic";
+			targetProxy = D0AEE6F81C4B51B00062025D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -683,8 +858,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Parse-SDK-iOS-OSX/Carthage/Checkouts/Bolts-iOS/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = LosAltosHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -695,8 +875,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Parse-SDK-iOS-OSX/Carthage/Checkouts/Bolts-iOS/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = LosAltosHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
