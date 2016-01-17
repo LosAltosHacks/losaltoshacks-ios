@@ -9,7 +9,6 @@
 import UIKit
 
 struct LAHConstants {
-    
     static let LAHStartDate = NSDate.specificDate(1, day: 10, year: 2016, hour: 12)
     static let LAHEndDate = NSDate.specificDate(1, day: 11, year: 2016, hour: 12)
     
@@ -55,4 +54,22 @@ struct LAHConstants {
             }
         }
     }
+}
+
+struct Keys {
+
+    static let sharedKeys = Keys()
+
+    let parseApplicationID: String
+    let parseClientKey: String
+
+    private init() {
+
+        let url = NSBundle.mainBundle().URLForResource("Keys", withExtension: "plist")!
+        let dictionary = NSDictionary(contentsOfURL: url)!
+
+        parseApplicationID = dictionary["ParseApplicationID"] as! String
+        parseClientKey = dictionary["ParseClientKey"] as! String
+    }
+
 }

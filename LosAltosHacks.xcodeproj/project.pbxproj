@@ -39,6 +39,8 @@
 		D0AEE6F61C4B51B00062025D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6D71C4B39720062025D /* Parse.framework */; };
 		D0AEE6F71C4B51B00062025D /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6D71C4B39720062025D /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0AEE6FD1C4B51DE0062025D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6FC1C4B51DE0062025D /* Bolts.framework */; };
+		D0AEE6FF1C4B535F0062025D /* UpdateParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AEE6FE1C4B535F0062025D /* UpdateParse.swift */; };
+		D0AEE7021C4B600D0062025D /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0AEE7011C4B600D0062025D /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +252,8 @@
 		D093A7B81C3B6FF900570708 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Parse.xcodeproj; path = "Carthage/Checkouts/Parse-SDK-iOS-OSX/Parse.xcodeproj"; sourceTree = "<group>"; };
 		D0AEE6FC1C4B51DE0062025D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Carthage/Checkouts/Parse-SDK-iOS-OSX/Carthage/Checkouts/Bolts-iOS/build/Debug-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
+		D0AEE6FE1C4B535F0062025D /* UpdateParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateParse.swift; sourceTree = "<group>"; };
+		D0AEE7011C4B600D0062025D /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +362,7 @@
 				37AE68891C2DF38C00A02DF0 /* Assets.xcassets */,
 				37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */,
 				37AE688E1C2DF38C00A02DF0 /* Info.plist */,
+				D0AEE7011C4B600D0062025D /* Keys.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				37CCFE911C31EE0800998CB1 /* Update.swift */,
 				141012D61C3F86B900706495 /* Event.swift */,
 				379B06691C474E76000808BF /* Fetchable.swift */,
+				D0AEE6FE1C4B535F0062025D /* UpdateParse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AEE7021C4B600D0062025D /* Keys.plist in Resources */,
 				37AE688D1C2DF38C00A02DF0 /* LaunchScreen.storyboard in Resources */,
 				37AE688A1C2DF38C00A02DF0 /* Assets.xcassets in Resources */,
 				37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */,
@@ -719,6 +726,7 @@
 				379B066A1C474E76000808BF /* Fetchable.swift in Sources */,
 				D00D96811C4382BF00D9A912 /* TimeLeftView.swift in Sources */,
 				37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */,
+				D0AEE6FF1C4B535F0062025D /* UpdateParse.swift in Sources */,
 				37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */,
 				37CCFE8A1C31E86000998CB1 /* SlackButton.swift in Sources */,
 				37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */,

@@ -15,10 +15,10 @@ class UpdatesViewController: BaseViewController {
     static let cellIdentifier = "updateCell"
     
     let refreshControl = UIRefreshControl()
-    
-    var updates = [Update]()
-    var estimatedHeights = [Int:CGFloat]()
-    
+
+//    var updates = [Update]()
+    var updates: [UpdateParse]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,11 +35,24 @@ class UpdatesViewController: BaseViewController {
     }
     
     func refresh() {
-        Update.fetch({[weak self] in self?.refreshControl.endRefreshing()}) { updates in
-            self.updates = updates
-            self.tableView.reloadData()
-            self.refreshControl.endRefreshing()
+        UpdateParse.fetch { updates, error -> Void in
+            if error != nil {
+                print(error)
+            } else if let updates = updates {
+                self.updates = updates as? [UpdateParse]
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+
+                if updates.count > 0 {
+                    self.tableView.backgroundView?.hidden = true
+                }
+            }
         }
+//        Update.fetch({[weak self] in self?.refreshControl.endRefreshing()}) { updates in
+//            self.updates = updates
+//            self.tableView.reloadData()
+//            self.refreshControl.endRefreshing()
+//        }
     }
     
     override func setupConstraints() {
@@ -53,24 +66,31 @@ class UpdatesViewController: BaseViewController {
 
 extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return updates.count
+        return updates?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(UpdatesViewController.cellIdentifier)! as! UpdateTableViewCell
-        
-        let update = updates[indexPath.row]
-        
-        cell.descriptionLabel.text = update.description
-        cell.dateLabel.text = LAHPreferredDisplay.from(update.date)
-        cell.iconView.image = UIImage(named: update.tag)
-        cell.splotchView.backgroundColor = LAHConstants.Color(from: update.tag)!.value
+
+        if let updates = updates {
+            let update = updates[indexPath.row]
+
+            cell.descriptionLabel.text = update.content
+            cell.dateLabel.text = LAHPreferredDisplay.from(update.createdAt!)
+            cell.iconView.image = UIImage(named: update.tag)
+            cell.splotchView.backgroundColor = LAHConstants.Color(from: update.tag)!.value
+        }
+
+//        cell.descriptionLabel.text = update.description
+//        cell.dateLabel.text = LAHPreferredDisplay.from(update.date)
+//        cell.iconView.image = UIImage(named: update.tag)
+//        cell.splotchView.backgroundColor = LAHConstants.Color(from: update.tag)!.value
 
         return cell
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if updates.count <= 0 {
+        if updates?.count <= 0 {
             let container = UIView(frame: CGRectMake(0, 0, 200, 200))
 
             container.center = tableView.center

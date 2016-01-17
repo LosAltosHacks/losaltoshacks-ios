@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Parse
 
-        Parse.setApplicationId("2buX8ZzFtJhZjWdwBn4neESzfH6Bu05lTHOmx53f",
-            clientKey: "V3550fTgNd4WEURdRGRl2a86btCXVSi4wnlrDDBb")
+        Parse.setApplicationId(Keys.sharedKeys.parseApplicationID, clientKey: Keys.sharedKeys.parseClientKey)
 
         // Application Styles
 
