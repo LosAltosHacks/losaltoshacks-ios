@@ -18,22 +18,24 @@ class UpdateParse : PFObject, PFSubclassing {
     @NSManaged var content: String
     @NSManaged var tag: String
 
-    static func fetch(callback: PFQueryArrayResultBlock) {
+    static func fetch(sortBy sorted: SortKey, callback: PFQueryArrayResultBlock) {
         let query = PFQuery(className: "Update")
-        query.findObjectsInBackgroundWithBlock(callback)
+        query.findObjectsInBackgroundWithBlock { results, error in
+            if sorted == .Newest {
+                callback(results?.reverse(), error)
+            } else if sorted == .Oldest {
+                callback(results, error)
+            }
+        }
     }
 
-    static func fetch(limit: Int, sorted: SortKey, callback: PFQueryArrayResultBlock) {
-        UpdateParse.fetch { results, error in
+    static func fetch(limit: Int, sortBy sorted: SortKey, callback: PFQueryArrayResultBlock) {
+        UpdateParse.fetch(sortBy: sorted) { results, error in
             if error != nil {
                 print(error)
             } else if let results = results {
                 let guardLimit = limit < results.count && limit > 0 ? limit : results.count
-                if sorted == .Newest {
-                    callback(Array(results.suffix(guardLimit)), error)
-                } else {
-                    callback(Array(results.prefix(guardLimit)), error)
-                }
+                callback(Array(results.prefix(guardLimit)), error)
             }
         }
     }

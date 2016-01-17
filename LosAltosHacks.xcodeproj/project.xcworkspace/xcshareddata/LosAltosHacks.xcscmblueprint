@@ -1,28 +1,38 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2B37A6B7C6884264154281A7A2D2189C0AFC7583",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++DAE7F2F",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047" : 0,
-    "0DCFF0852789D5A49F67B6C8EA2636735D303748" : 0,
-    "2B37A6B7C6884264154281A7A2D2189C0AFC7583" : 0,
-    "67620B5EFA902936DF04070AF595B76AB0333747" : 0,
-    "DFEB44D812BB6372AD837DE8B163C69310545D34" : 0,
-    "61C4B9E3B61282127C102C87B46B8CDE985974AE" : 0,
-    "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025" : 0,
-    "2782489666A0C780BCA87B8C53915A711A6BDD7C" : 0
+    "0DCFF0852789D5A49F67B6C8EA2636735D303748+++135E227" : 0,
+    "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++DAE7F2F" : 0,
+    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++B58C227" : 0,
+    "DFEB44D812BB6372AD837DE8B163C69310545D34+++3647E87" : 0,
+    "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++F2BC59B" : 0,
+    "67620B5EFA902936DF04070AF595B76AB0333747+++2801E96" : 0,
+    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++6C0BAEF" : 0,
+    "2782489666A0C780BCA87B8C53915A711A6BDD7C+++EA7D321" : 0,
+    "61C4B9E3B61282127C102C87B46B8CDE985974AE+++4A33884" : 0,
+    "0DCFF0852789D5A49F67B6C8EA2636735D303748+++B3E4527" : 0,
+    "0DCFF0852789D5A49F67B6C8EA2636735D303748+++A3C4544" : 0,
+    "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025+++FC14FE7" : 0,
+    "67620B5EFA902936DF04070AF595B76AB0333747+++B83A828" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ABF54ED7-A8AF-4BF1-9C73-436E690F01FE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047" : "LosAltosHacks\/Carthage\/Checkouts\/SnapKit\/",
-    "0DCFF0852789D5A49F67B6C8EA2636735D303748" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/Carthage\/Checkouts\/Bolts-iOS\/Vendor\/xctoolchain\/",
-    "2B37A6B7C6884264154281A7A2D2189C0AFC7583" : "losaltoshacks-ios\/",
-    "67620B5EFA902936DF04070AF595B76AB0333747" : "losaltoshacks-ios\/Carthage\/Checkouts\/Alamofire\/",
-    "DFEB44D812BB6372AD837DE8B163C69310545D34" : "LosAltosHacks\/",
-    "61C4B9E3B61282127C102C87B46B8CDE985974AE" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/Carthage\/Checkouts\/Bolts-iOS\/",
-    "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/Carthage\/Checkouts\/OCMock\/",
-    "2782489666A0C780BCA87B8C53915A711A6BDD7C" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/"
+    "0DCFF0852789D5A49F67B6C8EA2636735D303748+++135E227" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/Vendor\/xctoolchain\/",
+    "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++DAE7F2F" : "ios\/",
+    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++B58C227" : "LosAltosHacks\/Carthage\/Checkouts\/SnapKit\/",
+    "DFEB44D812BB6372AD837DE8B163C69310545D34+++3647E87" : "LosAltosHacks\/",
+    "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++F2BC59B" : "losaltoshacks-ios\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747+++2801E96" : "ios\/Carthage\/Checkouts\/Alamofire\/",
+    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++6C0BAEF" : "ios\/Carthage\/Checkouts\/Snapkit\/",
+    "2782489666A0C780BCA87B8C53915A711A6BDD7C+++EA7D321" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/",
+    "61C4B9E3B61282127C102C87B46B8CDE985974AE+++4A33884" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/Carthage\/Checkouts\/Bolts-iOS\/",
+    "0DCFF0852789D5A49F67B6C8EA2636735D303748+++B3E4527" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/Carthage\/Checkouts\/Bolts-iOS\/Vendor\/xctoolchain\/",
+    "0DCFF0852789D5A49F67B6C8EA2636735D303748+++A3C4544" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/Carthage\/Checkouts\/Bolts-iOS\/Vendor\/xctoolchain\/",
+    "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025+++FC14FE7" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/Carthage\/Checkouts\/OCMock\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747+++B83A828" : "losaltoshacks-ios\/Carthage\/Checkouts\/Alamofire\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LosAltosHacks",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -31,47 +41,67 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ParsePlatform\/xctoolchain.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0DCFF0852789D5A49F67B6C8EA2636735D303748"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0DCFF0852789D5A49F67B6C8EA2636735D303748+++135E227"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ParsePlatform\/xctoolchain.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0DCFF0852789D5A49F67B6C8EA2636735D303748"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0DCFF0852789D5A49F67B6C8EA2636735D303748+++A3C4544"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ParsePlatform\/xctoolchain.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0DCFF0852789D5A49F67B6C8EA2636735D303748+++B3E4527"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ParsePlatform\/Parse-SDK-iOS-OSX.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2782489666A0C780BCA87B8C53915A711A6BDD7C"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2782489666A0C780BCA87B8C53915A711A6BDD7C+++EA7D321"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/losaltoshacks\/losaltoshacks-ios.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B37A6B7C6884264154281A7A2D2189C0AFC7583"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++DAE7F2F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/losaltoshacks\/losaltoshacks-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++F2BC59B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Snapkit\/Snapkit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++6C0BAEF"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SnapKit\/SnapKit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3AF18F9C6F5D633BAA0B3F935459E0C777C82047"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++B58C227"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/BoltsFramework\/Bolts-iOS.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "61C4B9E3B61282127C102C87B46B8CDE985974AE"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "61C4B9E3B61282127C102C87B46B8CDE985974AE+++4A33884"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747+++2801E96"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747+++B83A828"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/losaltoshacks\/losaltoshacks-ios.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DFEB44D812BB6372AD837DE8B163C69310545D34"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DFEB44D812BB6372AD837DE8B163C69310545D34+++3647E87"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/erikdoe\/OCMock.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E4BCE3AE6B24E41B9BCE312FF3B0B6CD0B8B8025+++FC14FE7"
     }
   ]
 }

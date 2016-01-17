@@ -47,9 +47,9 @@ struct LAHConstants {
         
         init?(from: String) {
             switch from {
-            case "Logistics": self = .Logistics
-            case "Food": self = .Food
-            case "Workshop": self = .Workshop
+            case "logistics": self = .Logistics
+            case "food": self = .Food
+            case "workshop": self = .Workshop
             default: return nil
             }
         }

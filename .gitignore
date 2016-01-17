@@ -16,4 +16,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-/Keys.plist
+
+# Hide Keys.plist
+
+LosAltosHacks/Keys.plist

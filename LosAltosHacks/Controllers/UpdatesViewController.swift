@@ -35,7 +35,7 @@ class UpdatesViewController: BaseViewController {
     }
     
     func refresh() {
-        UpdateParse.fetch { updates, error -> Void in
+        UpdateParse.fetch(2, sortBy: .Newest) { updates, error -> Void in
             if error != nil {
                 print(error)
             } else if let updates = updates {
@@ -77,8 +77,8 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
 
             cell.descriptionLabel.text = update.content
             cell.dateLabel.text = LAHPreferredDisplay.from(update.createdAt!)
-            cell.iconView.image = UIImage(named: update.tag)
-            cell.splotchView.backgroundColor = LAHConstants.Color(from: update.tag)!.value
+            cell.iconView.image = UIImage(named: update.tag.lowercaseString)
+            cell.splotchView.backgroundColor = LAHConstants.Color(from: update.tag.lowercaseString)!.value
         }
 
 //        cell.descriptionLabel.text = update.description
