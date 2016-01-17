@@ -9,6 +9,7 @@
     "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++B58C227" : 0,
     "DFEB44D812BB6372AD837DE8B163C69310545D34+++3647E87" : 0,
     "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++F2BC59B" : 0,
+    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++D3C1170" : 0,
     "67620B5EFA902936DF04070AF595B76AB0333747+++2801E96" : 0,
     "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++6C0BAEF" : 0,
     "2782489666A0C780BCA87B8C53915A711A6BDD7C+++EA7D321" : 0,
@@ -25,6 +26,7 @@
     "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++B58C227" : "LosAltosHacks\/Carthage\/Checkouts\/SnapKit\/",
     "DFEB44D812BB6372AD837DE8B163C69310545D34+++3647E87" : "LosAltosHacks\/",
     "2B37A6B7C6884264154281A7A2D2189C0AFC7583+++F2BC59B" : "losaltoshacks-ios\/",
+    "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++D3C1170" : "losaltoshacks-ios\/Carthage\/Checkouts\/Snapkit\/",
     "67620B5EFA902936DF04070AF595B76AB0333747+++2801E96" : "ios\/Carthage\/Checkouts\/Alamofire\/",
     "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++6C0BAEF" : "ios\/Carthage\/Checkouts\/Snapkit\/",
     "2782489666A0C780BCA87B8C53915A711A6BDD7C+++EA7D321" : "ios\/Carthage\/Checkouts\/Parse-SDK-iOS-OSX\/",
@@ -77,6 +79,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SnapKit\/SnapKit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++B58C227"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Snapkit\/Snapkit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3AF18F9C6F5D633BAA0B3F935459E0C777C82047+++D3C1170"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/BoltsFramework\/Bolts-iOS.git",
