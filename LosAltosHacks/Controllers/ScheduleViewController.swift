@@ -16,6 +16,8 @@ class ScheduleViewController: BaseViewController {
 
     //    var events = [Event]()
     var events: [EventParse]?
+    var saturdayEvents: [EventParse]?
+    var sundayEvents: [EventParse]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,23 @@ class ScheduleViewController: BaseViewController {
 
         EventParse.fetch(sortBy: .Newest) { events, error in
             self.events = events as? [EventParse]
+
+            self.saturdayEvents = self.events?.filter { event in
+                if !event.from.isEarlierThanDate(LAHConstants.Saturday)
+                    && event.from.isEarlierThanDate(LAHConstants.Sunday) {
+                        return true
+                }
+                return false
+            }
+
+            self.sundayEvents = self.events?.filter { event in
+                if !event.from.isEarlierThanDate(LAHConstants.Sunday)
+                    && event.from.isEarlierThanDate(LAHConstants.LAHEndDate) {
+                        return true
+                }
+                return false
+            }
+
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
@@ -59,15 +78,36 @@ class ScheduleViewController: BaseViewController {
 extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //        return events.count
-        return events?.count ?? 0
+
+        var rows = 0
+        switch(section) {
+        case 0:
+            if let saturdayEvents = saturdayEvents {
+                rows = saturdayEvents.count
+            }
+        case 1:
+            if let sundayEvents = sundayEvents {
+                rows = sundayEvents.count
+            }
+        default:
+            rows = 0
+        }
+        return rows
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(ScheduleViewController.cellIdentifier)! as! ScheduleTableViewCell
 
-        if let events = events {
-            let event = events[indexPath.row]
-            cell.event = event
+        if let events = events, saturdayEvents = saturdayEvents, sundayEvents = sundayEvents {
+//            let event = events[indexPath.row]
+            switch(indexPath.section) {
+            case 0: // Saturday
+                cell.event = saturdayEvents[indexPath.row]
+            case 1: // Sunday
+                cell.event = sundayEvents[indexPath.row]
+            default:
+                cell.event = events[indexPath.row]
+            }
         }
 
         var date = NSDate()
@@ -77,6 +117,19 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         //  cell.splotchView.backgroundColor = UIColor.greenColor()
         //  }
         return cell
+    }
+
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var header: String
+        switch(section) {
+        case 0: // Saturday
+            header = "SATURDAY"
+        case 1: // Sunday
+            header = "SUNDAY"
+        default:
+            header = "DAY"
+        }
+        return header
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -115,6 +168,6 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.tableFooterView = nil
         tableView.backgroundView = nil
         
-        return 1
+        return 2 // 2 day event
     }
 }

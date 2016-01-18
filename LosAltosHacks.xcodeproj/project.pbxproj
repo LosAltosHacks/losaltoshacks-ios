@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		141012D71C3F86B900706495 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141012D61C3F86B900706495 /* Event.swift */; };
 		141012E41C3F92B800706495 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141012E31C3F92B800706495 /* ScheduleTableViewCell.swift */; };
-		371341781C4C40B000636CF0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6D71C4B39720062025D /* Parse.framework */; };
-		371341791C4C40B000636CF0 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6D71C4B39720062025D /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3795756F1C3941C000C4DFB5 /* LAHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795756E1C3941C000C4DFB5 /* LAHExtensions.swift */; };
 		37977A9F1C3FD22E003869F0 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37977A9E1C3FD22E003869F0 /* SocialMedia.swift */; };
 		37977AAC1C3FD658003869F0 /* LAHConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37977AAB1C3FD658003869F0 /* LAHConstants.swift */; };
@@ -33,6 +31,10 @@
 		37CCFE961C31F09400998CB1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCFE951C31F09400998CB1 /* BaseViewController.swift */; };
 		D00D96811C4382BF00D9A912 /* TimeLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D96801C4382BF00D9A912 /* TimeLeftView.swift */; };
 		D00D968E1C44CD7C00D9A912 /* UpcomingEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D968D1C44CD7C00D9A912 /* UpcomingEventView.swift */; };
+		D0286AAF1C4DB2F700F5F47A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6D51C4B39720062025D /* Parse.framework */; };
+		D0286AB01C4DB2F700F5F47A /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0AEE6D51C4B39720062025D /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0286ABD1C4DB35B00F5F47A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371341591C4C3F6900636CF0 /* Bolts.framework */; };
+		D0286ABE1C4DB35B00F5F47A /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371341591C4C3F6900636CF0 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D093A77F1C370CB400570708 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A77E1C370CB400570708 /* ProgressView.swift */; };
 		D093A7851C3721D800570708 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37AE68AA1C2DF53A00A02DF0 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D093A79F1C3731CF00570708 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A79E1C3731CF00570708 /* TopView.swift */; };
@@ -121,13 +123,6 @@
 			remoteGlobalIDString = 1EC3016018CDAA8400D06D07;
 			remoteInfo = BoltsTestUI;
 		};
-		3713417A1C4C40B000636CF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81C582E11C3B0A98000063C6;
-			remoteInfo = "Parse-iOS-Dynamic";
-		};
 		37AE68941C2DF38C00A02DF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37AE68771C2DF38C00A02DF0 /* Project object */;
@@ -212,6 +207,20 @@
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
+		D0286AB11C4DB2F700F5F47A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 81C3821B19CCA89E0066284A;
+			remoteInfo = "Parse-iOS";
+		};
+		D0286ABF1C4DB35B00F5F47A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3713414A1C4C3F6900636CF0 /* Bolts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 81ED94111BE147CF00795F05;
+			remoteInfo = "Bolts-iOS";
+		};
 		D0AEE6D41C4B39720062025D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0AEE6BF1C4B39720062025D /* Parse.xcodeproj */;
@@ -285,8 +294,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				37AF9B341C385177000C3D1D /* Alamofire.framework in Embed Frameworks */,
-				371341791C4C40B000636CF0 /* Parse.framework in Embed Frameworks */,
 				D093A7851C3721D800570708 /* SnapKit.framework in Embed Frameworks */,
+				D0286AB01C4DB2F700F5F47A /* Parse.framework in Embed Frameworks */,
+				D0286ABE1C4DB35B00F5F47A /* Bolts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,7 +349,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371341781C4C40B000636CF0 /* Parse.framework in Frameworks */,
+				D0286AAF1C4DB2F700F5F47A /* Parse.framework in Frameworks */,
+				D0286ABD1C4DB35B00F5F47A /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +547,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				3713417B1C4C40B000636CF0 /* PBXTargetDependency */,
+				D0286AB21C4DB2F700F5F47A /* PBXTargetDependency */,
+				D0286AC01C4DB35B00F5F47A /* PBXTargetDependency */,
 			);
 			name = LosAltosHacks;
 			productName = LosAltosHacks;
@@ -924,15 +936,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3713417B1C4C40B000636CF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Parse-iOS-Dynamic";
-			targetProxy = 3713417A1C4C40B000636CF0 /* PBXContainerItemProxy */;
-		};
 		37AE68951C2DF38C00A02DF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 37AE687E1C2DF38C00A02DF0 /* LosAltosHacks */;
 			targetProxy = 37AE68941C2DF38C00A02DF0 /* PBXContainerItemProxy */;
+		};
+		D0286AB21C4DB2F700F5F47A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Parse-iOS";
+			targetProxy = D0286AB11C4DB2F700F5F47A /* PBXContainerItemProxy */;
+		};
+		D0286AC01C4DB35B00F5F47A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Bolts-iOS";
+			targetProxy = D0286ABF1C4DB35B00F5F47A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

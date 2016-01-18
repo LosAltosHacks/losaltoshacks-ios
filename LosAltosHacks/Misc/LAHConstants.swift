@@ -9,9 +9,11 @@
 import UIKit
 
 struct LAHConstants {
-    static let LAHStartDate = NSDate.specificDate(1, day: 18, year: 2016, hour: 10)
-    static let LAHEndDate = NSDate.specificDate(1, day: 22, year: 2016, hour: 12)
-    
+    static let LAHStartDate = NSDate.specificDate(1, day: 30, year: 2016, hour: 9)
+    static let LAHEndDate = NSDate.specificDate(1, day: 31, year: 2016, hour: 4)
+    static let Saturday = NSDate.specificDate(1, day: 30, year: 2016, hour: 0)
+    static let Sunday = NSDate.specificDate(1, day: 31, year: 2016, hour: 0)
+
     static let BaseAPIURLString = "https://raw.githubusercontent.com/losaltoshacks/losaltoshacks-api/master/"
     
     enum Color {
