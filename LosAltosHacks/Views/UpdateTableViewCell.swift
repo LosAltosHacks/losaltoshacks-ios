@@ -11,6 +11,23 @@ import SnapKit
 
 class UpdateTableViewCell: UITableViewCell, SnapKitView {
 
+    var update: UpdateParse? {
+        didSet {
+            if update != nil {
+                descriptionLabel.text = update?.content
+                dateLabel.text = LAHPreferredDisplay.from(update!.createdAt!)
+                iconView.image = UIImage(named: "logistics")
+                if let tag = update?.tag {
+                    iconView.image = UIImage(named: tag.lowercaseString)
+                }
+                splotchView.backgroundColor = LAHConstants.Color.DefaultColor.value
+                if let color = LAHConstants.Color(from: update!.tag)?.value {
+                    splotchView.backgroundColor = color
+                }
+            }
+        }
+    }
+
     @IBOutlet weak var splotchView: UIView!
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!

@@ -74,11 +74,7 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
 
         if let updates = updates {
             let update = updates[indexPath.row]
-
-            cell.descriptionLabel.text = update.content
-            cell.dateLabel.text = LAHPreferredDisplay.from(update.createdAt!)
-            cell.iconView.image = UIImage(named: update.tag.lowercaseString)
-            cell.splotchView.backgroundColor = LAHConstants.Color(from: update.tag.lowercaseString)!.value
+            cell.update = update
         }
 
         //        cell.descriptionLabel.text = update.description

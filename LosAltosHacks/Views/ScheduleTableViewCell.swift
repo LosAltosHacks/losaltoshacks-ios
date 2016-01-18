@@ -17,14 +17,19 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var clockImage: UIImageView!
     @IBOutlet weak var mapImage: UIImageView!
+    @IBOutlet weak var leftSplotch: UIView!
 
     var event: EventParse? {
         didSet {
             if event != nil { // Guard against setting event = nil
-                titleLabel.text = event!.title
-                descriptionLabel.text = event!.detail
+                titleLabel.text = event?.title
+                descriptionLabel.text = event?.detail
                 dateLabel.text = LAHPreferredDisplay.from(event!.createdAt!)
-                locationLabel.text = event!.location
+                locationLabel.text = event?.location
+                leftSplotch.backgroundColor = LAHConstants.Color.DefaultColor.value
+                if let color = LAHConstants.Color(from: event!.tag)?.value {
+                    leftSplotch.backgroundColor = color
+                }
             }
         }
     }

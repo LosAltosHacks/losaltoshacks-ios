@@ -15,6 +15,7 @@ class EventParse : PFObject, PFSubclassing {
     @NSManaged var title: String
     @NSManaged var detail: String
     @NSManaged var location: String
+    @NSManaged var tag: String
 
     static func fetch(sortBy sorted: SortKey, callback: PFQueryArrayResultBlock) {
         let query = PFQuery(className: "Event")
