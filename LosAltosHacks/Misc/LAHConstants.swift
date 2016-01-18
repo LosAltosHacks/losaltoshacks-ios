@@ -46,7 +46,7 @@ struct LAHConstants {
         }
         
         init?(from: String) {
-            switch from {
+            switch from.lowercaseString {
             case "logistics": self = .Logistics
             case "food": self = .Food
             case "workshop": self = .Workshop
