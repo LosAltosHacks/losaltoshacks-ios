@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yRq-iJ-8Gc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yRq-iJ-8Gc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -55,35 +55,39 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="58"/>
                                         <color key="backgroundColor" red="0.23137254901960785" green="0.30980392156862746" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="fmA-l2-PvT"/>
+                                            <constraint firstAttribute="width" constant="200" placeholder="YES" id="amm-HE-7W1"/>
                                         </constraints>
                                         <state key="normal" image="fb"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTg-pm-ypa">
                                         <rect key="frame" x="200" y="0.0" width="200" height="58"/>
                                         <color key="backgroundColor" red="0.25882352941176473" green="0.59215686274509804" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" placeholder="YES" id="p2Q-Cc-Xjz"/>
+                                        </constraints>
                                         <state key="normal" image="twitter"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9U-Ya-gZ3">
-                                        <rect key="frame" x="400" y="1" width="200" height="55"/>
+                                        <rect key="frame" x="400" y="1" width="200" height="59"/>
                                         <color key="backgroundColor" red="0.69019607843137254" green="0.43529411764705883" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" placeholder="YES" id="NYg-3t-fui"/>
+                                        </constraints>
                                         <state key="normal" image="instagram"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="TQz-8m-Qd3" firstAttribute="top" secondItem="GTg-pm-ypa" secondAttribute="top" placeholder="YES" id="FHe-av-ipd"/>
-                                    <constraint firstItem="GTg-pm-ypa" firstAttribute="leading" secondItem="TQz-8m-Qd3" secondAttribute="trailing" placeholder="YES" id="LP9-2N-hVa"/>
-                                    <constraint firstItem="TQz-8m-Qd3" firstAttribute="firstBaseline" secondItem="GTg-pm-ypa" secondAttribute="firstBaseline" placeholder="YES" id="NW9-gr-ZPG"/>
-                                    <constraint firstItem="TQz-8m-Qd3" firstAttribute="leading" secondItem="orM-iO-hVU" secondAttribute="leading" placeholder="YES" id="d8t-0h-kTp"/>
-                                    <constraint firstItem="W9U-Ya-gZ3" firstAttribute="top" secondItem="orM-iO-hVU" secondAttribute="top" constant="1" placeholder="YES" id="hg9-QA-4K1"/>
-                                    <constraint firstItem="W9U-Ya-gZ3" firstAttribute="centerY" secondItem="GTg-pm-ypa" secondAttribute="centerY" placeholder="YES" id="mPE-Yy-g1K"/>
-                                    <constraint firstItem="W9U-Ya-gZ3" firstAttribute="leading" secondItem="GTg-pm-ypa" secondAttribute="trailing" placeholder="YES" id="qI8-HL-dvj"/>
-                                    <constraint firstAttribute="bottom" secondItem="TQz-8m-Qd3" secondAttribute="bottom" placeholder="YES" id="sX8-OH-uav"/>
-                                    <constraint firstAttribute="trailing" secondItem="W9U-Ya-gZ3" secondAttribute="trailing" placeholder="YES" id="t0l-cP-xAu"/>
-                                    <constraint firstItem="GTg-pm-ypa" firstAttribute="centerX" secondItem="orM-iO-hVU" secondAttribute="centerX" placeholder="YES" id="uT7-co-tsE"/>
-                                    <constraint firstItem="GTg-pm-ypa" firstAttribute="top" secondItem="orM-iO-hVU" secondAttribute="top" placeholder="YES" id="v8i-9C-VkQ"/>
-                                    <constraint firstItem="TQz-8m-Qd3" firstAttribute="baseline" secondItem="GTg-pm-ypa" secondAttribute="baseline" placeholder="YES" id="ydN-vR-Bxn"/>
+                                    <constraint firstItem="TQz-8m-Qd3" firstAttribute="top" secondItem="orM-iO-hVU" secondAttribute="topMargin" constant="-8" placeholder="YES" id="16F-aK-y40"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="W9U-Ya-gZ3" secondAttribute="bottom" constant="-10" placeholder="YES" id="FkT-Dt-RAR"/>
+                                    <constraint firstItem="GTg-pm-ypa" firstAttribute="leading" secondItem="TQz-8m-Qd3" secondAttribute="trailing" placeholder="YES" id="JAb-1X-NZF"/>
+                                    <constraint firstItem="GTg-pm-ypa" firstAttribute="top" secondItem="orM-iO-hVU" secondAttribute="topMargin" constant="-8" placeholder="YES" id="TiR-cm-TdK"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="W9U-Ya-gZ3" secondAttribute="trailing" constant="-8" placeholder="YES" id="UVA-LP-oze"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="TQz-8m-Qd3" secondAttribute="bottom" constant="-8" placeholder="YES" id="cBf-Pv-bw9"/>
+                                    <constraint firstItem="W9U-Ya-gZ3" firstAttribute="top" secondItem="orM-iO-hVU" secondAttribute="topMargin" constant="-7" placeholder="YES" id="fSs-6e-1xh"/>
+                                    <constraint firstItem="W9U-Ya-gZ3" firstAttribute="leading" secondItem="GTg-pm-ypa" secondAttribute="trailing" placeholder="YES" id="g6v-BB-zeR"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="GTg-pm-ypa" secondAttribute="bottom" constant="-8" placeholder="YES" id="jXd-Kn-2uN"/>
+                                    <constraint firstItem="TQz-8m-Qd3" firstAttribute="leading" secondItem="orM-iO-hVU" secondAttribute="leadingMargin" constant="-8" placeholder="YES" id="ohO-Vb-9zf"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="facebookButton" destination="TQz-8m-Qd3" id="b8y-SM-ec9"/>
