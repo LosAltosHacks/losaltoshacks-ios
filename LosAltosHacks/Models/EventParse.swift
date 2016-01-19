@@ -17,27 +17,22 @@ class EventParse : PFObject, PFSubclassing {
     @NSManaged var location: String
     @NSManaged var tag: String
 
-    static func fetch(sortBy sorted: SortKey, callback: PFQueryArrayResultBlock) {
+    static func fetch(callback: PFQueryArrayResultBlock) {
         let query = PFQuery(className: "Event")
-        query.findObjectsInBackgroundWithBlock { results, error in
-            if sorted == .Newest {
-                callback(results?.reverse(), error)
-            } else if sorted == .Oldest {
-                callback(results, error)
-            }
-        }
+        query.addAscendingOrder("from")
+        query.findObjectsInBackgroundWithBlock(callback)
     }
 
-    static func fetch(limit: Int, sortBy sorted: SortKey, callback: PFQueryArrayResultBlock) {
-        UpdateParse.fetch(sortBy: sorted) { results, error in
-            if error != nil {
-                print(error)
-            } else if let results = results {
-                let guardLimit = limit < results.count && limit > 0 ? limit : results.count
-                callback(Array(results.prefix(guardLimit)), error)
-            }
-        }
-    }
+//    static func fetch(limit: Int, sortBy sorted: SortKey, callback: PFQueryArrayResultBlock) {
+//        UpdateParse.fetch(sortBy: sorted) { results, error in
+//            if error != nil {
+//                print(error)
+//            } else if let results = results {
+//                let guardLimit = limit < results.count && limit > 0 ? limit : results.count
+//                callback(Array(results.prefix(guardLimit)), error)
+//            }
+//        }
+//    }
 
     // MARK: PFSubclassing
 

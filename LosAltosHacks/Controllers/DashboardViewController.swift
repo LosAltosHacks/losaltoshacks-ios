@@ -26,6 +26,7 @@ class DashboardViewController: BaseViewController {
         socialMediaView.delegate = self
         scrollView.contentSize = CGSizeMake(view.frame.size.width,
             115 * 2 + 150 * 2) // TODO: make this not static
+
     }
     
     override func setupConstraints() {

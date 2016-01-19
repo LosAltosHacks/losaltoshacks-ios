@@ -40,7 +40,7 @@ class ScheduleViewController: BaseViewController {
         //            self.refreshControl.endRefreshing()
         //        }
 
-        EventParse.fetch(sortBy: .Newest) { events, error in
+        EventParse.fetch { events, error in
             self.events = events as? [EventParse]
 
             self.saturdayEvents = self.events?.filter { event in
