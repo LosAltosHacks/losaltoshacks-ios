@@ -19,25 +19,28 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var leftSplotch: UIView!
 
-    var event: EventParse? {
+    var event: Event! {
         didSet {
-            if event != nil { // Guard against setting event = nil
-                titleLabel.text = event?.title
-                descriptionLabel.text = event?.detail
-
-                print(event?.from)
-                let formatter = NSDateFormatter()
-                formatter.dateFormat = "hh:mm a"
-                formatter.timeZone = NSTimeZone(name: "GMT")
-                print(formatter.stringFromDate(event!.from))
-                dateLabel.text = formatter.stringFromDate(self.event!.from)
-                locationLabel.text = event?.location
-                leftSplotch.backgroundColor = LAHConstants.Color.DefaultColor.value
-                if let color = LAHConstants.Color(from: event!.tag)?.value {
-                    leftSplotch.backgroundColor = color
-                }
-            }
+            updateContent()
         }
+    }
+    
+    func updateContent() {
+        titleLabel.text = event.title
+        descriptionLabel.text = event.detail
+        
+        print(event.from)
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        formatter.timeZone = NSTimeZone(name: "GMT")
+        print(formatter.stringFromDate(event!.from))
+        
+        dateLabel.text = formatter.stringFromDate(self.event!.from)
+        
+        locationLabel.text = event.location
+        
+        let color = LAHConstants.Color(from: event.tag) ?? LAHConstants.Color.DefaultColor
+        leftSplotch.backgroundColor = color.value
     }
 
     override func awakeFromNib() {

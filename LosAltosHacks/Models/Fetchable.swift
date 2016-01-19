@@ -11,7 +11,7 @@ import Alamofire
 
 protocol Fetchable {
     static func path() -> String
-    static func fetch(error: Void -> Void, callback: [Self] -> Void)
+    static func fetch(error error: Void -> Void, callback: [Self] -> Void)
     static func parse(json: AnyObject) -> [Self]
 }
 
@@ -21,7 +21,7 @@ extension Fetchable {
      and calls the callback on success.
      Retries by recursively calling itself up to 3 times until is successful.
      */
-    static func fetch(error: Void -> Void, callback: [Self] -> Void) {
+    static func fetch(error error: Void -> Void, callback: [Self] -> Void) {
         fetch(recursiveDepth: 0, error: error, callback: callback)
     }
     

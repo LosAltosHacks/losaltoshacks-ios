@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class UpdatesViewController: BaseViewController {
 
@@ -15,10 +14,9 @@ class UpdatesViewController: BaseViewController {
     static let cellIdentifier = "updateCell"
 
     let refreshControl = UIRefreshControl()
-
-    //    var updates = [Update]()
-    var updates: [UpdateParse]?
-
+    
+    var updates = [Update]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,58 +33,41 @@ class UpdatesViewController: BaseViewController {
     }
 
     func refresh() {
-        UpdateParse.fetch(sortBy: .Newest) { updates, error -> Void in
-            if error != nil {
-                print(error)
-            } else if let updates = updates {
-                self.updates = updates as? [UpdateParse]
-                self.tableView.reloadData()
-                self.refreshControl.endRefreshing()
-
-                if updates.count > 0 {
-                    self.tableView.backgroundView?.hidden = true
-                }
-            }
+        Update.fetch(error: {[weak self] in self?.refreshControl.endRefreshing()}) { [weak self] updates in
+            self?.updates = updates
+            self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
         }
-        //        Update.fetch({[weak self] in self?.refreshControl.endRefreshing()}) { updates in
-        //            self.updates = updates
-        //            self.tableView.reloadData()
-        //            self.refreshControl.endRefreshing()
-        //        }
     }
-
+    
     override func setupConstraints() {
         tableView.snp_makeConstraints { make in
             make.margins.equalTo(view.snp_margins).priorityMedium()
             make.topMargin.equalTo(view.snp_topMargin).offset(9).priorityHigh()
-            //            make.bottomMargin.equalTo(snp_bottomLayoutGuideTop).offset(-9).priorityHigh()
+//            make.bottomMargin.equalTo(snp_bottomLayoutGuideTop).offset(-9).priorityHigh()
         }
     }
 }
 
 extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return updates?.count ?? 0
+        return updates.count
     }
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(UpdatesViewController.cellIdentifier)! as! UpdateTableViewCell
-
-        if let updates = updates {
-            let update = updates[indexPath.row]
-            cell.update = update
-        }
-
-        //        cell.descriptionLabel.text = update.description
-        //        cell.dateLabel.text = LAHPreferredDisplay.from(update.date)
-        //        cell.iconView.image = UIImage(named: update.tag)
-        //        cell.splotchView.backgroundColor = LAHConstants.Color(from: update.tag)!.value
-
+        
+        let update = updates[indexPath.row]
+        
+        cell.update = update
+        
         return cell
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if updates?.count <= 0 {
+        
+        if updates.count <= 0 {
+            
             let container = UIView(frame: CGRectMake(0, 0, 200, 200))
 
             container.center = tableView.center
@@ -113,6 +94,9 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.backgroundView = container
             return 0
         }
+        
+        tableView.backgroundView = nil
+        
         return 1
     }
 }
