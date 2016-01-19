@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Application Styles
 
+        UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).font = UIFont.systemFontOfSize(14)
+        UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = UIColor(white: 0.4, alpha: 1.0)
         UITabBar.appearance().tintColor = LAHConstants.Color.DefaultColor.value
 
         // Push Notifications

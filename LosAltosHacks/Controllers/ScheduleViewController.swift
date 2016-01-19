@@ -44,7 +44,7 @@ class ScheduleViewController: BaseViewController {
             self.events = events as? [EventParse]
 
             self.saturdayEvents = self.events?.filter { event in
-                if !event.from.isEarlierThanDate(LAHConstants.Saturday)
+                if !event.from.isEarlierThanDate(LAHConstants.LAHStartDate)
                     && event.from.isEarlierThanDate(LAHConstants.Sunday) {
                         return true
                 }
@@ -58,6 +58,8 @@ class ScheduleViewController: BaseViewController {
                 }
                 return false
             }
+
+            print(self.saturdayEvents, self.sundayEvents)
 
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
@@ -131,7 +133,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return header
     }
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 
         if events?.count <= 0 {

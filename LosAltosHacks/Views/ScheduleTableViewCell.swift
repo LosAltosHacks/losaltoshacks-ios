@@ -24,8 +24,12 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
             if event != nil { // Guard against setting event = nil
                 titleLabel.text = event?.title
                 descriptionLabel.text = event?.detail
+
+                print(event?.from)
                 let formatter = NSDateFormatter()
-                formatter.dateFormat = "HH:mm"
+                formatter.dateFormat = "hh:mm a"
+                formatter.timeZone = NSTimeZone(name: "GMT")
+                print(formatter.stringFromDate(event!.from))
                 dateLabel.text = formatter.stringFromDate(self.event!.from)
                 locationLabel.text = event?.location
                 leftSplotch.backgroundColor = LAHConstants.Color.DefaultColor.value
