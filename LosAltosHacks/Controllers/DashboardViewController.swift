@@ -77,7 +77,7 @@ class DashboardViewController: BaseViewController {
     }
 }
 
-extension BaseViewController: SocialMediaViewDelegate {
+extension DashboardViewController: SocialMediaViewDelegate {
     func onTap(socialMedia: SocialMedia) {
         
         let safari = SFSafariViewController(URL: socialMedia.url)
