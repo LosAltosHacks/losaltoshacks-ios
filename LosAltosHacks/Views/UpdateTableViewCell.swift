@@ -51,24 +51,7 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
         setupConstraints()
     }
 
-    func setupConstraints() {
-
-        // TODO: Make this work
-//        dateLabel.snp_makeConstraints { make in
-//            make.width.equalTo(self.snp_width)
-//            
-//            make.leftMargin.equalTo(descriptionLabel.snp_leftMargin)
-//            make.top.equalTo(self.snp_topMargin)
-//        }
-//
-//        descriptionLabel.snp_makeConstraints { make in
-//            make.width.equalTo(self.snp_width)
-//
-//            make.leftMargin.equalTo(self.snp_leftMargin).offset(10)
-//            make.top.equalTo(dateLabel.snp_bottom)
-//            make.bottom.equalTo(self.snp_bottom)
-//        }
-    }
+    func setupConstraints() {}
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
