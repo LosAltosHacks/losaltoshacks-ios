@@ -72,7 +72,6 @@ extension NSDate {
         return gregorian!.dateFromComponents(components)!
     }
 
-    // TODO: move this to a `<` overload
     func isEarlierThanDate(date: NSDate) -> Bool {
         return (self.compare(date) == .OrderedAscending)
     }
