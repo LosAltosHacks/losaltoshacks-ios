@@ -47,3 +47,9 @@ extension Fetchable {
         }
     }
 }
+
+extension Fetchable where Self: Cacheable {
+    static func updateCache(error error: Void -> Void) {
+        Self.fetch(error: error, callback: Self.store)
+    }
+}

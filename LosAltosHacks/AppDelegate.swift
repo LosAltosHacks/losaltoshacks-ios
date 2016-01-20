@@ -34,6 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("message: \(message)")
             print("additional data: \(data)")
             print("isActive: \(isActive)")
+            
+            // update cache, on error try again (behind the scenes retries 6 times)
+            Update.updateCache(error: { Update.updateCache(error: {print("Failed fetching updates for cache")})})
         }
         
         let client = OneSignal(launchOptions: launchOptions, appId: "3b4705ab-e13e-41e9-8a43-a8371b75b595", handleNotification: handleNotification)
