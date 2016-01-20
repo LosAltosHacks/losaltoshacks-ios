@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).font = UIFont.systemFontOfSize(14)
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = UIColor(white: 0.4, alpha: 1.0)
-        UITabBar.appearance().tintColor = LAHConstants.Color.DefaultColor.value
+        UITabBar.appearance().tintColor = LAHColor.DefaultColor.value
 
         // Push Notifications
         let handleNotification: OneSignalHandleNotificationBlock = { message, data, isActive in
@@ -34,18 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         client.enableInAppAlertNotification(true)
         
         return true
-    }
-
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        if error.code == 3010 {
-            print("Push notifications are not supported in the iOS Simulator.")
-        } else {
-            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
-        }
-    }
-
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("GOT PUSH NOTIFICATION!!!")
     }
 
     func applicationWillResignActive(application: UIApplication) {

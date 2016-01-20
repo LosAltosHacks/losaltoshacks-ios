@@ -22,7 +22,7 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
         dateLabel.text = LAHPreferredDisplay.from(update.date)
         iconView.image = UIImage(named: update.tag.lowercaseString)
         
-        let color = LAHConstants.Color(from: update.tag) ?? LAHConstants.Color.DefaultColor
+        let color = LAHColor(from: update.tag) ?? LAHColor.DefaultColor
         splotchView.backgroundColor = color.value
     }
 

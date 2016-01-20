@@ -26,7 +26,7 @@ class ProgressView: BaseView {
     }
 
     // Color of interior progress bar
-    var barTintColor: UIColor = LAHConstants.Color.DefaultColor.value.colorWithAlphaComponent(0.9)
+    var barTintColor: UIColor = LAHColor.DefaultColor.value.colorWithAlphaComponent(0.9)
 
     // Center label that shows the % of progress
     @IBOutlet weak var percentLabel: UILabel!
@@ -67,7 +67,7 @@ class ProgressView: BaseView {
 
         cornerRadius = rect.size.height / 2 // rounded rect effect
         percentLabel.text = "\(Int(progress * 100))%"
-        percentLabel.textColor = LAHConstants.Color.DefaultDarkGreyColor.value
+        percentLabel.textColor = LAHColor.DefaultDarkGreyColor.value
         percentLabel.clipsToBounds = true
         percentLabel.layer.cornerRadius = percentLabel.frame.size.height / 2
 
@@ -75,7 +75,7 @@ class ProgressView: BaseView {
 
         self.layer.borderWidth = BorderWidth
         self.layer.cornerRadius = cornerRadius
-        self.layer.borderColor = LAHConstants.Color.DefaultGreyColor.value.CGColor
+        self.layer.borderColor = LAHColor.DefaultGreyColor.value.CGColor
 
         // Inner Rect
 

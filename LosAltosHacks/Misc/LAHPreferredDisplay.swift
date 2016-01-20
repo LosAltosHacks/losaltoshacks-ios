@@ -11,13 +11,15 @@ import Foundation
 struct LAHPreferredDisplay {
     
     /// ```
-    /// <1-60/1-24/1-infinity> <minute(s)/hour(s)/day(s)> ago
+    /// <1-60/1-24/1-infinity> <minute(s)/hour(s)/day(s)>
     /// ```
     /// ex: 34 minutes ago
     ///
     /// ex: 1 hour ago
     ///
     /// ex: 98 days ago
+    /// 
+    /// ex: in 10 days
     static func from(date: NSDate) -> String {
         
         let seconds = -date.timeIntervalSinceNow
@@ -35,11 +37,15 @@ struct LAHPreferredDisplay {
             time = .Day(seconds/86400)
         }
         
-        return "\(Int(time.amount)) \(time.typeDescription) ago"
+        if seconds < 0 {
+            return "in \(-Int(time.amount)) \(time.typeDescription)"
+        } else {
+            return "\(Int(time.amount)) \(time.typeDescription) ago"
+        }
     }
+    
     static func range(dateFrom: NSDate, dateTo: NSDate) -> String {
         
         return "From \(dateFrom) to \(dateTo)"
     }
-    
 }
