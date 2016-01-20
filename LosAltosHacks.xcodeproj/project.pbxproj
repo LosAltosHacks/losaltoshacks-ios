@@ -21,7 +21,6 @@
 		37AE68B61C2DFFE600A02DF0 /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */; };
 		37AE68BA1C2E000300A02DF0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */; };
 		37AE68BC1C2E001200A02DF0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */; };
-		37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */; };
 		37AF3D541C4EEC580037D345 /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37764A781C4ED85800835F17 /* OneSignal.framework */; };
 		37AF3D551C4EEC580037D345 /* OneSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37764A781C4ED85800835F17 /* OneSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37C182C41C3AAC8500D931EC /* LAHPreferredDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C182C31C3AAC8500D931EC /* LAHPreferredDisplay.swift */; };
@@ -200,7 +199,6 @@
 		37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
 		37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorsViewController.swift; sourceTree = "<group>"; };
 		37C182C31C3AAC8500D931EC /* LAHPreferredDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHPreferredDisplay.swift; sourceTree = "<group>"; };
 		37C336931C4DF4500076DA9E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Carthage/Checkouts/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		37C336AB1C4DF4620076DA9E /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Carthage/Checkouts/Snapkit/SnapKit.xcodeproj; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 				37AE68B91C2E000300A02DF0 /* DashboardViewController.swift */,
 				37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */,
 				37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */,
-				37AE68BD1C2E002A00A02DF0 /* SponsorsViewController.swift */,
 				D093A7B81C3B6FF900570708 /* MapViewController.swift */,
 			);
 			path = Controllers;
@@ -598,7 +595,6 @@
 				37977AAC1C3FD658003869F0 /* LAHConstants.swift in Sources */,
 				37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */,
 				37C182C41C3AAC8500D931EC /* LAHPreferredDisplay.swift in Sources */,
-				37AE68BE1C2E002A00A02DF0 /* SponsorsViewController.swift in Sources */,
 				37CCFE921C31EE0800998CB1 /* Update.swift in Sources */,
 				37CCFE841C31E60800998CB1 /* MentorView.swift in Sources */,
 				D093A77F1C370CB400570708 /* ProgressView.swift in Sources */,
