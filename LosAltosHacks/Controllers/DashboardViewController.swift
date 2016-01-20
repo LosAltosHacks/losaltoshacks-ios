@@ -80,8 +80,12 @@ class DashboardViewController: BaseViewController {
 extension DashboardViewController: SocialMediaViewDelegate {
     func onTap(socialMedia: SocialMedia) {
         
-        let safari = SFSafariViewController(URL: socialMedia.url)
+        if #available(iOS 9, *) {
+            let safari = SFSafariViewController(URL: socialMedia.url)
+            self.presentViewController(safari, animated: true, completion: nil)
+        } else {
+            UIApplication.sharedApplication().openURL(socialMedia.url)
+        }
         
-        self.presentViewController(safari, animated: true, completion: nil)
     }
 }

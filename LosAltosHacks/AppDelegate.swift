@@ -18,11 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Application Styles
-
-        UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).font = UIFont.systemFontOfSize(14)
-        UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = UIColor(white: 0.4, alpha: 1.0)
         UITabBar.appearance().tintColor = LAHColor.DefaultColor.value
 
+        if #available(iOS 9.0, *) {
+            UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).font = UIFont.systemFontOfSize(14)
+            UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = UIColor(white: 0.4, alpha: 1.0)
+        } else {
+            UILabel.LAH_appearanceWhenContainedIn(UITableViewHeaderFooterView.self).font = UIFont.systemFontOfSize(14)
+            UILabel.LAH_appearanceWhenContainedIn(UITableViewHeaderFooterView.self).textColor = UIColor(white: 0.4, alpha: 1.0)
+        }
+        
+        
         // Push Notifications
         let handleNotification: OneSignalHandleNotificationBlock = { message, data, isActive in
             print("message: \(message)")
@@ -32,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let client = OneSignal(launchOptions: launchOptions, appId: "3b4705ab-e13e-41e9-8a43-a8371b75b595", handleNotification: handleNotification)
         client.enableInAppAlertNotification(true)
+        
         
         return true
     }
