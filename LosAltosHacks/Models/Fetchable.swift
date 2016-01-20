@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 
 protocol Fetchable {
-    static func path() -> String
+    static var path: String {get}
     static func fetch(error error: Void -> Void, callback: [Self] -> Void)
-    static func parse(json: AnyObject) -> [Self]
+    static func parse(json: AnyObject) -> Self
 }
 
 extension Fetchable {
@@ -29,17 +29,19 @@ extension Fetchable {
         
         guard recursiveDepth < 3 else { error(); return }
         
-        let url = LAHConstants.BaseAPIURLString + self.path()
+        let url = LAHConstants.BaseAPIURLString + self.path
         
         Alamofire.request(.GET, url).responseJSON { response in
             
-            guard let json = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments) else {
+            guard
+                let json = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments),
+                jsonArr = json as? [AnyObject] else {
                 // recurse
                 fetch(recursiveDepth: recursiveDepth+1, error: error, callback: callback)
                 return
             }
             
-            let parsed = parse(json)
+            let parsed = jsonArr.map(parse)
             
             callback(parsed)
         }

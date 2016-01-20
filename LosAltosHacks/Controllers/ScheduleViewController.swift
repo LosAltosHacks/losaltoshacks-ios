@@ -15,7 +15,7 @@ class ScheduleViewController: BaseViewController {
 
     let refreshControl = UIRefreshControl()
 
-    var events = [Event]()
+    var events = Event.cached() ?? []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,10 @@ class ScheduleViewController: BaseViewController {
         tableView.estimatedRowHeight = 120.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        refreshControl.beginRefreshing()
-        refresh()
+        if events.isEmpty {
+            refreshControl.beginRefreshing()
+            refresh()
+        }
     }
 
     func refresh() {
@@ -37,6 +39,9 @@ class ScheduleViewController: BaseViewController {
             self?.events = events
             self?.tableView.reloadData()
             self?.refreshControl.endRefreshing()
+            
+            // update cache
+            Event.store(events)
         }
     }
 

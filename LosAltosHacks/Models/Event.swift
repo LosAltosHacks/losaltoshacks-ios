@@ -18,23 +18,43 @@ struct Event {
 }
 
 extension Event: Fetchable {
-    static func path() -> String {
+    static var path: String {
         return "schedule.json"
     }
     
-    static func parse(json: AnyObject) -> [Event] {
-        return (json as! [[String:AnyObject]])
-            .map {
-                Event(
-                    from: NSDate(timeIntervalSince1970: NSTimeInterval($0["from"]!.intValue)),
-                    to: NSDate(timeIntervalSince1970: NSTimeInterval($0["to"]!.intValue)),
-                    title: $0["title"] as! String,
-                    detail: $0["detail"] as! String,
-                    location: $0["location"] as! String,
-                    tag: $0["tag"] as! String
-                )
-            }
-            .sort { e1, e2 in e1.from.timeIntervalSince1970 < e2.from.timeIntervalSince1970 }
+    static func parse(json: AnyObject) -> Event {
+        let json = json as! [String:AnyObject]
+        return Event(
+            from: NSDate(timeIntervalSince1970: NSTimeInterval(json["from"]!.intValue)),
+            to: NSDate(timeIntervalSince1970: NSTimeInterval(json["to"]!.intValue)),
+            title: json["title"] as! String,
+            detail: json["detail"] as! String,
+            location: json["location"] as! String,
+            tag: json["tag"] as! String
+        )
+//            .sort { e1, e2 in e1.from.timeIntervalSince1970 < e2.from.timeIntervalSince1970 }
+    }
+}
+
+extension Event: Cacheable {
+    static var cacheKey: String {
+        return "eventsCache"
+    }
+    
+    func toJSON() -> String {
+        
+        let dict: [String:AnyObject] = [
+            "from": from.timeIntervalSince1970,
+            "to": to.timeIntervalSince1970,
+            "title": title,
+            "detail": detail,
+            "location": location,
+            "tag": tag
+        ]
+        
+        let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
+        
+        return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
     }
 }
 

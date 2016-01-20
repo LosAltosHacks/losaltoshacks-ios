@@ -15,7 +15,7 @@ class UpdatesViewController: BaseViewController {
 
     let refreshControl = UIRefreshControl()
     
-    var updates = [Update]()
+    var updates = Update.cached() ?? []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,10 @@ class UpdatesViewController: BaseViewController {
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        refreshControl.beginRefreshing()
-        refresh()
+        if updates.isEmpty {
+            refreshControl.beginRefreshing()
+            refresh()
+        }
     }
 
     func refresh() {
@@ -37,6 +39,8 @@ class UpdatesViewController: BaseViewController {
             self?.updates = updates
             self?.tableView.reloadData()
             self?.refreshControl.endRefreshing()
+            
+            Update.store(updates)
         }
     }
     

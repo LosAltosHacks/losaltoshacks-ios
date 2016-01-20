@@ -15,18 +15,36 @@ struct Update {
 }
 
 extension Update: Fetchable {
-    static func path() -> String {
+    static var path: String {
         return "updates.json"
     }
     
-    static func parse(json: AnyObject) -> [Update] {
-        return (json as! [[String:AnyObject]])
-            .map {
-                Update(
-                    date: NSDate(timeIntervalSince1970: NSTimeInterval($0["date"]!.intValue)),
-                    description: $0["description"] as! String,
-                    tag: $0["tag"] as! String
-                )
-            }
+    static func parse(json: AnyObject) -> Update {
+        let json = json as! [String:AnyObject]
+        
+        return Update(
+            date: NSDate(timeIntervalSince1970: NSTimeInterval(json["date"]!.intValue)),
+            description: json["description"] as! String,
+            tag: json["tag"] as! String
+        )
+    }
+}
+
+extension Update: Cacheable {
+    static var cacheKey: String {
+        return "updatesCache"
+    }
+    
+    func toJSON() -> String {
+        
+        let dict: [String:AnyObject] = [
+            "date": date.timeIntervalSince1970,
+            "description": description,
+            "tag": tag
+        ]
+        
+        let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
+        
+        return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
     }
 }
