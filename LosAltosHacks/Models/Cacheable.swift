@@ -8,15 +8,11 @@
 
 import Foundation
 
-protocol Cacheable {
+protocol Cacheable: JSONConvertible {
     static var cacheKey: String {get}
     static func cached() -> [Self]?
     static func store(cache: [Self])
     static func clear()
-    
-    //json
-    static func parse(json: AnyObject) -> Self
-    func toJSON() -> String
 }
 
 extension Cacheable {
@@ -38,11 +34,12 @@ extension Cacheable {
         // parse each json string into a "Self"
         // using the do/catch as an early return
         do {
-            return try jsonArr.map {
+            let items: [Self] = try jsonArr.map {
                 let data = $0.dataUsingEncoding(NSUTF8StringEncoding)!
                 let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
                 return Self.parse(json)
             }
+            return items
         } catch {
             return nil
         }
@@ -64,5 +61,13 @@ extension Cacheable {
     static func clear() {
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: cacheKey)
         NSUserDefaults.standardUserDefaults().synchronize()
+    }
+}
+
+extension Cacheable where Self: Sortable {
+    static func cached(sort sort: Bool) -> [Self]? {
+        guard let cached = cached() else { return nil }
+        guard sort else { return cached }
+        return Self.sort(cached)
     }
 }

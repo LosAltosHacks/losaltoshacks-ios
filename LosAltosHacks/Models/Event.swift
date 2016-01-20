@@ -21,26 +21,15 @@ extension Event: Fetchable {
     static var path: String {
         return "schedule.json"
     }
-    
-    static func parse(json: AnyObject) -> Event {
-        let json = json as! [String:AnyObject]
-        return Event(
-            from: NSDate(timeIntervalSince1970: NSTimeInterval(json["from"]!.intValue)),
-            to: NSDate(timeIntervalSince1970: NSTimeInterval(json["to"]!.intValue)),
-            title: json["title"] as! String,
-            detail: json["detail"] as! String,
-            location: json["location"] as! String,
-            tag: json["tag"] as! String
-        )
-//            .sort { e1, e2 in e1.from.timeIntervalSince1970 < e2.from.timeIntervalSince1970 }
-    }
 }
 
 extension Event: Cacheable {
     static var cacheKey: String {
         return "eventsCache"
     }
-    
+}
+
+extension Event: JSONConvertible {
     func toJSON() -> String {
         
         let dict: [String:AnyObject] = [
@@ -55,6 +44,24 @@ extension Event: Cacheable {
         let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
         
         return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
+    }
+    
+    static func parse(json: AnyObject) -> Event {
+        let json = json as! [String:AnyObject]
+        return Event(
+            from: NSDate(timeIntervalSince1970: NSTimeInterval(json["from"]!.intValue)),
+            to: NSDate(timeIntervalSince1970: NSTimeInterval(json["to"]!.intValue)),
+            title: json["title"] as! String,
+            detail: json["detail"] as! String,
+            location: json["location"] as! String,
+            tag: json["tag"] as! String
+        )
+    }
+}
+
+extension Event: Sortable {
+    static func sort(items: [Event]) -> [Event] {
+         return items.sort { $0.from.isEarlierThanDate($1.from) }
     }
 }
 

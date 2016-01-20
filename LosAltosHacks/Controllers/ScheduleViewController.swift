@@ -15,7 +15,7 @@ class ScheduleViewController: BaseViewController {
 
     let refreshControl = UIRefreshControl()
 
-    var events = Event.cached() ?? []
+    var events = Event.cached(sort: true) ?? []
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -18,6 +18,27 @@ extension Update: Fetchable {
     static var path: String {
         return "updates.json"
     }
+}
+
+extension Update: Cacheable {
+    static var cacheKey: String {
+        return "updatesCache"
+    }
+}
+
+extension Update: JSONConvertible {
+    func toJSON() -> String {
+        
+        let dict: [String:AnyObject] = [
+            "date": date.timeIntervalSince1970,
+            "description": description,
+            "tag": tag
+        ]
+        
+        let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
+        
+        return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
+    }
     
     static func parse(json: AnyObject) -> Update {
         let json = json as! [String:AnyObject]
@@ -30,21 +51,8 @@ extension Update: Fetchable {
     }
 }
 
-extension Update: Cacheable {
-    static var cacheKey: String {
-        return "updatesCache"
-    }
-    
-    func toJSON() -> String {
-        
-        let dict: [String:AnyObject] = [
-            "date": date.timeIntervalSince1970,
-            "description": description,
-            "tag": tag
-        ]
-        
-        let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
-        
-        return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
+extension Update: Sortable {
+    static func sort(items: [Update]) -> [Update] {
+        return items.sort { !$0.date.isEarlierThanDate($1.date) }
     }
 }

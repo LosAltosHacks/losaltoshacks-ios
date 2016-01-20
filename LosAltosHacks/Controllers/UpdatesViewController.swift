@@ -15,7 +15,7 @@ class UpdatesViewController: BaseViewController {
 
     let refreshControl = UIRefreshControl()
     
-    var updates = Update.cached() ?? []
+    var updates = Update.cached(sort: true) ?? []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,18 @@ class UpdatesViewController: BaseViewController {
         if updates.isEmpty {
             refreshControl.beginRefreshing()
             refresh()
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("refreshUpdates", object: nil, queue: NSOperationQueue.mainQueue()) { [weak self] _ in
+            
+            self?.refreshControl.beginRefreshing()
+            
+            // update cache, on error try again (behind the scenes retries 6 times)
+            Update.updateCache(sort: true, error: { Update.updateCache(error: {print("Failed fetching updates for cache")})}) { [weak self] updates in
+                self?.updates = updates
+                self?.tableView.reloadData()
+                self?.refreshControl.endRefreshing()
+            }
         }
     }
 

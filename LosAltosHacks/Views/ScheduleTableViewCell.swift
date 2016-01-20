@@ -29,11 +29,9 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
         titleLabel.text = event.title
         descriptionLabel.text = event.detail
         
-        print(event.from)
         let formatter = NSDateFormatter()
         formatter.dateFormat = "hh:mm a"
         formatter.timeZone = NSTimeZone(name: "GMT")
-        print(formatter.stringFromDate(event!.from))
         
         dateLabel.text = formatter.stringFromDate(self.event!.from)
         
