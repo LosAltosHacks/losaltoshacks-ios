@@ -28,14 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UILabel.LAH_appearanceWhenContainedIn(UITableViewHeaderFooterView.self).textColor = UIColor(white: 0.4, alpha: 1.0)
         }
         
-        
         // Push Notifications
-        let handleNotification: OneSignalHandleNotificationBlock = { message, data, isActive in
+        let handleNotification: OneSignalHandleNotificationBlock = { [weak self] message, data, isActive in
             print("message: \(message)")
             print("additional data: \(data)")
             print("isActive: \(isActive)")
             
-            NSNotificationCenter.defaultCenter().postNotificationName("refreshUpdates", object: nil)
+            guard let updatesVC: UpdatesViewController = self?.getVCWithType() else { return }
+            updatesVC.refresh()
         }
         
         let client = OneSignal(launchOptions: launchOptions, appId: "3b4705ab-e13e-41e9-8a43-a8371b75b595", handleNotification: handleNotification)
@@ -43,6 +43,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         return true
+    }
+    
+    func getVCWithType<T>() -> T? {
+        
+        guard let rootVC = self.window?.rootViewController,
+            tabVC = rootVC as? UITabBarController,
+            tabs = tabVC.viewControllers else {
+            return nil
+        }
+        
+        for tab in tabs {
+            guard let nvc = tab as? UINavigationController else { continue }
+            
+            for vc in nvc.viewControllers {
+                if let vc = vc as? T {
+                    return vc
+                }
+            }
+        }
+        
+        return nil
     }
 
     func applicationWillResignActive(application: UIApplication) {

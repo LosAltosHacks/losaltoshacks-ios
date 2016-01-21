@@ -32,24 +32,12 @@ class UpdatesViewController: BaseViewController {
             refreshControl.beginRefreshing()
             refresh()
         }
-        
-        NSNotificationCenter.defaultCenter().addObserverForName("refreshUpdates", object: nil, queue: NSOperationQueue.mainQueue()) { [weak self] _ in
-            
-            self?.refreshControl.beginRefreshing()
-            
-            // update cache, on error try again (behind the scenes retries 6 times)
-            Update.updateCache(sort: true, error: { Update.updateCache(error: {print("Failed fetching updates for cache")})}) { [weak self] updates in
-                self?.updates = updates
-                self?.tableView.reloadData()
-                self?.refreshControl.endRefreshing()
-            }
-        }
     }
 
     func refresh() {
         Update.fetch(error: {[weak self] in self?.refreshControl.endRefreshing()}) { [weak self] updates in
             self?.updates = updates
-            self?.tableView.reloadData()
+            self?.tableView?.reloadData()
             self?.refreshControl.endRefreshing()
             
             Update.store(updates)

@@ -37,7 +37,7 @@ class ScheduleViewController: BaseViewController {
     func refresh() {
         Event.fetch(error: {[weak self] in self?.refreshControl.endRefreshing()}) { [weak self] events  in
             self?.events = events
-            self?.tableView.reloadData()
+            self?.tableView?.reloadData()
             self?.refreshControl.endRefreshing()
             
             // update cache
