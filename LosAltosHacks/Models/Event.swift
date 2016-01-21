@@ -9,10 +9,10 @@
 import Foundation
 
 struct Event {
-    let from: NSDate
-    let to: NSDate
+    let start: NSDate
+    let end: NSDate
     let title: String
-    let detail: String
+    let description: String
     let location: String
     let tag: String
 }
@@ -33,10 +33,10 @@ extension Event: JSONConvertible {
     func toJSON() -> String {
         
         let dict: [String:AnyObject] = [
-            "from": from.timeIntervalSince1970,
-            "to": to.timeIntervalSince1970,
+            "start": start.timeIntervalSince1970,
+            "end": end.timeIntervalSince1970,
             "title": title,
-            "detail": detail,
+            "description": description,
             "location": location,
             "tag": tag
         ]
@@ -49,10 +49,10 @@ extension Event: JSONConvertible {
     static func parse(json: AnyObject) -> Event {
         let json = json as! [String:AnyObject]
         return Event(
-            from: NSDate(timeIntervalSince1970: NSTimeInterval(json["from"]!.intValue)),
-            to: NSDate(timeIntervalSince1970: NSTimeInterval(json["to"]!.intValue)),
+            start: NSDate(timeIntervalSince1970: NSTimeInterval(json["start"]!.intValue)),
+            end: NSDate(timeIntervalSince1970: NSTimeInterval(json["end"]!.intValue)),
             title: json["title"] as! String,
-            detail: json["detail"] as! String,
+            description: json["description"] as! String,
             location: json["location"] as! String,
             tag: json["tag"] as! String
         )
@@ -61,20 +61,20 @@ extension Event: JSONConvertible {
 
 extension Event: Sortable {
     static func sort(items: [Event]) -> [Event] {
-         return items.sort { $0.from.isEarlierThanDate($1.from) }
+         return items.sort { $0.start.isEarlierThanDate($1.start) }
     }
 }
 
 extension Event {
     var isOnSaturday: Bool {
-        let afterStart = !self.from.isEarlierThanDate(LAHConstants.LAHStartDate)
-        let beforeSunday = self.from.isEarlierThanDate(LAHConstants.Sunday)
+        let afterStart = !self.start.isEarlierThanDate(LAHConstants.LAHStartDate)
+        let beforeSunday = self.start.isEarlierThanDate(LAHConstants.Sunday)
         return afterStart && beforeSunday
     }
     
     var isOnSunday: Bool {
-        let afterStartOfSunday = !self.from.isEarlierThanDate(LAHConstants.Sunday)
-        let beforeEnd = self.from.isEarlierThanDate(LAHConstants.LAHEndDate)
+        let afterStartOfSunday = !self.start.isEarlierThanDate(LAHConstants.Sunday)
+        let beforeEnd = self.start.isEarlierThanDate(LAHConstants.LAHEndDate)
         return afterStartOfSunday && beforeEnd
     }
 }
