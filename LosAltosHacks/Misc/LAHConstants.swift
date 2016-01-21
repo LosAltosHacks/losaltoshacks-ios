@@ -14,7 +14,7 @@ struct LAHConstants {
     static let Saturday = NSDate.specificDate(1, day: 30, year: 2016, hour: 0)
     static let Sunday = NSDate.specificDate(1, day: 31, year: 2016, hour: 0)
 
-    static let BaseAPIURLString = "https://raw.githubusercontent.com/losaltoshacks/losaltoshacks-api/master/"
+    static let BaseAPIURLString = "https://s3-us-west-2.amazonaws.com/losaltoshacks/"
 }
 
 enum LAHColor {
