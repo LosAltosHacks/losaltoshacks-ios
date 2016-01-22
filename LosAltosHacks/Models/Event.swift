@@ -14,7 +14,7 @@ struct Event {
     let title: String
     let description: String
     let location: String
-    let tag: String
+    let tag: Tag
 }
 
 extension Event: Fetchable {
@@ -38,7 +38,7 @@ extension Event: JSONConvertible {
             "title": title,
             "description": description,
             "location": location,
-            "tag": tag
+            "tag": tag.rawValue
         ]
         
         let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
@@ -54,7 +54,7 @@ extension Event: JSONConvertible {
             title: json["title"] as! String,
             description: json["description"] as! String,
             location: json["location"] as! String,
-            tag: json["tag"] as! String
+            tag: Tag(rawValue: (json["tag"] as! String).lowercaseString)!
         )
     }
 }

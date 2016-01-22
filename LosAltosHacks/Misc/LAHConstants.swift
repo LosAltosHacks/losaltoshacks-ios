@@ -47,13 +47,4 @@ enum LAHColor {
         
         return c
     }
-    
-    init?(from: String) {
-        switch from.lowercaseString {
-        case "logistics": self = .Logistics
-        case "food": self = .Food
-        case "workshop": self = .Workshop
-        default: return nil
-        }
-    }
 }

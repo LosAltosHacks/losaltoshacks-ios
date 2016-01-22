@@ -18,16 +18,17 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
     }
     
     func updateContent() {
+        titleLabel.text = update.title
         descriptionLabel.text = update.description
         dateLabel.text = LAHPreferredDisplay.from(update.date)
-        iconView.image = UIImage(named: update.tag.lowercaseString)
+        iconView.image = update.tag.image
         
-        let color = LAHColor(from: update.tag) ?? LAHColor.DefaultColor
-        splotchView.backgroundColor = color.value
+        splotchView.backgroundColor = update.tag.color.value
     }
 
     @IBOutlet weak var splotchView: UIView!
     @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 
@@ -39,6 +40,9 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
 
         splotchView.contentMode = .ScaleAspectFill
         splotchView.clipsToBounds = true
+        
+        titleLabel.numberOfLines = 0
+        titleLabel.sizeToFit()
 
         descriptionLabel.numberOfLines = 0
         descriptionLabel.sizeToFit()

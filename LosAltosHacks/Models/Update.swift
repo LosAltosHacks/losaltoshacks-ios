@@ -10,8 +10,9 @@ import Foundation
 
 struct Update {
     let date: NSDate
+    let title: String
     let description: String
-    let tag: String
+    let tag: Tag
 }
 
 extension Update: Fetchable {
@@ -31,8 +32,9 @@ extension Update: JSONConvertible {
         
         let dict: [String:AnyObject] = [
             "date": date.timeIntervalSince1970,
+            "title": title,
             "description": description,
-            "tag": tag
+            "tag": tag.rawValue
         ]
         
         let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
@@ -45,8 +47,9 @@ extension Update: JSONConvertible {
         
         return Update(
             date: NSDate(timeIntervalSince1970: NSTimeInterval(json["date"]!.intValue)),
+            title: json["title"] as! String,
             description: json["description"] as! String,
-            tag: json["tag"] as! String
+            tag: Tag(rawValue: (json["tag"] as! String).lowercaseString)!
         )
     }
 }
