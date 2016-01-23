@@ -109,7 +109,6 @@ extension DashboardViewController: SocialMediaViewDelegate, SlackButtonDelegate 
 
 extension DashboardViewController: CacheableDelegate {
     func didUpdateCache() {
-        print("cache is totally updated")
         upcomingView.awakeFromNib()
     }
 }
