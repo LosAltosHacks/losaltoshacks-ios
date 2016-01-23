@@ -9,8 +9,13 @@
 import UIKit
 import SnapKit
 
+protocol SlackButtonDelegate: class {
+    func onTap(button: SlackButton)
+}
+
 class SlackButton: UIButton {
     override func awakeFromNib() {
+        super.awakeFromNib()
         layer.cornerRadius = 20
         layer.borderColor = UIColor.lightGrayColor().CGColor
         layer.borderWidth = 1.0

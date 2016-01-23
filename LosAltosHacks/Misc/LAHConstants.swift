@@ -15,6 +15,7 @@ struct LAHConstants {
     static let Sunday = NSDate.specificDate(year: 2016, month: 1, day: 31, hour: 0)
 
     static let BaseAPIURLString = "https://s3-us-west-2.amazonaws.com/losaltoshacks/"
+    static let SlackURL = NSURL(string: "slack://channel?id=C091PQ8NR&team=T091PGAAW")!
 }
 
 enum LAHColor {

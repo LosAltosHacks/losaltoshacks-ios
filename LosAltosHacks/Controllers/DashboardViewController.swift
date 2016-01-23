@@ -24,6 +24,7 @@ class DashboardViewController: BaseViewController {
         super.viewDidLoad()
         
         socialMediaView.delegate = self
+        mentorView.slackButtonDelgate = self
         scrollView.contentSize = CGSizeMake(view.frame.size.width,
             115 * 2 + 150 * 2) // TODO: make this not static
 
@@ -77,7 +78,7 @@ class DashboardViewController: BaseViewController {
     }
 }
 
-extension DashboardViewController: SocialMediaViewDelegate {
+extension DashboardViewController: SocialMediaViewDelegate, SlackButtonDelegate {
     func onTap(socialMedia: SocialMedia) {
         
         if #available(iOS 9, *) {
@@ -87,5 +88,19 @@ extension DashboardViewController: SocialMediaViewDelegate {
             UIApplication.sharedApplication().openURL(socialMedia.url)
         }
         
+    }
+    func onTap(button: SlackButton) {
+        
+        // if it can open in slack app, open in slack app
+        if UIApplication.sharedApplication().canOpenURL(LAHConstants.SlackURL) {
+            UIApplication.sharedApplication().openURL(LAHConstants.SlackURL)
+        } else {
+            if #available(iOS 9, *) {
+                let safari = SFSafariViewController(URL: NSURL(string: "https://losaltoshacks.slack.com/")!)
+                self.presentViewController(safari, animated: true, completion: nil)
+            } else {
+                UIApplication.sharedApplication().openURL(NSURL(string: "https://losaltoshacks.slack.com/")!)
+            }
+        }
     }
 }

@@ -13,6 +13,18 @@ class MentorView: BaseView {
 
     @IBOutlet weak var slackButton: SlackButton!
     @IBOutlet weak var helpLabel: UILabel!
+    
+    weak var slackButtonDelgate: SlackButtonDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        slackButton.addTarget(self, action: "tapped:", forControlEvents: .TouchUpInside)
+    }
+    
+    func tapped(sender: UIButton) {
+        self.slackButtonDelgate?.onTap(sender as! SlackButton)
+    }
 
     override func setupConstraints() {
         // Help text
