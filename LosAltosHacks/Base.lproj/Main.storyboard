@@ -290,69 +290,23 @@
                                                 <color key="textColor" red="0.25964583333333335" green="0.25964583333333335" blue="0.25964583333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Span" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdc-lx-ZlA">
-                                                <rect key="frame" x="67" y="37" width="227" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="227" placeholder="YES" id="KUB-UT-Wyd"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-o5-8n7">
-                                                <rect key="frame" x="317" y="37" width="239" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXx-Hw-HCA">
-                                                <rect key="frame" x="45" y="66" width="511" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="myW-rj-c8z">
-                                                <rect key="frame" x="45" y="41" width="14" height="14"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="14" placeholder="YES" id="Uba-Yi-72y"/>
-                                                    <constraint firstAttribute="width" constant="14" placeholder="YES" id="iC9-H5-sNz"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="QxX-iQ-z00">
-                                                <rect key="frame" x="295" y="41" width="14" height="14"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="14" placeholder="YES" id="46F-Wc-tap"/>
-                                                </constraints>
-                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8y-lN-Vfy" userLabel="latestEventView">
+                                                <rect key="frame" x="8" y="34" width="584" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="cFr-o5-8n7" firstAttribute="trailing" secondItem="IXx-Hw-HCA" secondAttribute="trailing" placeholder="YES" id="0uP-lh-lqe"/>
-                                            <constraint firstItem="Jdc-lx-ZlA" firstAttribute="leading" secondItem="myW-rj-c8z" secondAttribute="trailing" constant="8" symbolic="YES" placeholder="YES" id="1nn-Ql-8qV"/>
-                                            <constraint firstAttribute="trailing" secondItem="cFr-o5-8n7" secondAttribute="trailing" constant="44" placeholder="YES" id="2BP-sz-G10"/>
-                                            <constraint firstItem="Jdc-lx-ZlA" firstAttribute="top" secondItem="A7w-sW-UOk" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="7Pw-uW-7Rg"/>
-                                            <constraint firstItem="myW-rj-c8z" firstAttribute="leading" secondItem="IXx-Hw-HCA" secondAttribute="leading" placeholder="YES" id="7bL-LP-B48"/>
-                                            <constraint firstItem="QxX-iQ-z00" firstAttribute="leading" secondItem="Jdc-lx-ZlA" secondAttribute="trailing" constant="1" placeholder="YES" id="9ZP-pG-WTd"/>
+                                            <constraint firstItem="e8y-lN-Vfy" firstAttribute="leading" secondItem="Vlm-O2-sWV" secondAttribute="leading" constant="8" placeholder="YES" id="0nf-az-7yF"/>
                                             <constraint firstItem="A7w-sW-UOk" firstAttribute="centerX" secondItem="Vlm-O2-sWV" secondAttribute="centerX" placeholder="YES" id="G8T-nR-Pqn"/>
-                                            <constraint firstItem="myW-rj-c8z" firstAttribute="leading" secondItem="Vlm-O2-sWV" secondAttribute="leading" constant="45" placeholder="YES" id="IXb-k5-MM9"/>
-                                            <constraint firstItem="Jdc-lx-ZlA" firstAttribute="centerY" secondItem="myW-rj-c8z" secondAttribute="centerY" placeholder="YES" id="J6m-Zh-JHh"/>
-                                            <constraint firstItem="cFr-o5-8n7" firstAttribute="baseline" secondItem="Jdc-lx-ZlA" secondAttribute="baseline" placeholder="YES" id="LmV-8y-67l"/>
-                                            <constraint firstItem="QxX-iQ-z00" firstAttribute="bottom" secondItem="myW-rj-c8z" secondAttribute="bottom" placeholder="YES" id="Nea-bg-nZ9"/>
-                                            <constraint firstItem="cFr-o5-8n7" firstAttribute="leading" secondItem="QxX-iQ-z00" secondAttribute="trailing" constant="8" symbolic="YES" placeholder="YES" id="Rqk-Xp-nl4"/>
-                                            <constraint firstItem="IXx-Hw-HCA" firstAttribute="top" secondItem="myW-rj-c8z" secondAttribute="bottom" constant="11" placeholder="YES" id="UmB-67-BuM"/>
-                                            <constraint firstItem="IXx-Hw-HCA" firstAttribute="centerY" secondItem="Vlm-O2-sWV" secondAttribute="centerY" placeholder="YES" id="YXB-BS-N5x"/>
-                                            <constraint firstItem="QxX-iQ-z00" firstAttribute="top" secondItem="myW-rj-c8z" secondAttribute="top" placeholder="YES" id="aYJ-zB-kgQ"/>
-                                            <constraint firstItem="cFr-o5-8n7" firstAttribute="firstBaseline" secondItem="Jdc-lx-ZlA" secondAttribute="firstBaseline" placeholder="YES" id="hgf-b0-Idw"/>
-                                            <constraint firstItem="IXx-Hw-HCA" firstAttribute="top" secondItem="Jdc-lx-ZlA" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="k3T-bU-zoW"/>
+                                            <constraint firstItem="e8y-lN-Vfy" firstAttribute="top" secondItem="A7w-sW-UOk" secondAttribute="bottom" constant="5" placeholder="YES" id="Mok-dp-Y1z"/>
+                                            <constraint firstAttribute="trailing" secondItem="e8y-lN-Vfy" secondAttribute="trailing" constant="8" placeholder="YES" id="kNL-dl-zwo"/>
+                                            <constraint firstAttribute="bottom" secondItem="e8y-lN-Vfy" secondAttribute="bottom" placeholder="YES" id="m7H-rQ-9OF"/>
                                             <constraint firstItem="A7w-sW-UOk" firstAttribute="top" secondItem="Vlm-O2-sWV" secondAttribute="topMargin" placeholder="YES" id="n31-U1-Xlz"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="clockImage" destination="myW-rj-c8z" id="DyG-b1-D0Y"/>
-                                            <outlet property="descriptionLabel" destination="IXx-Hw-HCA" id="2P8-d5-cqx"/>
-                                            <outlet property="locationLabel" destination="cFr-o5-8n7" id="ACz-Wi-mDn"/>
-                                            <outlet property="mapImage" destination="QxX-iQ-z00" id="ON9-8M-aeY"/>
+                                            <outlet property="latestEventView" destination="e8y-lN-Vfy" id="t3g-eo-e3h"/>
                                             <outlet property="sectionLabel" destination="A7w-sW-UOk" id="wzm-f0-gf0"/>
-                                            <outlet property="timeLabel" destination="Jdc-lx-ZlA" id="ARI-Rl-s3p"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -664,7 +618,7 @@
         <!--Schedule-->
         <scene sceneID="mN0-t3-9EK">
             <objects>
-                <viewController id="4RM-jk-t62" userLabel="Schedule" customClass="ScheduleViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scheduleVC" title="scheduleVC" id="4RM-jk-t62" userLabel="Schedule" customClass="ScheduleViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bom-Ic-XUp"/>
                         <viewControllerLayoutGuide type="bottom" id="ZcF-3B-seM"/>

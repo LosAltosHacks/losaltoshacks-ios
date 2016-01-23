@@ -9,10 +9,10 @@
 import UIKit
 
 struct LAHConstants {
-    static let LAHStartDate = NSDate.specificDate(1, day: 30, year: 2016, hour: 9)
-    static let LAHEndDate = NSDate.specificDate(1, day: 31, year: 2016, hour: 4)
-    static let Saturday = NSDate.specificDate(1, day: 30, year: 2016, hour: 0)
-    static let Sunday = NSDate.specificDate(1, day: 31, year: 2016, hour: 0)
+    static let LAHStartDate = NSDate.specificDate(year: 2016, month: 1, day: 30, hour: 9)
+    static let LAHEndDate = NSDate.specificDate(year: 2016, month: 1, day: 31, hour: 4)
+    static let Saturday = NSDate.specificDate(year: 2016, month: 1, day: 30, hour: 0)
+    static let Sunday = NSDate.specificDate(year: 2016, month: 1, day: 31, hour: 0)
 
     static let BaseAPIURLString = "https://s3-us-west-2.amazonaws.com/losaltoshacks/"
 }
@@ -21,6 +21,7 @@ enum LAHColor {
     case DefaultColor
     case DefaultGreyColor
     case DefaultDarkGreyColor
+    case Transparent
     
     case Logistics
     case Food
@@ -36,6 +37,8 @@ enum LAHColor {
             c = UIColor(white: 0.6, alpha: 1.0)
         case .DefaultDarkGreyColor:
             c = UIColor(white: 0.3, alpha: 1.0)
+        case .Transparent:
+            c = UIColor(white: 0, alpha: 0)
         case .Logistics:
             c = UIColor(red: 244/255, green: 208/255, blue: 63/255, alpha: 1.0)
         case .Food:

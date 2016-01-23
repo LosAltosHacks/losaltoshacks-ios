@@ -11,58 +11,85 @@ import UIKit
 class UpcomingEventView: BaseView {
 
     @IBOutlet weak var sectionLabel: UILabel!
-    @IBOutlet weak var clockImage: UIImageView!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var mapImage: UIImageView!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var latestEventView: UIView!
+    var latestEventCell: ScheduleTableViewCell!
 
     override func awakeFromNib() {
+        
+        guard let events = Event.cached(sort: true),
+            first = events.first else {
+            // cache is empty
+            return
+        }
+        
+        // gets the first event AFTER now, or the first if there are none after now
+        let nextEvent = events.reduce(first) { latest, event in
+            
+            // if latest is before now, return the event
+            if latest.start.isEarlierThanDate(NSDate()) {
+                return event
+            }
+            
+            // otherwise, return latest
+            return latest
+        }
+        
+        let cell = fetchScheduleTableViewCell()
+        
+        cell.event = nextEvent
+        latestEventView.addSubview(cell)
+        latestEventCell = cell
+        
         super.awakeFromNib()
-
-        descriptionLabel.numberOfLines = 0
+    }
+    
+    func fetchScheduleTableViewCell() -> ScheduleTableViewCell {
+        // /puke
+        
+        defer {
+            // remove VC as much as possible
+            scheduleVC.view = nil
+            scheduleVC.tableView = nil
+            scheduleVC.didReceiveMemoryWarning()
+            scheduleVC.dismissViewControllerAnimated(false, completion: nil)
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let scheduleVC = storyboard.instantiateViewControllerWithIdentifier("scheduleVC") as! ScheduleViewController
+        
+        if #available(iOS 9.0, *) {
+            scheduleVC.loadViewIfNeeded()
+        } else {
+            scheduleVC.loadView()
+        }
+        
+        return scheduleVC.tableView.dequeueReusableCellWithIdentifier(ScheduleViewController.cellIdentifier) as! ScheduleTableViewCell
     }
 
     override func setupConstraints() {
         sectionLabel.snp_makeConstraints { make in
-            make.top.equalTo(10)
+            make.top.equalTo(self.snp_top).offset(-10)
             make.height.equalTo(44)
             make.centerX.equalTo(self.snp_centerX)
         }
-
-        clockImage.snp_makeConstraints { make in
-            make.top.equalTo(sectionLabel.snp_bottom).offset(10)
-            make.left.equalTo(self.snp_left).offset(40)
-            make.height.equalTo(14)
-            make.width.equalTo(14)
+        
+        latestEventView.snp_makeConstraints { make in
+            make.top.equalTo(sectionLabel.snp_bottom).offset(-10)
+            make.left.equalTo(self.snp_left)
+            make.right.equalTo(self.snp_right)
+            make.bottom.equalTo(self.snp_bottom)
         }
-
-        timeLabel.snp_makeConstraints { make in
-            make.centerY.equalTo(clockImage.snp_centerY)
-            make.right.equalTo(self.snp_centerX)
-            make.height.equalTo(32)
-            make.left.equalTo(clockImage.snp_right).offset(5)
-        }
-
-        mapImage.snp_makeConstraints { make in
-            make.centerY.equalTo(clockImage.snp_centerY)
-            make.left.equalTo(self.snp_centerX).offset(5)
-            make.height.equalTo(14)
-            make.width.equalTo(14)
-        }
-
-        locationLabel.snp_makeConstraints { make in
-            make.centerY.equalTo(clockImage.snp_centerY)
-            make.height.equalTo(32)
-            make.left.equalTo(mapImage.snp_right).offset(5)
-        }
-
-        descriptionLabel.snp_makeConstraints { make in
-            make.left.equalTo(clockImage.snp_left)
-            make.right.equalTo(self.snp_right).offset(-40)
-            make.height.equalTo(40)
-            make.top.equalTo(clockImage.snp_bottom).offset(5)
+        
+        latestEventCell.snp_makeConstraints { make in
+            if latestEventCell.descriptionLabel?.text == "" {
+                make.height.equalTo(80).priorityHigh()
+            }
+            // should always be at the top of the view
+            make.top.equalTo(latestEventView.snp_top).priorityHigh()
+            
+            // make size "dynamic"
+            make.edges.equalTo(latestEventView.snp_edges).priorityMedium()
+            make.size.equalTo(latestEventView.snp_size).priorityMedium()
         }
     }
-
 }

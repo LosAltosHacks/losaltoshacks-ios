@@ -11,6 +11,7 @@ enum Tag: String {
     case Logistics = "logistics"
     case Activity = "activity"
     case Workshop = "workshop"
+    case None = ""
     
     var color: LAHColor {
         switch self {
@@ -20,6 +21,8 @@ enum Tag: String {
 
         // TODO: Make this a color
         case .Activity: return .DefaultColor
+            
+        case .None: return .Transparent
         }
     }
     

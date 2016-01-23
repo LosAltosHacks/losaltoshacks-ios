@@ -61,7 +61,7 @@ extension NSDate {
         }
     }
         
-    static func specificDate(month: Int, day: Int, year: Int, hour: Int) -> NSDate {
+    static func specificDate(year year: Int, month: Int, day: Int, hour: Int) -> NSDate {
         let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         gregorian?.timeZone = NSTimeZone(name: "GMT")!
         let components = NSDateComponents()
