@@ -28,7 +28,7 @@ class DashboardViewController: BaseViewController {
         socialMediaView.delegate = self
         mentorView.slackButtonDelgate = self
         scrollView.contentSize = CGSizeMake(view.frame.size.width,
-            115 * 2 + 150 * 2) // TODO: make this not static
+            115 * 2 + 150 + 120) // TODO: make this not static
 
     }
     
@@ -72,7 +72,7 @@ class DashboardViewController: BaseViewController {
 
         upcomingView.snp_makeConstraints { make in
             make.top.equalTo(timeLeftView.snp_bottom)
-            make.height.equalTo(150)
+            make.height.equalTo(120)
             make.left.equalTo(view.snp_left)
             make.right.equalTo(view.snp_right)
         }

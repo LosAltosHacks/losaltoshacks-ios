@@ -43,6 +43,7 @@
 		D093A79F1C3731CF00570708 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A79E1C3731CF00570708 /* TopView.swift */; };
 		D093A7A11C37499800570708 /* SocialMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7A01C37499800570708 /* SocialMediaView.swift */; };
 		D093A7B91C3B6FF900570708 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093A7B81C3B6FF900570708 /* MapViewController.swift */; };
+		D0D5CCEC1C543CCA00D6D2A9 /* CampusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D5CCEB1C543CCA00D6D2A9 /* CampusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,7 @@
 		D093A79E1C3731CF00570708 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		D093A7A01C37499800570708 /* SocialMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaView.swift; sourceTree = "<group>"; };
 		D093A7B81C3B6FF900570708 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D0D5CCEB1C543CCA00D6D2A9 /* CampusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 				37AE68BB1C2E001200A02DF0 /* ScheduleViewController.swift */,
 				37AE68B51C2DFFE600A02DF0 /* UpdatesViewController.swift */,
 				D093A7B81C3B6FF900570708 /* MapViewController.swift */,
+				D0D5CCEB1C543CCA00D6D2A9 /* CampusViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -453,7 +456,7 @@
 				TargetAttributes = {
 					37AE687E1C2DF38C00A02DF0 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = M3QL4363UT;
+						DevelopmentTeam = 7GWWSZ3ZW4;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -619,6 +622,7 @@
 				375790421C502197004A29D1 /* Sortable.swift in Sources */,
 				37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */,
 				37977A9F1C3FD22E003869F0 /* SocialMedia.swift in Sources */,
+				D0D5CCEC1C543CCA00D6D2A9 /* CampusViewController.swift in Sources */,
 				3795756F1C3941C000C4DFB5 /* Extensions.swift in Sources */,
 				37977AAC1C3FD658003869F0 /* LAHConstants.swift in Sources */,
 				37CCFE941C31EF9F00998CB1 /* UpdateTableViewCell.swift in Sources */,
@@ -792,7 +796,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.losaltoshacks.ios-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.ios;
 				PRODUCT_NAME = LAH;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = LosAltosHacks/LosAltosHacks.h;
@@ -803,7 +807,7 @@
 		37AE689E1C2DF38C00A02DF0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -811,7 +815,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.losaltoshacks.ios-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.losaltoshacks.ios;
 				PRODUCT_NAME = LAH;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = LosAltosHacks/LosAltosHacks.h;

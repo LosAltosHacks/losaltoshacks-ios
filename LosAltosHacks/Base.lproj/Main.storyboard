@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yRq-iJ-8Gc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yRq-iJ-8Gc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -34,7 +34,7 @@
         <!--Dashboard-->
         <scene sceneID="alQ-XM-u42">
             <objects>
-                <viewController id="hIi-mi-WmA" userLabel="Dashboard" customClass="DashboardViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hIi-mi-WmA" userLabel="Dashboard" customClass="DashboardViewController" customModule="LAH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BBe-aL-WyC"/>
                         <viewControllerLayoutGuide type="bottom" id="zSV-jA-OM9"/>
@@ -43,7 +43,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orM-iO-hVU" customClass="SocialMediaView" customModule="LosAltosHacks" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orM-iO-hVU" customClass="SocialMediaView" customModule="LAH" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="493" width="600" height="58"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQz-8m-Qd3">
@@ -93,7 +93,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-kE-Ixp">
                                 <rect key="frame" x="0.0" y="64" width="600" height="398"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdZ-Cp-C7B" customClass="TopView" customModule="LosAltosHacks" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdZ-Cp-C7B" customClass="TopView" customModule="LAH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-204" width="600" height="137"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="MBV-cc-5Fc">
@@ -138,10 +138,10 @@
                                             <outlet property="upperLabel" destination="924-zi-aDy" id="bSQ-bc-jmR"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftQ-Hc-Qn2" customClass="MentorView" customModule="LosAltosHacks" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftQ-Hc-Qn2" customClass="MentorView" customModule="LAH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-67" width="600" height="128"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-k5-3o6" customClass="SlackButton" customModule="LosAltosHacks" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-k5-3o6" customClass="SlackButton" customModule="LAH" customModuleProvider="target">
                                                 <rect key="frame" x="161" y="61" width="279" height="44"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -177,7 +177,7 @@
                                             <outlet property="slackButton" destination="h1g-k5-3o6" id="1EA-S7-LK5"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hls-e0-vMY" customClass="TimeLeftView" customModule="LosAltosHacks" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hls-e0-vMY" customClass="TimeLeftView" customModule="LAH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="62" width="600" height="161"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME REMAINING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gx-zD-6yY">
@@ -198,7 +198,7 @@
                                                 <color key="textColor" red="0.27114583333333331" green="0.27114583333333331" blue="0.27114583333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwh-PH-lM5" customClass="ProgressView" customModule="LosAltosHacks" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwh-PH-lM5" customClass="ProgressView" customModule="LAH" customModuleProvider="target">
                                                 <rect key="frame" x="106" y="132" width="388" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkT-mP-Lv3">
@@ -277,7 +277,7 @@
                                             <outlet property="timeRemainingLabel" destination="4gx-zD-6yY" id="TWH-A5-1CJ"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vlm-O2-sWV" customClass="UpcomingEventView" customModule="LosAltosHacks" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vlm-O2-sWV" customClass="UpcomingEventView" customModule="LAH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="223" width="600" height="162"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPCOMING EVENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7w-sW-UOk">
@@ -372,7 +372,7 @@
         <!--MAP-->
         <scene sceneID="kwz-g8-7ag">
             <objects>
-                <viewController title="MAP" id="tN6-bE-W8O" customClass="MapViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MAP" id="tN6-bE-W8O" customClass="MapViewController" customModule="LAH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="73b-aV-Pfj"/>
                         <viewControllerLayoutGuide type="bottom" id="Q9h-q5-24e"/>
@@ -404,7 +404,7 @@
         <!--Updates-->
         <scene sceneID="HE0-V8-yW4">
             <objects>
-                <viewController id="6Ko-AV-c41" userLabel="Updates" customClass="UpdatesViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Ko-AV-c41" userLabel="Updates" customClass="UpdatesViewController" customModule="LAH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sXd-5S-yVA"/>
                         <viewControllerLayoutGuide type="bottom" id="HNj-HC-b4e"/>
@@ -417,7 +417,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateCell" rowHeight="85" id="658-eU-zNd" customClass="UpdateTableViewCell" customModule="LosAltosHacks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateCell" rowHeight="85" id="658-eU-zNd" customClass="UpdateTableViewCell" customModule="LAH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="658-eU-zNd" id="bZt-J3-RgI">
@@ -583,10 +583,15 @@
         <scene sceneID="ii1-0x-qDN">
             <objects>
                 <navigationController id="b93-ZV-nAj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="1KB-8c-G3w"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="campus" id="1KB-8c-G3w"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="APB-ax-Upx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="0.0"/>
+                            <color key="textColor" red="0.50246247629999996" green="0.67487330590000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="6LP-vq-eoI" kind="relationship" relationship="rootViewController" id="mS6-Tm-FnE"/>
@@ -599,7 +604,7 @@
         <!--CAMPUS MAP-->
         <scene sceneID="tim-70-d5F">
             <objects>
-                <viewController id="6LP-vq-eoI" sceneMemberID="viewController">
+                <viewController id="6LP-vq-eoI" customClass="CampusViewController" customModule="LAH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a4g-aO-ysr"/>
                         <viewControllerLayoutGuide type="bottom" id="iad-aE-DlO"/>
@@ -607,9 +612,30 @@
                     <view key="view" contentMode="scaleToFill" id="78N-f9-Xth">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pu6-Op-Zn3">
+                                <rect key="frame" x="281" y="514" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.3628333333" green="0.3628333333" blue="0.3628333333" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTw-Az-oPW">
+                                <rect key="frame" x="20" y="92" width="560" height="416"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lTw-Az-oPW" firstAttribute="centerX" secondItem="pu6-Op-Zn3" secondAttribute="centerX" placeholder="YES" id="0an-u8-Nuu"/>
+                            <constraint firstItem="pu6-Op-Zn3" firstAttribute="top" secondItem="lTw-Az-oPW" secondAttribute="bottom" constant="6" placeholder="YES" id="0fm-9f-Hc6"/>
+                            <constraint firstItem="lTw-Az-oPW" firstAttribute="leading" secondItem="78N-f9-Xth" secondAttribute="leadingMargin" placeholder="YES" id="N0K-Wp-IC4"/>
+                            <constraint firstItem="lTw-Az-oPW" firstAttribute="centerY" secondItem="78N-f9-Xth" secondAttribute="centerY" placeholder="YES" id="Uzb-DK-X8m"/>
+                            <constraint firstItem="pu6-Op-Zn3" firstAttribute="bottom" secondItem="iad-aE-DlO" secondAttribute="top" placeholder="YES" id="ocf-uW-Pt4"/>
+                            <constraint firstItem="pu6-Op-Zn3" firstAttribute="centerX" secondItem="78N-f9-Xth" secondAttribute="centerX" placeholder="YES" id="wRx-vd-dOj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CAMPUS MAP" id="FZD-hb-HY3"/>
+                    <connections>
+                        <outlet property="pageControl" destination="pu6-Op-Zn3" id="SNd-Zw-hzl"/>
+                        <outlet property="scrollView" destination="lTw-Az-oPW" id="xFK-Ez-P3L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vP-20-zA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -618,7 +644,7 @@
         <!--Schedule-->
         <scene sceneID="mN0-t3-9EK">
             <objects>
-                <viewController storyboardIdentifier="scheduleVC" title="scheduleVC" id="4RM-jk-t62" userLabel="Schedule" customClass="ScheduleViewController" customModule="LosAltosHacks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scheduleVC" title="scheduleVC" id="4RM-jk-t62" userLabel="Schedule" customClass="ScheduleViewController" customModule="LAH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bom-Ic-XUp"/>
                         <viewControllerLayoutGuide type="bottom" id="ZcF-3B-seM"/>
@@ -631,7 +657,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="160" id="Bok-fj-bIQ" customClass="ScheduleTableViewCell" customModule="LosAltosHacks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="160" id="Bok-fj-bIQ" customClass="ScheduleTableViewCell" customModule="LAH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bok-fj-bIQ" id="QJX-gj-yHu">
@@ -639,7 +665,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bQ-Hs-Oba">
-                                                    <rect key="frame" x="42" y="54" width="540" height="88"/>
+                                                    <rect key="frame" x="38" y="54" width="540" height="88"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="84" id="mNP-bb-dcQ"/>
                                                     </constraints>
@@ -653,7 +679,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5i-BG-tVp">
-                                                    <rect key="frame" x="42" y="30" width="540" height="20.5"/>
+                                                    <rect key="frame" x="38" y="30" width="540" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -666,7 +692,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Span" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pee-lL-BtJ">
-                                                    <rect key="frame" x="64" y="6" width="60" height="19"/>
+                                                    <rect key="frame" x="60" y="6" width="60" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="FMH-n5-czD"/>
                                                         <constraint firstAttribute="width" constant="254" id="eVq-BH-vNZ"/>
@@ -681,21 +707,21 @@
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="qTd-sb-1rR">
-                                                    <rect key="frame" x="42" y="9" width="14" height="14"/>
+                                                    <rect key="frame" x="38" y="9" width="14" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="14" id="FZ9-3Q-qWx"/>
                                                         <constraint firstAttribute="height" constant="14" id="gUp-kd-QjW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="5eo-G7-ubr">
-                                                    <rect key="frame" x="148" y="9" width="14" height="14"/>
+                                                    <rect key="frame" x="144" y="9" width="14" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="jRZ-Yp-OCq"/>
                                                         <constraint firstAttribute="width" constant="14" id="pmC-6f-hZx"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k75-uJ-YPc">
-                                                    <rect key="frame" x="170" y="9" width="49" height="15"/>
+                                                    <rect key="frame" x="166" y="9" width="49" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="3cf-26-W57"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="49" id="C4A-AQ-aRx"/>
@@ -715,8 +741,8 @@
                                                 <constraint firstItem="0bQ-Hs-Oba" firstAttribute="top" secondItem="o5i-BG-tVp" secondAttribute="bottom" constant="3.5" id="71l-1v-srU"/>
                                                 <constraint firstItem="0bQ-Hs-Oba" firstAttribute="leading" secondItem="o5i-BG-tVp" secondAttribute="leading" id="BLE-wd-ojb"/>
                                                 <constraint firstItem="k75-uJ-YPc" firstAttribute="leading" secondItem="5eo-G7-ubr" secondAttribute="trailing" constant="8" id="EcG-aW-cIA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="o5i-BG-tVp" secondAttribute="trailing" constant="10" id="IPf-rM-kaA"/>
-                                                <constraint firstItem="o5i-BG-tVp" firstAttribute="leading" secondItem="Flh-hJ-0aJ" secondAttribute="trailing" constant="22" id="MAC-Tj-D7A"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="o5i-BG-tVp" secondAttribute="trailing" constant="14" id="IPf-rM-kaA"/>
+                                                <constraint firstItem="o5i-BG-tVp" firstAttribute="leading" secondItem="Flh-hJ-0aJ" secondAttribute="trailing" constant="18" id="MAC-Tj-D7A"/>
                                                 <constraint firstItem="0bQ-Hs-Oba" firstAttribute="bottom" secondItem="QJX-gj-yHu" secondAttribute="bottomMargin" constant="-10" id="WnW-Oz-UO0"/>
                                                 <constraint firstItem="o5i-BG-tVp" firstAttribute="leading" secondItem="qTd-sb-1rR" secondAttribute="leading" id="Zlj-gY-KGV"/>
                                                 <constraint firstItem="o5i-BG-tVp" firstAttribute="top" secondItem="qTd-sb-1rR" secondAttribute="bottom" constant="7" id="dSa-Pn-EX2"/>
@@ -774,6 +800,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="campus" width="25" height="25"/>
         <image name="clock" width="19" height="19"/>
         <image name="dashboard" width="30" height="30"/>
         <image name="fb" width="22" height="22"/>
