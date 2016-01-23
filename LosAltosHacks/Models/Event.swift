@@ -15,6 +15,8 @@ struct Event {
     let description: String
     let location: String
     let tag: Tag
+    
+    static var delegates = [CacheableDelegate]()
 }
 
 extension Event: Fetchable {

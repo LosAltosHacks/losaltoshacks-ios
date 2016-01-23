@@ -13,9 +13,16 @@ protocol Cacheable: JSONConvertible {
     static func cached() -> [Self]?
     static func store(cache: [Self])
     static func clear()
+    static var delegates: [CacheableDelegate] {get}
+}
+
+protocol CacheableDelegate {
+    func didUpdateCache()
 }
 
 extension Cacheable {
+    
+    static var delegates: [CacheableDelegate] { return [] }
     
     static func cached() -> [Self]? {
         
@@ -56,6 +63,8 @@ extension Cacheable {
         
         NSUserDefaults.standardUserDefaults().setObject(jsonString, forKey: cacheKey)
         NSUserDefaults.standardUserDefaults().synchronize()
+        
+        delegates.forEach { $0.didUpdateCache() }
     }
     
     static func clear() {

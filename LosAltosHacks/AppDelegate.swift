@@ -42,6 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         client.enableInAppAlertNotification(true)
         
         
+        if Event.cached() == nil {
+            Event.updateCache(sort: true, error: {})
+        }
+        if Update.cached() == nil {
+            Update.updateCache(sort: true, error: {})
+        }
+        
+        
         return true
     }
     

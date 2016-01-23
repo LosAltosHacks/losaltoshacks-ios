@@ -23,6 +23,8 @@ class DashboardViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Event.delegates.append(self)
+        
         socialMediaView.delegate = self
         mentorView.slackButtonDelgate = self
         scrollView.contentSize = CGSizeMake(view.frame.size.width,
@@ -102,5 +104,12 @@ extension DashboardViewController: SocialMediaViewDelegate, SlackButtonDelegate 
                 UIApplication.sharedApplication().openURL(NSURL(string: "https://losaltoshacks.slack.com/")!)
             }
         }
+    }
+}
+
+extension DashboardViewController: CacheableDelegate {
+    func didUpdateCache() {
+        print("cache is totally updated")
+        upcomingView.awakeFromNib()
     }
 }

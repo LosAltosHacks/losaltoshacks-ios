@@ -73,7 +73,7 @@ extension Fetchable where Self: Cacheable {
 
 
 extension Fetchable where Self: Cacheable, Self: Sortable {
-    static func updateCache(sort sort: Bool, error: Void -> Void, callback: [Self] -> Void) {
-        Self.fetch(sort: sort, error: error, callback: {Self.store($0); callback($0)})
+    static func updateCache(sort sort: Bool, error: Void -> Void) {
+        Self.fetch(sort: sort, error: error, callback: {Self.store($0)})
     }
 }

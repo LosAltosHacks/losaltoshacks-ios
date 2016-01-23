@@ -19,8 +19,12 @@ class UpcomingEventView: BaseView {
         guard let events = Event.cached(sort: true),
             first = events.first else {
             // cache is empty
+            self.hidden = true // hide just in case
             return
         }
+        
+        // awakeFromNib might be called programatically (from DashboardViewController)
+        self.hidden = false
         
         // gets the first event AFTER now, or the first if there are none after now
         let nextEvent = events.reduce(first) { latest, event in
