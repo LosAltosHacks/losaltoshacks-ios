@@ -197,7 +197,7 @@
 		37977A9E1C3FD22E003869F0 /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
 		37977AAB1C3FD658003869F0 /* LAHConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHConstants.swift; sourceTree = "<group>"; };
 		379B06691C474E76000808BF /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
-		37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LosAltosHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37AE687F1C2DF38C00A02DF0 /* LAH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LAH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AE68871C2DF38C00A02DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37AE68891C2DF38C00A02DF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -291,7 +291,7 @@
 		37AE68801C2DF38C00A02DF0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */,
+				37AE687F1C2DF38C00A02DF0 /* LAH.app */,
 				37AE68931C2DF38C00A02DF0 /* LosAltosHacksTests.xctest */,
 			);
 			name = Products;
@@ -420,7 +420,7 @@
 			);
 			name = LosAltosHacks;
 			productName = LosAltosHacks;
-			productReference = 37AE687F1C2DF38C00A02DF0 /* LosAltosHacks.app */;
+			productReference = 37AE687F1C2DF38C00A02DF0 /* LAH.app */;
 			productType = "com.apple.product-type.application";
 		};
 		37AE68921C2DF38C00A02DF0 /* LosAltosHacksTests */ = {
@@ -793,7 +793,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.losaltoshacks.ios-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LAH;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = LosAltosHacks/LosAltosHacks.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -812,7 +812,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.losaltoshacks.ios-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LAH;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = LosAltosHacks/LosAltosHacks.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
