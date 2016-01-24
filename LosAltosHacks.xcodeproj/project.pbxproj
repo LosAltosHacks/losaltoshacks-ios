@@ -17,6 +17,8 @@
 		37977A9F1C3FD22E003869F0 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37977A9E1C3FD22E003869F0 /* SocialMedia.swift */; };
 		37977AAC1C3FD658003869F0 /* LAHConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37977AAB1C3FD658003869F0 /* LAHConstants.swift */; };
 		379B066A1C474E76000808BF /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379B06691C474E76000808BF /* Fetchable.swift */; };
+		37A274C71C55675A003F8535 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 37A274C61C55675A003F8535 /* Settings.bundle */; };
+		37A274D51C556ADD003F8535 /* generate-licenses.py in Resources */ = {isa = PBXBuildFile; fileRef = 37A274D41C556ADD003F8535 /* generate-licenses.py */; };
 		37AE68831C2DF38C00A02DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */; };
 		37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE68861C2DF38C00A02DF0 /* Main.storyboard */; };
 		37AE688D1C2DF38C00A02DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */; };
@@ -198,6 +200,8 @@
 		37977A9E1C3FD22E003869F0 /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
 		37977AAB1C3FD658003869F0 /* LAHConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAHConstants.swift; sourceTree = "<group>"; };
 		379B06691C474E76000808BF /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
+		37A274C61C55675A003F8535 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		37A274D41C556ADD003F8535 /* generate-licenses.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = "generate-licenses.py"; sourceTree = "<group>"; };
 		37AE687F1C2DF38C00A02DF0 /* LAH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LAH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AE68821C2DF38C00A02DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AE68871C2DF38C00A02DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -308,6 +312,7 @@
 				37AE68B31C2DFFA200A02DF0 /* Controllers */,
 				37AE68861C2DF38C00A02DF0 /* Main.storyboard */,
 				37AE68B41C2DFFAB00A02DF0 /* Supporting Files */,
+				37A274D41C556ADD003F8535 /* generate-licenses.py */,
 			);
 			path = LosAltosHacks;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				37AE68891C2DF38C00A02DF0 /* Assets.xcassets */,
 				37AE688B1C2DF38C00A02DF0 /* LaunchScreen.storyboard */,
 				37AE688E1C2DF38C00A02DF0 /* Info.plist */,
+				37A274C61C55675A003F8535 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				37AE687C1C2DF38C00A02DF0 /* Frameworks */,
 				37AE687D1C2DF38C00A02DF0 /* Resources */,
 				D019F5C31C4DCEAC00D5D9A4 /* Embed Frameworks */,
+				37A274D31C556A6A003F8535 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -594,9 +601,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A274C71C55675A003F8535 /* Settings.bundle in Resources */,
 				378CE00B1C4EE8F3005D5E3D /* Assets.xcassets in Resources */,
 				37AE688D1C2DF38C00A02DF0 /* LaunchScreen.storyboard in Resources */,
 				37AE68881C2DF38C00A02DF0 /* Main.storyboard in Resources */,
+				37A274D51C556ADD003F8535 /* generate-licenses.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +617,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37A274D31C556A6A003F8535 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $SRCROOT/LosAltosHacks\npython3 generate-licenses.py";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		37AE687B1C2DF38C00A02DF0 /* Sources */ = {
