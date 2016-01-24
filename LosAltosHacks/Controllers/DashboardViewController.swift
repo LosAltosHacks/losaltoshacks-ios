@@ -81,29 +81,20 @@ class DashboardViewController: BaseViewController {
 }
 
 extension DashboardViewController: SocialMediaViewDelegate, SlackButtonDelegate {
-    func onTap(socialMedia: SocialMedia) {
-        
+    func openURL(url: NSURL) {
         if #available(iOS 9, *) {
-            let safari = SFSafariViewController(URL: socialMedia.url)
+            let safari = SFSafariViewController(URL: url)
             self.presentViewController(safari, animated: true, completion: nil)
         } else {
-            UIApplication.sharedApplication().openURL(socialMedia.url)
+            UIApplication.sharedApplication().openURL(url)
         }
-        
+    }
+    
+    func onTap(socialMedia: SocialMedia) {
+        openURL(socialMedia.url)
     }
     func onTap(button: SlackButton) {
-        
-        // if it can open in slack app, open in slack app
-        if UIApplication.sharedApplication().canOpenURL(LAHConstants.SlackURL) {
-            UIApplication.sharedApplication().openURL(LAHConstants.SlackURL)
-        } else {
-            if #available(iOS 9, *) {
-                let safari = SFSafariViewController(URL: NSURL(string: "https://losaltoshacks.slack.com/")!)
-                self.presentViewController(safari, animated: true, completion: nil)
-            } else {
-                UIApplication.sharedApplication().openURL(NSURL(string: "https://losaltoshacks.slack.com/")!)
-            }
-        }
+        openURL(NSURL(string: LAHConstants.SlackURLString)!)
     }
 }
 
