@@ -72,13 +72,15 @@ class UpcomingEventView: BaseView {
 
     override func setupConstraints() {
         sectionLabel.snp_makeConstraints { make in
-            make.top.equalTo(self.snp_top).offset(-10)
-            make.height.equalTo(44)
+            make.top.equalTo(self.snp_top)
+            make.height.equalTo(28)
             make.centerX.equalTo(self.snp_centerX)
+            make.left.equalTo(self.snp_left)
+            make.right.equalTo(self.snp_right)
         }
         
         latestEventView.snp_makeConstraints { make in
-            make.top.equalTo(sectionLabel.snp_bottom).offset(-10)
+            make.top.equalTo(sectionLabel.snp_bottom).offset(10)
             make.left.equalTo(self.snp_left)
             make.right.equalTo(self.snp_right)
             make.bottom.equalTo(self.snp_bottom)

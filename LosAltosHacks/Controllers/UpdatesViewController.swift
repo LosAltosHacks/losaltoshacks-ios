@@ -29,7 +29,7 @@ class UpdatesViewController: BaseViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
 
         if updates.isEmpty {
-            refreshControl.beginRefreshing()
+//            refreshControl.beginRefreshing()
             refresh()
         }
     }

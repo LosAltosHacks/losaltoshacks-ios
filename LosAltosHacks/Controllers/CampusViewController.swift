@@ -15,8 +15,10 @@ class CampusViewController: BaseViewController {
 
     // TODO: Add gestures for zoom/pan
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        scrollView.delegate = self
 
         setupMapViews()
     }
@@ -38,6 +40,8 @@ class CampusViewController: BaseViewController {
 
     func setupMapViews() {
         let maps = [UIImage(named: "floor2"), UIImage(named: "floor2")]
+        pageControl.numberOfPages = maps.count
+
         scrollView.pagingEnabled = true
         let width = self.view.frame.size.width - 2 * 20
 
@@ -53,4 +57,11 @@ class CampusViewController: BaseViewController {
         }
     }
 
+}
+
+extension CampusViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let page = Int(floor(scrollView.contentOffset.x / scrollView.frame.size.width))
+        pageControl.currentPage = page
+    }
 }

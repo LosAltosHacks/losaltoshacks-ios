@@ -281,9 +281,10 @@
                                         <rect key="frame" x="0.0" y="223" width="600" height="162"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPCOMING EVENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7w-sW-UOk">
-                                                <rect key="frame" x="221" y="8" width="159" height="21"/>
+                                                <rect key="frame" x="0.0" y="8" width="600" height="21"/>
+                                                <color key="backgroundColor" red="0.96028124999999998" green="0.96028124999999998" blue="0.96028124999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="159" placeholder="YES" id="aId-Xv-5ZK"/>
+                                                    <constraint firstAttribute="width" constant="600" placeholder="YES" id="aId-Xv-5ZK"/>
                                                     <constraint firstAttribute="height" constant="21" placeholder="YES" id="n07-L6-URg"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -615,7 +616,8 @@
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pu6-Op-Zn3">
                                 <rect key="frame" x="281" y="514" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.3628333333" green="0.3628333333" blue="0.3628333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="pageIndicatorTintColor" red="0.65803734205415054" green="0.66725305790322043" blue="0.71933333333333338" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.41697602293370495" green="0.43443244337179393" blue="0.44830208333333332" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTw-Az-oPW">
                                 <rect key="frame" x="20" y="92" width="560" height="416"/>
