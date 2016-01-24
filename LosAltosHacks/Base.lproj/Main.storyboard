@@ -614,29 +614,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pu6-Op-Zn3">
-                                <rect key="frame" x="281" y="514" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.65803734205415054" green="0.66725305790322043" blue="0.71933333333333338" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.41697602293370495" green="0.43443244337179393" blue="0.44830208333333332" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTw-Az-oPW">
-                                <rect key="frame" x="20" y="92" width="560" height="416"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="400"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="floor2" translatesAutoresizingMaskIntoConstraints="NO" id="u5Z-sK-XZE">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="swK-5A-zde"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="u5Z-sK-XZE" firstAttribute="leading" secondItem="lTw-Az-oPW" secondAttribute="leading" id="0fI-1E-8wf"/>
+                                    <constraint firstItem="u5Z-sK-XZE" firstAttribute="top" secondItem="lTw-Az-oPW" secondAttribute="top" id="3hV-fV-Dsx"/>
+                                    <constraint firstAttribute="bottom" secondItem="u5Z-sK-XZE" secondAttribute="bottom" id="3kd-zP-UOr"/>
+                                    <constraint firstAttribute="trailing" secondItem="u5Z-sK-XZE" secondAttribute="trailing" id="nh6-Mt-IAz"/>
+                                    <constraint firstItem="u5Z-sK-XZE" firstAttribute="centerX" secondItem="lTw-Az-oPW" secondAttribute="centerX" id="vv3-9k-Dds"/>
+                                </constraints>
                             </scrollView>
+                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cVa-mz-qo4">
+                                <rect key="frame" x="232" y="72" width="137" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Lk4-U0-wnV"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="FLOOR 1"/>
+                                    <segment title="FLOOR 2"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeFloor:" destination="6LP-vq-eoI" eventType="valueChanged" id="ywA-52-jSe"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lTw-Az-oPW" firstAttribute="centerX" secondItem="pu6-Op-Zn3" secondAttribute="centerX" placeholder="YES" id="0an-u8-Nuu"/>
-                            <constraint firstItem="pu6-Op-Zn3" firstAttribute="top" secondItem="lTw-Az-oPW" secondAttribute="bottom" constant="6" placeholder="YES" id="0fm-9f-Hc6"/>
-                            <constraint firstItem="lTw-Az-oPW" firstAttribute="leading" secondItem="78N-f9-Xth" secondAttribute="leadingMargin" placeholder="YES" id="N0K-Wp-IC4"/>
-                            <constraint firstItem="lTw-Az-oPW" firstAttribute="centerY" secondItem="78N-f9-Xth" secondAttribute="centerY" placeholder="YES" id="Uzb-DK-X8m"/>
-                            <constraint firstItem="pu6-Op-Zn3" firstAttribute="bottom" secondItem="iad-aE-DlO" secondAttribute="top" placeholder="YES" id="ocf-uW-Pt4"/>
-                            <constraint firstItem="pu6-Op-Zn3" firstAttribute="centerX" secondItem="78N-f9-Xth" secondAttribute="centerX" placeholder="YES" id="wRx-vd-dOj"/>
+                            <constraint firstItem="lTw-Az-oPW" firstAttribute="centerX" secondItem="cVa-mz-qo4" secondAttribute="centerX" placeholder="YES" id="21J-4L-28R"/>
+                            <constraint firstItem="cVa-mz-qo4" firstAttribute="top" secondItem="a4g-aO-ysr" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="76v-Gt-kDS"/>
+                            <constraint firstItem="lTw-Az-oPW" firstAttribute="top" secondItem="cVa-mz-qo4" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="aaQ-dZ-Y6B"/>
+                            <constraint firstItem="lTw-Az-oPW" firstAttribute="leading" secondItem="78N-f9-Xth" secondAttribute="leading" placeholder="YES" id="eVi-3I-fA0"/>
+                            <constraint firstAttribute="trailing" secondItem="lTw-Az-oPW" secondAttribute="trailing" placeholder="YES" id="fk2-K2-Q8V"/>
+                            <constraint firstItem="lTw-Az-oPW" firstAttribute="top" secondItem="cVa-mz-qo4" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="hco-7o-rfM"/>
+                            <constraint firstItem="iad-aE-DlO" firstAttribute="top" secondItem="lTw-Az-oPW" secondAttribute="bottom" constant="43" placeholder="YES" id="pQP-dr-Xx0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hco-7o-rfM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="CAMPUS MAP" id="FZD-hb-HY3"/>
                     <connections>
-                        <outlet property="pageControl" destination="pu6-Op-Zn3" id="SNd-Zw-hzl"/>
+                        <outlet property="imageView" destination="u5Z-sK-XZE" id="yLN-EM-Bax"/>
                         <outlet property="scrollView" destination="lTw-Az-oPW" id="xFK-Ez-P3L"/>
+                        <outlet property="segmentedControl" destination="cVa-mz-qo4" id="v6V-7A-MzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vP-20-zA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -806,6 +837,7 @@
         <image name="clock" width="19" height="19"/>
         <image name="dashboard" width="30" height="30"/>
         <image name="fb" width="22" height="22"/>
+        <image name="floor2" width="800" height="762"/>
         <image name="header" width="125" height="34"/>
         <image name="instagram" width="22" height="22"/>
         <image name="map" width="22" height="22"/>
