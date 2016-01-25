@@ -631,7 +631,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-Xi-8jf">
                                 <rect key="frame" x="0.0" y="100" width="600" height="443"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-XG-NeO">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="floor1" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-XG-NeO">
                                         <rect key="frame" x="15" y="9" width="570" height="426"/>
                                     </imageView>
                                 </subviews>
@@ -829,6 +829,7 @@
         <image name="clock" width="19" height="19"/>
         <image name="dashboard" width="30" height="30"/>
         <image name="fb" width="22" height="22"/>
+        <image name="floor1" width="800" height="790"/>
         <image name="header" width="125" height="34"/>
         <image name="instagram" width="22" height="22"/>
         <image name="map" width="22" height="22"/>
