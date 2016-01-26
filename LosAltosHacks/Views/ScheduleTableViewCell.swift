@@ -31,7 +31,7 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "hh:mm a"
-        formatter.timeZone = NSTimeZone.localTimeZone()
+        formatter.timeZone = NSTimeZone(name: "PST")!
         
         dateLabel.text = formatter.stringFromDate(self.event!.start)
         

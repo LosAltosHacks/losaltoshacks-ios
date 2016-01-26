@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,21 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Altos Hacks" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQr-cZ-De7">
-                                <rect key="frame" x="20" y="20" width="560" height="560"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="41"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ship" translatesAutoresizingMaskIntoConstraints="NO" id="9mX-jk-WgL">
+                                <rect key="frame" x="204" y="195" width="192" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="1mo-wm-6fL"/>
+                                    <constraint firstAttribute="height" constant="210" id="P4E-Z7-Ngn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.2156862766" green="0.54901963470000004" blue="0.83529412749999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.24313725490196078" green="0.58823529411764708" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="PQr-cZ-De7" secondAttribute="bottom" constant="20" id="3NQ-6M-81l"/>
-                            <constraint firstItem="PQr-cZ-De7" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="GAS-1j-ayP"/>
-                            <constraint firstItem="PQr-cZ-De7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Iab-ZJ-ryD"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="PQr-cZ-De7" secondAttribute="leading" id="un7-9t-V2w"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PQr-cZ-De7" secondAttribute="trailing" id="vaz-Zx-74k"/>
-                            <constraint firstItem="PQr-cZ-De7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wjj-iU-VMW"/>
+                            <constraint firstItem="9mX-jk-WgL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="G32-ys-e20"/>
+                            <constraint firstItem="9mX-jk-WgL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ifR-5c-WeH"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ship" width="243" height="243"/>
+    </resources>
 </document>

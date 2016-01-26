@@ -63,7 +63,7 @@ extension NSDate {
         
     static func specificDate(year year: Int, month: Int, day: Int, hour: Int) -> NSDate {
         let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        gregorian?.timeZone = NSTimeZone.localTimeZone()
+        gregorian?.timeZone = NSTimeZone(name: "PST")!
         let components = NSDateComponents()
         components.month = month
         components.day = day
