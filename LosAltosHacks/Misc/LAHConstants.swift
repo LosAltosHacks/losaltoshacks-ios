@@ -10,7 +10,7 @@ import UIKit
 
 struct LAHConstants {
     static let LAHStartDate = NSDate.specificDate(year: 2016, month: 1, day: 30, hour: 9)
-    static let LAHEndDate = NSDate.specificDate(year: 2016, month: 1, day: 31, hour: 4)
+    static let LAHEndDate = NSDate.specificDate(year: 2016, month: 1, day: 31, hour: 16)
     static let Saturday = NSDate.specificDate(year: 2016, month: 1, day: 30, hour: 0)
     static let Sunday = NSDate.specificDate(year: 2016, month: 1, day: 31, hour: 0)
 
