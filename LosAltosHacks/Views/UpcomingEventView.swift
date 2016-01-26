@@ -30,7 +30,7 @@ class UpcomingEventView: BaseView {
         let nextEvent = events.reduce(first) { latest, event in
             
             // if latest is before now, return the event
-            if latest.start.isEarlierThanDate(NSDate()) {
+            if latest.time.isEarlierThanDate(NSDate()) {
                 return event
             }
             

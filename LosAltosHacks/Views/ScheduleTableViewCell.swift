@@ -26,14 +26,14 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
     }
     
     func updateContent() {
-        titleLabel.text = event.title
-        descriptionLabel.text = event.description
+        titleLabel.text = event.event
+        descriptionLabel.text = nil
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "hh:mm a"
         formatter.timeZone = NSTimeZone(name: "PST")!
         
-        dateLabel.text = formatter.stringFromDate(self.event!.start)
+        dateLabel.text = formatter.stringFromDate(self.event.time)
         
         locationLabel.text = event.location
         
