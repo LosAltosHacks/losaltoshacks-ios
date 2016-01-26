@@ -18,9 +18,7 @@ enum Tag: String {
         case .Food: return .Food
         case .Logistics: return .Logistics
         case .Workshop: return .Workshop
-
-        // TODO: Make this a color
-        case .Activity: return .DefaultColor
+        case .Activity: return .Activity
             
         case .None: return .Transparent
         }

@@ -27,6 +27,7 @@ enum LAHColor {
     case Logistics
     case Food
     case Workshop
+    case Activity
     
     var value: UIColor {
         
@@ -46,7 +47,8 @@ enum LAHColor {
             c = UIColor(red: 246/255, green: 71/255, blue: 71/255, alpha: 1.0)
         case .Workshop:
             c = UIColor(red: 65/255, green: 131/255, blue: 215/255, alpha: 1.0)
-            
+        case .Activity:
+            c = UIColor(red: 236/255, green: 120/255, blue: 240/255, alpha: 1.0)
         }
         
         return c
