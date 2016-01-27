@@ -9,6 +9,6 @@
 #ifndef LosAltosHacks_h
 #define LosAltosHacks_h
 
-#import "UIAppearance+Swift.h"
+#import "UIView+Swift.h"
 
 #endif /* LosAltosHacks_h */
