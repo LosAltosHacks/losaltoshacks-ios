@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             updatesVC.refresh()
         }
         
-        let client = OneSignal(launchOptions: launchOptions, appId: "3b4705ab-e13e-41e9-8a43-a8371b75b595", handleNotification: handleNotification)
+        let client = OneSignal(launchOptions: launchOptions, appId: "YOUR-API-KEY-HERE", handleNotification: handleNotification)
         client.enableInAppAlertNotification(true)
         
         
