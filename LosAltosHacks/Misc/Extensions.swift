@@ -92,3 +92,20 @@ extension TimeInterval {
 //        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
 }
+
+
+import SnapKit
+
+enum ConstraintPriorityTargetiOS: Int {
+    case required = 1000
+    case high = 750
+    case medium = 500
+    case low = 250
+}
+
+extension ConstraintMakerPriortizable {
+    @discardableResult
+    func priority(_ amount: ConstraintPriorityTargetiOS) -> ConstraintMakerFinalizable {
+        return priority(amount.rawValue)
+    }
+}

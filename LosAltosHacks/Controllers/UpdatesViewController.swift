@@ -46,9 +46,9 @@ class UpdatesViewController: BaseViewController {
     
     override func setupConstraints() {
         tableView.snp.makeConstraints { make in
-            make.margins.equalTo(view.snp.margins).priorityMedium()
-            make.topMargin.equalTo(view.snp.topMargin).offset(9).priorityHigh()
-//            make.bottomMargin.equalTo(snp.bottomLayoutGuideTop).offset(-9).priorityHigh()
+            make.margins.equalTo(view.snp.margins).priority(.medium)
+            make.topMargin.equalTo(view.snp.topMargin).offset(9).priority(.high)
+//            make.bottomMargin.equalTo(snp.bottomLayoutGuideTop).offset(-9).priority(.high)
         }
     }
 }

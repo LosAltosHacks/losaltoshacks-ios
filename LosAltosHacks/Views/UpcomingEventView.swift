@@ -88,14 +88,14 @@ class UpcomingEventView: BaseView {
         
         latestEventCell.snp.makeConstraints { make in
             if latestEventCell.descriptionLabel?.text == "" {
-                make.height.equalTo(80).priorityHigh()
+                make.height.equalTo(80).priority(.high)
             }
             // should always be at the top of the view
-            make.top.equalTo(latestEventView.snp.top).priorityHigh()
+            make.top.equalTo(latestEventView.snp.top).priority(.high)
             
             // make size "dynamic"
-            make.edges.equalTo(latestEventView.snp.edges).priorityMedium()
-            make.size.equalTo(latestEventView.snp.size).priorityMedium()
+            make.edges.equalTo(latestEventView.snp.edges).priority(.medium)
+            make.size.equalTo(latestEventView.snp.size).priority(.medium)
         }
     }
 }
