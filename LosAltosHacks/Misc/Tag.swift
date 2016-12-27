@@ -6,6 +6,8 @@
 //  Copyright © 2016 Dan Appel. All rights reserved.
 //
 
+import UIKit
+
 enum Tag: String {
     case food = "food"
     case logistics = "logistics"
