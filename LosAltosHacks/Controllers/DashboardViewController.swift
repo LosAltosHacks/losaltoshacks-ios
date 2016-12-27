@@ -22,14 +22,13 @@ class DashboardViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Event.delegates.append(self)
-        
+
+        Event.delegates.append(WeakCacheableDelegate(self))
+
         socialMediaView.delegate = self
         mentorView.slackButtonDelgate = self
         scrollView.contentSize = CGSize(width: view.frame.size.width,
             height: 115 * 2 + 150 + 135) // TODO: make this not static
-
     }
     
     override func setupConstraints() {
@@ -76,7 +75,6 @@ class DashboardViewController: BaseViewController {
             make.left.equalTo(view.snp.left)
             make.right.equalTo(view.snp.right)
         }
-
     }
 }
 
@@ -100,6 +98,6 @@ extension DashboardViewController: SocialMediaViewDelegate, SlackButtonDelegate 
 
 extension DashboardViewController: CacheableDelegate {
     func didUpdateCache() {
-        upcomingView.awakeFromNib()
+        upcomingView.updateCell()
     }
 }

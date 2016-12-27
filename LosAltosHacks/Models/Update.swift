@@ -13,12 +13,8 @@ struct Update {
     let title: String
     let description: String
     let tag: Tag
-}
 
-extension Update: Fetchable {
-    static var path: String {
-        return "updates.json"
-    }
+    static var delegates = [CacheableDelegate]()
 }
 
 extension Update: Cacheable {
@@ -28,24 +24,19 @@ extension Update: Cacheable {
 }
 
 extension Update: JSONConvertible {
-    func toJSON() -> String {
-        
-        let dict: [String:AnyObject] = [
+    var asJSON: [String:Any] {
+        return [
             "date": date.timeIntervalSince1970 as AnyObject,
             "title": title as AnyObject,
             "description": description as AnyObject,
             "tag": tag.rawValue as AnyObject
         ]
-        
-        let jsonObject = try! JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
-        
-        return String(data: jsonObject, encoding: String.Encoding.utf8)!
     }
     
-    static func parse(_ json: Any) -> Update {
+    init(json: Any) {
         let json = json as! [String:Any]
         
-        return Update(
+        self = Update(
             date: Date(timeIntervalSince1970: TimeInterval((json["date"]! as AnyObject).int32Value)),
             title: json["title"] as! String,
             description: json["description"] as! String,

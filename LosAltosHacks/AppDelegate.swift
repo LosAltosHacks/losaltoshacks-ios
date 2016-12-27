@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,21 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+
         // Application Styles
         UITabBar.appearance().tintColor = LAHColor.defaultColor.value
 
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).font = UIFont.systemFont(ofSize: 14)
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = UIColor(white: 0.4, alpha: 1.0)
 
-        if Event.cached() == nil {
-            Event.updateCache(sort: true, error: {})
-        }
-        if Update.cached() == nil {
-            Update.updateCache(sort: true, error: {})
-        }
-        
-        
+        FIRApp.configure()
+
+        // pipe firebase directly into local cache
+        FirebaseManager.shared.events(callback: Event.store)
+        FirebaseManager.shared.updates(callback: Update.store)
+
         return true
     }
     

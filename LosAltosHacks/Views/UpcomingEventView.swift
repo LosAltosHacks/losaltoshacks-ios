@@ -13,40 +13,45 @@ class UpcomingEventView: BaseView {
     @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var latestEventView: UIView!
     var latestEventCell: ScheduleTableViewCell!
-
     override func awakeFromNib() {
-        
+        let cell = fetchScheduleTableViewCell()
+
+        latestEventView.addSubview(cell)
+        latestEventCell = cell
+
+        updateCell()
+
+        super.awakeFromNib()
+    }
+
+    func updateCell() {
         guard let events = Event.cached(sort: true),
             let first = events.first else {
-            // cache is empty
-            self.isHidden = true // hide just in case
+            isHidden = true
             return
         }
-        
-        // awakeFromNib might be called programatically (from DashboardViewController)
-        self.isHidden = false
-        
+        isHidden = false
+
+        if latestEventCell == nil {
+            latestEventCell = fetchScheduleTableViewCell()
+            latestEventView.addSubview(latestEventCell)
+        }
+
         // gets the first event AFTER now, or the first if there are none after now
         let nextEvent = events.reduce(first) { latest, event in
-            
+
             // if latest is before now, return the event
             if latest.time.isEarlierThanDate(Date()) {
                 return event
             }
-            
+
             // otherwise, return latest
             return latest
         }
-        
-        let cell = fetchScheduleTableViewCell()
-        
-        cell.event = nextEvent
-        latestEventView.addSubview(cell)
-        latestEventCell = cell
-        
-        super.awakeFromNib()
+
+        latestEventCell.event = nextEvent
     }
-    
+
     func fetchScheduleTableViewCell() -> ScheduleTableViewCell {
         // /puke
         
@@ -67,7 +72,9 @@ class UpcomingEventView: BaseView {
             scheduleVC.loadView()
         }
         
-        return scheduleVC.tableView.dequeueReusableCell(withIdentifier: ScheduleViewController.cellIdentifier) as! ScheduleTableViewCell
+        let cell = scheduleVC.tableView.dequeueReusableCell(withIdentifier: ScheduleViewController.cellIdentifier) as! ScheduleTableViewCell
+        cell.awakeFromNib()
+        return cell
     }
 
     override func setupConstraints() {
@@ -87,15 +94,11 @@ class UpcomingEventView: BaseView {
         }
         
         latestEventCell.snp.makeConstraints { make in
-            if latestEventCell.descriptionLabel?.text == "" {
-                make.height.equalTo(80).priority(.high)
-            }
             // should always be at the top of the view
-            make.top.equalTo(latestEventView.snp.top).priority(.high)
-            
+//            make.top.equalTo(latestEventView.snp.top).priority(.high)
             // make size "dynamic"
-            make.edges.equalTo(latestEventView.snp.edges).priority(.medium)
-            make.size.equalTo(latestEventView.snp.size).priority(.medium)
+//            make.edges.equalTo(latestEventView.snp.edges).priority(.medium)
+//            make.size.equalTo(latestEventView.snp.size).priority(.medium)
         }
     }
 }

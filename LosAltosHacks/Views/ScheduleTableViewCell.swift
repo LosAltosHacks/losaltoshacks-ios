@@ -27,7 +27,7 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
     
     func updateContent() {
         titleLabel.text = event.event
-        descriptionLabel.text = nil
+        descriptionLabel.text = ""
         
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"

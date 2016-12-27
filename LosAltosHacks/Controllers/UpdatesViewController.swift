@@ -13,8 +13,6 @@ class UpdatesViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     static let cellIdentifier = "updateCell"
 
-    let refreshControl = UIRefreshControl()
-    
     var updates = Update.cached(sort: true) ?? []
     
     override func viewDidLoad() {
@@ -22,26 +20,10 @@ class UpdatesViewController: BaseViewController {
 
         tableView.dataSource = self
 
-        refreshControl.addTarget(self, action: #selector(UpdatesViewController.refresh), for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(refreshControl)
-
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        if updates.isEmpty {
-//            refreshControl.beginRefreshing()
-            refresh()
-        }
-    }
-
-    func refresh() {
-        Update.fetch(error: {[weak self] in self?.refreshControl.endRefreshing()}) { [weak self] updates in
-            self?.updates = updates
-            self?.tableView?.reloadData()
-            self?.refreshControl.endRefreshing()
-            
-            Update.store(updates)
-        }
+        Update.delegates.append(WeakCacheableDelegate(self))
     }
     
     override func setupConstraints() {
@@ -50,6 +32,14 @@ class UpdatesViewController: BaseViewController {
             make.topMargin.equalTo(view.snp.topMargin).offset(9).priority(.high)
 //            make.bottomMargin.equalTo(snp.bottomLayoutGuideTop).offset(-9).priority(.high)
         }
+    }
+}
+
+extension UpdatesViewController: CacheableDelegate {
+    func didUpdateCache() {
+        guard let updates = Update.cached() else { return }
+        self.updates = updates
+        tableView.reloadData()
     }
 }
 

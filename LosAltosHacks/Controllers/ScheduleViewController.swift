@@ -13,36 +13,17 @@ class ScheduleViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     static let cellIdentifier = "scheduleCell"
 
-    let refreshControl = UIRefreshControl()
-
     var events = Event.cached(sort: true) ?? []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.dataSource = self
 
-        refreshControl.addTarget(self, action: #selector(ScheduleViewController.refresh), for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(refreshControl)
+        tableView.dataSource = self
 
         tableView.estimatedRowHeight = 120.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        if events.isEmpty {
-            refreshControl.beginRefreshing()
-            refresh()
-        }
-    }
-
-    func refresh() {
-        Event.fetch(error: {[weak self] in self?.refreshControl.endRefreshing()}) { [weak self] events  in
-            self?.events = events
-            self?.tableView?.reloadData()
-            self?.refreshControl.endRefreshing()
-            
-            // update cache
-            Event.store(events)
-        }
+        Event.delegates.append(WeakCacheableDelegate(self))
     }
 
     override func setupConstraints() {
@@ -51,6 +32,14 @@ class ScheduleViewController: BaseViewController {
             make.topMargin.equalTo(view.snp.topMargin).offset(9).priority(.high)
 //            make.bottomMargin.equalTo(snp.bottomLayoutGuideTop).offset(-9).priority(.high)
         }
+    }
+}
+
+extension ScheduleViewController: CacheableDelegate {
+    func didUpdateCache() {
+        guard let events = Event.cached() else { return }
+        self.events = events
+        tableView?.reloadData()
     }
 }
 

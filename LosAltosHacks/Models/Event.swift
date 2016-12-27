@@ -17,12 +17,6 @@ struct Event {
     static var delegates = [CacheableDelegate]()
 }
 
-extension Event: Fetchable {
-    static var path: String {
-        return "schedule.json"
-    }
-}
-
 extension Event: Cacheable {
     static var cacheKey: String {
         return "eventsCache"
@@ -30,23 +24,19 @@ extension Event: Cacheable {
 }
 
 extension Event: JSONConvertible {
-    func toJSON() -> String {
-        
-        let dict: [String:AnyObject] = [
+    var asJSON: [String:Any] {
+        return [
             "event": event as AnyObject,
             "time": time.timeIntervalSince1970 as AnyObject,
             "location": location as AnyObject,
             "tag": tag.rawValue as AnyObject
         ]
-        
-        let jsonObject = try! JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
-        
-        return String(data: jsonObject, encoding: String.Encoding.utf8)!
     }
-    
-    static func parse(_ json: Any) -> Event {
+
+    init(json: Any) {
         let json = json as! [String:Any]
-        return Event(
+
+        self = Event(
             event: json["event"] as! String,
             location: json["location"] as! String,
             time: Date(timeIntervalSince1970: TimeInterval((json["time"]! as AnyObject).int32Value)),
