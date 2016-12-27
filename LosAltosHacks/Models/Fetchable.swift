@@ -30,12 +30,12 @@ extension Fetchable {
         
         let url = LAHConstants.BaseAPIURLString + self.path
         
-        let request = NSMutableURLRequest(url: URL(string: url)!)
+        var request = URLRequest(url: URL(string: url)!)
         
         request.httpMethod = "GET"
         request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         
-        Alamofire.request(request as! URLRequestConvertible).responseJSON { response in
+        Alamofire.request(request).responseJSON { response in
             
             guard
                 let json = try? JSONSerialization.jsonObject(with: response.data!, options: .allowFragments),

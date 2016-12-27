@@ -30,7 +30,7 @@ class TopView: BaseView {
         titleLabel.snp.makeConstraints { make in
             make.width.equalTo(self.snp.width)
             make.centerX.equalTo(self.snp.centerX)
-            make.centerY.equalTo(self.snp.centerY).offset(-12)
+            make.centerY.equalTo(self.snp.centerY).offset(12)
         }
     }
 }

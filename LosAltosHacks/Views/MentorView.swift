@@ -32,7 +32,8 @@ class MentorView: BaseView {
             make.width.equalTo(self.snp.width).multipliedBy(0.75)
             make.height.equalTo(21)
             
-            make.center.equalTo(self.snp.center).offset(CGPoint(x: 0, y: -30) as! ConstraintOffsetTarget)
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).offset(-30)
 //            make.top.equalTo(self.snp.top).offset(10)
         }
         
