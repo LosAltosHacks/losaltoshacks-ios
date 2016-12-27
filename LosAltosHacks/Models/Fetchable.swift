@@ -11,7 +11,7 @@ import Alamofire
 
 protocol Fetchable: JSONDecodable {
     static var path: String {get}
-    static func fetch(error error: Void -> Void, callback: [Self] -> Void)
+    static func fetch(error: @escaping (Void) -> Void, callback: @escaping ([Self]) -> Void)
 }
 
 extension Fetchable {
@@ -20,26 +20,26 @@ extension Fetchable {
      and calls the callback on success.
      Retries by recursively calling itself up to 3 times until is successful.
      */
-    static func fetch(error error: Void -> Void, callback: [Self] -> Void) {
+    static func fetch(error: @escaping (Void) -> Void, callback: @escaping ([Self]) -> Void) {
         fetch(recursiveDepth: 0, error: error, callback: callback)
     }
-    
-    static func fetch(recursiveDepth recursiveDepth: Int, error: Void -> Void, callback: [Self] -> Void) {
+
+    static func fetch(recursiveDepth: Int, error: @escaping (Void) -> Void, callback: @escaping ([Self]) -> Void) {
         
         guard recursiveDepth < 3 else { error(); return }
         
         let url = LAHConstants.BaseAPIURLString + self.path
         
-        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        let request = NSMutableURLRequest(url: URL(string: url)!)
         
-        request.HTTPMethod = "GET"
-        request.cachePolicy = .ReloadIgnoringLocalAndRemoteCacheData
+        request.httpMethod = "GET"
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         
-        Alamofire.request(request).responseJSON { response in
+        Alamofire.request(request as! URLRequestConvertible).responseJSON { response in
             
             guard
-                let json = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments),
-                jsonArr = json as? [AnyObject] else {
+                let json = try? JSONSerialization.jsonObject(with: response.data!, options: .allowFragments),
+                let jsonArr = json as? [AnyObject] else {
                 // recurse
                 fetch(recursiveDepth: recursiveDepth+1, error: error, callback: callback)
                 return
@@ -60,20 +60,20 @@ extension Fetchable where Self: Sortable {
      
      Sorts the items before passing to the callback if the sort parameter is true (default: true)
      */
-    static func fetch(sort sort: Bool = true, error: Void -> Void, callback: [Self] -> Void) {
-        fetch(recursiveDepth: 0, error: error, callback: {sort ? callback(Self.sort($0)) : callback($0)})
+    static func fetch(sort: Bool = true, error: @escaping (Void) -> Void, callback: @escaping ([Self]) -> Void) {
+        fetch(error: error, callback: {sort ? callback(Self.sort($0)) : callback($0)})
     }
 }
 
 extension Fetchable where Self: Cacheable {
-    static func updateCache(error error: Void -> Void) {
+    static func updateCache(error: @escaping (Void) -> Void) {
         Self.fetch(error: error, callback: Self.store)
     }
 }
 
 
 extension Fetchable where Self: Cacheable, Self: Sortable {
-    static func updateCache(sort sort: Bool, error: Void -> Void) {
+    static func updateCache(sort: Bool, error: @escaping (Void) -> Void) {
         Self.fetch(sort: sort, error: error, callback: {Self.store($0)})
     }
 }

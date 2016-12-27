@@ -29,11 +29,11 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
         titleLabel.text = event.event
         descriptionLabel.text = nil
         
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
-        formatter.timeZone = NSTimeZone(name: "PST")!
+        formatter.timeZone = TimeZone(identifier: "PST")!
         
-        dateLabel.text = formatter.stringFromDate(self.event.time)
+        dateLabel.text = formatter.string(from: self.event.time as Date)
         
         locationLabel.text = event.location
         
@@ -54,7 +54,7 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
 
     func setupConstraints() {}
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

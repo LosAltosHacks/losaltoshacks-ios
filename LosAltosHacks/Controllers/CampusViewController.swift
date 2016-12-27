@@ -16,7 +16,7 @@ class CampusViewController: BaseViewController {
 
     // TODO: Add gestures for zoom/pan
 
-    @IBAction func changeFloor(sender: UISegmentedControl) {
+    @IBAction func changeFloor(_ sender: UISegmentedControl) {
         switch(sender.selectedSegmentIndex) {
         case 0:
             imageView.image = UIImage(named: "floor1")
@@ -42,23 +42,23 @@ class CampusViewController: BaseViewController {
         segmentedControl.layer.zPosition = 1.0
         segmentedControl.layer.cornerRadius = 5.0
 
-        imageView.contentMode = .ScaleAspectFit
-        imageView.userInteractionEnabled = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
 
 //        setupMapViews()
     }
 
     override func setupConstraints() {
-        segmentedControl.snp_makeConstraints { make in
-            make.top.equalTo(snp_topLayoutGuideBottom).offset(10)
-            make.centerX.equalTo(view.snp_centerX)
+        segmentedControl.snp.makeConstraints { make in
+            make.top.equalTo(topLayoutGuide.snp.bottom).offset(10)
+            make.centerX.equalTo(view.snp.centerX)
         }
     }
 
 }
 
 extension CampusViewController: UIScrollViewDelegate {
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
 }

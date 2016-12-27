@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SocialMediaViewDelegate: class {
-    func onTap(socialMedia: SocialMedia)
+    func onTap(_ socialMedia: SocialMedia)
 }
 
 class SocialMediaView: BaseView {
@@ -28,21 +28,21 @@ class SocialMediaView: BaseView {
     
     func registerListeners() {
         // because outlets are too much work...
-        facebookButton.addTarget(self, action: "tapped:", forControlEvents: .TouchUpInside)
-        twitterButton.addTarget(self, action: "tapped:", forControlEvents: .TouchUpInside)
-        instagramButton.addTarget(self, action: "tapped:", forControlEvents: .TouchUpInside)
+        facebookButton.addTarget(self, action: #selector(SocialMediaView.tapped(_:)), for: .touchUpInside)
+        twitterButton.addTarget(self, action: #selector(SocialMediaView.tapped(_:)), for: .touchUpInside)
+        instagramButton.addTarget(self, action: #selector(SocialMediaView.tapped(_:)), for: .touchUpInside)
     }
     
-    func tapped(sender: UIButton) {
+    func tapped(_ sender: UIButton) {
         
         let socialMedia: SocialMedia
         switch sender {
         case facebookButton:
-            socialMedia = .Facebook
+            socialMedia = .facebook
         case twitterButton:
-            socialMedia = .Twitter
+            socialMedia = .twitter
         case instagramButton:
-            socialMedia = .Instagram
+            socialMedia = .instagram
         default:
             return
         }
@@ -51,25 +51,25 @@ class SocialMediaView: BaseView {
     }
     
     override func setupConstraints() {
-        facebookButton.snp_makeConstraints { make in
-            make.width.equalTo(self.snp_width).dividedBy(3)
-            make.height.equalTo(self.snp_height)
-            make.left.equalTo(self.snp_left)
-            make.top.equalTo(self.snp_top)
+        facebookButton.snp.makeConstraints { make in
+            make.width.equalTo(self.snp.width).dividedBy(3)
+            make.height.equalTo(self.snp.height)
+            make.left.equalTo(self.snp.left)
+            make.top.equalTo(self.snp.top)
         }
         
-        twitterButton.snp_makeConstraints { make in
-            make.width.equalTo(self.snp_width).dividedBy(3)
-            make.height.equalTo(self.snp_height)
-            make.left.equalTo(facebookButton.snp_right)
-            make.top.equalTo(self.snp_top)
+        twitterButton.snp.makeConstraints { make in
+            make.width.equalTo(self.snp.width).dividedBy(3)
+            make.height.equalTo(self.snp.height)
+            make.left.equalTo(facebookButton.snp.right)
+            make.top.equalTo(self.snp.top)
         }
         
-        instagramButton.snp_makeConstraints { make in
-            make.width.equalTo(self.snp_width).dividedBy(3)
-            make.height.equalTo(self.snp_height)
-            make.left.equalTo(twitterButton.snp_right)
-            make.top.equalTo(self.snp_top)
+        instagramButton.snp.makeConstraints { make in
+            make.width.equalTo(self.snp.width).dividedBy(3)
+            make.height.equalTo(self.snp.height)
+            make.left.equalTo(twitterButton.snp.right)
+            make.top.equalTo(self.snp.top)
         }
     }
 }

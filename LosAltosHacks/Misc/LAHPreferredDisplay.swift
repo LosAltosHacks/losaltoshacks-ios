@@ -20,21 +20,21 @@ struct LAHPreferredDisplay {
     /// ex: 98 days ago
     /// 
     /// ex: in 10 days
-    static func from(date: NSDate) -> String {
+    static func from(_ date: Date) -> String {
         
         let seconds = -date.timeIntervalSinceNow
         
-        let time: NSDate.Time
+        let time: Date.Time
         
         switch seconds {
         case 0..<60:
             return "Just now"
         case 60..<3600:
-            time = .Minute(seconds/60)
+            time = .minute(seconds/60)
         case 3600..<86400:
-            time = .Hour(seconds/3600)
+            time = .hour(seconds/3600)
         default:
-            time = .Day(seconds/86400)
+            time = .day(seconds/86400)
         }
         
         if seconds < 0 {
@@ -44,7 +44,7 @@ struct LAHPreferredDisplay {
         }
     }
     
-    static func range(dateFrom: NSDate, dateTo: NSDate) -> String {
+    static func range(_ dateFrom: Date, dateTo: Date) -> String {
         
         return "From \(dateFrom) to \(dateTo)"
     }

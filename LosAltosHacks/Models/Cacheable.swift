@@ -11,7 +11,7 @@ import Foundation
 protocol Cacheable: JSONConvertible {
     static var cacheKey: String {get}
     static func cached() -> [Self]?
-    static func store(cache: [Self])
+    static func store(_ cache: [Self])
     static func clear()
     static var delegates: [CacheableDelegate] {get}
 }
@@ -27,13 +27,13 @@ extension Cacheable {
     static func cached() -> [Self]? {
         
         // get json string from cache
-        guard let cacheJsonString = NSUserDefaults.standardUserDefaults().stringForKey(cacheKey) else { return nil }
+        guard let cacheJsonString = UserDefaults.standard.string(forKey: cacheKey) else { return nil }
         
         // turn json string into nsdata
-        guard let jsonData = cacheJsonString.dataUsingEncoding(NSUTF8StringEncoding) else { return nil }
+        guard let jsonData = cacheJsonString.data(using: String.Encoding.utf8) else { return nil }
         
         // turn json data into a json object
-        guard let jsonObj = try? NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments) else { return nil }
+        guard let jsonObj = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) else { return nil }
         
         // turn json object into array of json strings
         guard let jsonArr = jsonObj as? [String] else { return nil }
@@ -42,8 +42,8 @@ extension Cacheable {
         // using the do/catch as an early return
         do {
             let items: [Self] = try jsonArr.map {
-                let data = $0.dataUsingEncoding(NSUTF8StringEncoding)!
-                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                let data = $0.data(using: String.Encoding.utf8)!
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 return Self.parse(json)
             }
             return items
@@ -52,29 +52,29 @@ extension Cacheable {
         }
     }
     
-    static func store(cache: [Self]) {
+    static func store(_ cache: [Self]) {
         
         // turn each into a json string
         let json = cache.map { $0.toJSON() }
         
         // should just be an array of strings, so force the try
-        let jsonObj = try! NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
-        let jsonString = String(data: jsonObj, encoding: NSUTF8StringEncoding)
+        let jsonObj = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+        let jsonString = String(data: jsonObj, encoding: String.Encoding.utf8)
         
-        NSUserDefaults.standardUserDefaults().setObject(jsonString, forKey: cacheKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(jsonString, forKey: cacheKey)
+        UserDefaults.standard.synchronize()
         
         delegates.forEach { $0.didUpdateCache() }
     }
     
     static func clear() {
-        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: cacheKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(nil, forKey: cacheKey)
+        UserDefaults.standard.synchronize()
     }
 }
 
 extension Cacheable where Self: Sortable {
-    static func cached(sort sort: Bool) -> [Self]? {
+    static func cached(sort: Bool) -> [Self]? {
         guard let cached = cached() else { return nil }
         guard sort else { return cached }
         return Self.sort(cached)

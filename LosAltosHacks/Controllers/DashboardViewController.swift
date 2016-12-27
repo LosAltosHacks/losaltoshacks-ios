@@ -27,74 +27,74 @@ class DashboardViewController: BaseViewController {
         
         socialMediaView.delegate = self
         mentorView.slackButtonDelgate = self
-        scrollView.contentSize = CGSizeMake(view.frame.size.width,
-            115 * 2 + 150 + 135) // TODO: make this not static
+        scrollView.contentSize = CGSize(width: view.frame.size.width,
+            height: 115 * 2 + 150 + 135) // TODO: make this not static
 
     }
     
     override func setupConstraints() {
-        socialMediaView.snp_makeConstraints { make in
-            make.bottom.equalTo(snp_bottomLayoutGuideTop)
-            make.left.equalTo(view.snp_left)
-            make.right.equalTo(view.snp_right)
+        socialMediaView.snp.makeConstraints { make in
+            make.bottom.equalTo(bottomLayoutGuide.snp.top)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
             make.height.equalTo(44)
         }
 
-        scrollView.snp_makeConstraints { make in
-            make.top.equalTo(snp_topLayoutGuideBottom)
-            make.bottom.equalTo(socialMediaView.snp_top)
-            make.left.equalTo(view.snp_left)
-            make.right.equalTo(view.snp_right)
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(topLayoutGuide.snp.bottom)
+            make.bottom.equalTo(socialMediaView.snp.top)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
         }
 
-        topView.snp_makeConstraints { make in
+        topView.snp.makeConstraints { make in
             make.height.equalTo(115)
-            make.top.equalTo(scrollView.snp_bottom)
-            make.left.equalTo(view.snp_left)
-            make.right.equalTo(view.snp_right)
+            make.top.equalTo(scrollView.snp.bottom)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
         }
 
-        mentorView.snp_makeConstraints { make in
+        mentorView.snp.makeConstraints { make in
             make.height.equalTo(115)
 
-            make.centerX.equalTo(view.snp_centerX)
+            make.centerX.equalTo(view.snp.centerX)
             
-            make.left.equalTo(view.snp_left)
-            make.top.equalTo(topView.snp_bottom)
+            make.left.equalTo(view.snp.left)
+            make.top.equalTo(topView.snp.bottom)
         }
 
-        timeLeftView.snp_makeConstraints { make in
-            make.top.equalTo(mentorView.snp_bottom)
+        timeLeftView.snp.makeConstraints { make in
+            make.top.equalTo(mentorView.snp.bottom)
             make.height.equalTo(150)
-            make.left.equalTo(view.snp_left)
-            make.right.equalTo(view.snp_right)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
         }
 
-        upcomingView.snp_makeConstraints { make in
-            make.top.equalTo(timeLeftView.snp_bottom)
+        upcomingView.snp.makeConstraints { make in
+            make.top.equalTo(timeLeftView.snp.bottom)
             make.height.equalTo(135)
-            make.left.equalTo(view.snp_left)
-            make.right.equalTo(view.snp_right)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
         }
 
     }
 }
 
 extension DashboardViewController: SocialMediaViewDelegate, SlackButtonDelegate {
-    func openURL(url: NSURL) {
+    func openURL(_ url: URL) {
         if #available(iOS 9, *) {
-            let safari = SFSafariViewController(URL: url)
-            self.presentViewController(safari, animated: true, completion: nil)
+            let safari = SFSafariViewController(url: url)
+            self.present(safari, animated: true, completion: nil)
         } else {
-            UIApplication.sharedApplication().openURL(url)
+            UIApplication.shared.openURL(url)
         }
     }
     
-    func onTap(socialMedia: SocialMedia) {
-        openURL(socialMedia.url)
+    func onTap(_ socialMedia: SocialMedia) {
+        openURL(socialMedia.url as URL)
     }
-    func onTap(button: SlackButton) {
-        openURL(NSURL(string: LAHConstants.SlackURLString)!)
+    func onTap(_ button: SlackButton) {
+        openURL(URL(string: LAHConstants.SlackURLString)!)
     }
 }
 

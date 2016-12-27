@@ -11,7 +11,7 @@ protocol JSONEncodable {
 }
 
 protocol JSONDecodable {
-    static func parse(json: AnyObject) -> Self
+    static func parse(_ json: Any) -> Self
 }
 
 protocol JSONConvertible: JSONEncodable, JSONDecodable {}

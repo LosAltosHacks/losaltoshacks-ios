@@ -9,7 +9,7 @@
 import Foundation
 
 struct Update {
-    let date: NSDate
+    let date: Date
     let title: String
     let description: String
     let tag: Tag
@@ -31,31 +31,31 @@ extension Update: JSONConvertible {
     func toJSON() -> String {
         
         let dict: [String:AnyObject] = [
-            "date": date.timeIntervalSince1970,
-            "title": title,
-            "description": description,
-            "tag": tag.rawValue
+            "date": date.timeIntervalSince1970 as AnyObject,
+            "title": title as AnyObject,
+            "description": description as AnyObject,
+            "tag": tag.rawValue as AnyObject
         ]
         
-        let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
+        let jsonObject = try! JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
         
-        return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
+        return String(data: jsonObject, encoding: String.Encoding.utf8)!
     }
     
-    static func parse(json: AnyObject) -> Update {
-        let json = json as! [String:AnyObject]
+    static func parse(_ json: Any) -> Update {
+        let json = json as! [String:Any]
         
         return Update(
-            date: NSDate(timeIntervalSince1970: NSTimeInterval(json["date"]!.intValue)),
+            date: Date(timeIntervalSince1970: TimeInterval((json["date"]! as AnyObject).int32Value)),
             title: json["title"] as! String,
             description: json["description"] as! String,
-            tag: Tag(rawValue: (json["tag"] as! String).lowercaseString)!
+            tag: Tag(rawValue: (json["tag"] as! String).lowercased())!
         )
     }
 }
 
 extension Update: Sortable {
-    static func sort(items: [Update]) -> [Update] {
-        return items.sort { !$0.date.isEarlierThanDate($1.date) }
+    static func sort(_ items: [Update]) -> [Update] {
+        return items.sorted { !$0.date.isEarlierThanDate($1.date) }
     }
 }

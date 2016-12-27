@@ -7,24 +7,24 @@
 //
 
 enum Tag: String {
-    case Food = "food"
-    case Logistics = "logistics"
-    case Activity = "activity"
-    case Workshop = "workshop"
-    case None = ""
+    case food = "food"
+    case logistics = "logistics"
+    case activity = "activity"
+    case workshop = "workshop"
+    case none = ""
     
     var color: LAHColor {
         switch self {
-        case .Food: return .Food
-        case .Logistics: return .Logistics
-        case .Workshop: return .Workshop
-        case .Activity: return .Activity
+        case .food: return .food
+        case .logistics: return .logistics
+        case .workshop: return .workshop
+        case .activity: return .activity
             
-        case .None: return .Transparent
+        case .none: return .transparent
         }
     }
     
     var image: UIImage? {
-        return UIImage(named: self.rawValue.lowercaseString)
+        return UIImage(named: self.rawValue.lowercased())
     }
 }

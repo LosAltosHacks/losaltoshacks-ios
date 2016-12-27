@@ -11,7 +11,7 @@ import Foundation
 struct Event {
     let event: String
     let location: String
-    let time: NSDate
+    let time: Date
     let tag: Tag
 
     static var delegates = [CacheableDelegate]()
@@ -33,31 +33,31 @@ extension Event: JSONConvertible {
     func toJSON() -> String {
         
         let dict: [String:AnyObject] = [
-            "event": event,
-            "time": time.timeIntervalSince1970,
-            "location": location,
-            "tag": tag.rawValue
+            "event": event as AnyObject,
+            "time": time.timeIntervalSince1970 as AnyObject,
+            "location": location as AnyObject,
+            "tag": tag.rawValue as AnyObject
         ]
         
-        let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
+        let jsonObject = try! JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
         
-        return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
+        return String(data: jsonObject, encoding: String.Encoding.utf8)!
     }
     
-    static func parse(json: AnyObject) -> Event {
-        let json = json as! [String:AnyObject]
+    static func parse(_ json: Any) -> Event {
+        let json = json as! [String:Any]
         return Event(
             event: json["event"] as! String,
             location: json["location"] as! String,
-            time: NSDate(timeIntervalSince1970: NSTimeInterval(json["time"]!.intValue)),
-            tag: Tag(rawValue: (json["tag"] as! String).lowercaseString)!
+            time: Date(timeIntervalSince1970: TimeInterval((json["time"]! as AnyObject).int32Value)),
+            tag: Tag(rawValue: (json["tag"] as! String).lowercased())!
         )
     }
 }
 
 extension Event: Sortable {
-    static func sort(items: [Event]) -> [Event] {
-         return items.sort { $0.time.isEarlierThanDate($1.time) }
+    static func sort(_ items: [Event]) -> [Event] {
+         return items.sorted { $0.time.isEarlierThanDate($1.time) }
     }
 }
 
@@ -75,7 +75,7 @@ extension Event {
     }
 }
 
-extension SequenceType where Generator.Element == Event {
+extension Sequence where Iterator.Element == Event {
     var onSaturday: [Event] {
         return self.filter { $0.isOnSaturday }
     }

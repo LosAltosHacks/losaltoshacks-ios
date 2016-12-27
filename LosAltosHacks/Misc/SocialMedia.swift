@@ -9,23 +9,23 @@
 import Foundation
 
 enum SocialMedia {
-    case Facebook
-    case Twitter
-    case Instagram
+    case facebook
+    case twitter
+    case instagram
     
-    var url: NSURL {
+    var url: URL {
         
         let url: String
         
         switch self {
-        case .Twitter:
+        case .twitter:
             url = "https://twitter.com/losaltoshacks"
-        case .Facebook:
+        case .facebook:
             url = "https://www.facebook.com/events/584690041683677"
-        case .Instagram:
+        case .instagram:
             url = "https://www.instagram.com/losaltoshacks"
         }
         
-        return NSURL(string: url)!
+        return URL(string: url)!
     }
 }

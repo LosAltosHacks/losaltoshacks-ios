@@ -23,33 +23,33 @@ class TimeLeftView: BaseView {
     }
 
     override func setupConstraints() {
-        timeRemainingLabel.snp_makeConstraints { make in
+        timeRemainingLabel.snp.makeConstraints { make in
             make.top.equalTo(12)
-            make.centerX.equalTo(self.snp_centerX)
-            make.width.equalTo(self.snp_width).dividedBy(1.5)
+            make.centerX.equalTo(self.snp.centerX)
+            make.width.equalTo(self.snp.width).dividedBy(1.5)
         }
 
-        countdownLabel.snp_makeConstraints { make in
-            make.top.equalTo(timeRemainingLabel.snp_bottomMargin).offset(-4)
-            make.centerX.equalTo(self.snp_centerX)
+        countdownLabel.snp.makeConstraints { make in
+            make.top.equalTo(timeRemainingLabel.snp.bottomMargin).offset(-4)
+            make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(240)
             make.height.equalTo(80)
         }
 
-        hourLabel.snp_makeConstraints { make in
-            make.centerY.equalTo(countdownLabel.snp_centerY)
-            make.right.equalTo(countdownLabel.snp_left).offset(16)
+        hourLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(countdownLabel.snp.centerY)
+            make.right.equalTo(countdownLabel.snp.left).offset(16)
         }
 
-        minuteLabel.snp_makeConstraints { make in
-            make.centerY.equalTo(countdownLabel.snp_centerY)
-            make.left.equalTo(countdownLabel.snp_right).offset(-18)
+        minuteLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(countdownLabel.snp.centerY)
+            make.left.equalTo(countdownLabel.snp.right).offset(-18)
         }
 
-        progressView.snp_makeConstraints { make in
-            make.top.equalTo(countdownLabel.snp_bottomMargin)
-            make.centerX.equalTo(self.snp_centerX)
-            make.width.equalTo(self.snp_width)
+        progressView.snp.makeConstraints { make in
+            make.top.equalTo(countdownLabel.snp.bottomMargin)
+            make.centerX.equalTo(self.snp.centerX)
+            make.width.equalTo(self.snp.width)
                 .dividedBy(1.2)
             make.height.equalTo(44)
         }
@@ -58,7 +58,7 @@ class TimeLeftView: BaseView {
     func initializeTimer() {
 
         // Time leading up to LAH
-        if NSDate().isEarlierThanDate(LAHConstants.LAHStartDate) {
+        if Date().isEarlierThanDate(LAHConstants.LAHStartDate) {
             timeRemainingLabel.text = "TIME UNTIL LOS ALTOS HACKS"
         }
 
