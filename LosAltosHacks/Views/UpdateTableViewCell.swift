@@ -20,7 +20,7 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
     func updateContent() {
         titleLabel.text = update.title
         descriptionLabel.text = update.description
-        dateLabel.text = update.date.displayDescription
+        dateLabel.text = update.time.displayDescription
         iconView.image = update.tag.image
         
         splotchView.backgroundColor = update.tag.color

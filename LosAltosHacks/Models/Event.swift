@@ -33,14 +33,22 @@ extension Event: JSONConvertible {
         ]
     }
 
-    init(json: Any) {
-        let json = json as! [String:Any]
+    init?(json: Any) {
+        guard
+            let json = json as? [String:Any],
+            let event = json["event"] as? String,
+            let location = json["location"] as? String,
+            let timeJ = json["time"] as? Int,
+            let time = Optional(Date(timeIntervalSince1970: TimeInterval(timeJ))),
+            let tagJ = json["tag"] as? String,
+            let tag = Tag(rawValue: tagJ.lowercased())
+        else { return nil }
 
         self = Event(
-            event: json["event"] as! String,
-            location: json["location"] as! String,
-            time: Date(timeIntervalSince1970: TimeInterval((json["time"]! as AnyObject).int32Value)),
-            tag: Tag(rawValue: (json["tag"] as! String).lowercased())!
+            event: event,
+            location: location,
+            time: time,
+            tag: tag
         )
     }
 }

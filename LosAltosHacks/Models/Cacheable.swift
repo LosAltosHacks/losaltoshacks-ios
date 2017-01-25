@@ -53,7 +53,7 @@ extension Cacheable {
         // parse each json string into a "Self"
         // using the do/catch as an early return
         do {
-            let items: [Self] = try jsonArr.map {
+            let items: [Self] = try jsonArr.flatMap {
                 let data = $0.data(using: String.Encoding.utf8)!
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 return Self.init(json: json)

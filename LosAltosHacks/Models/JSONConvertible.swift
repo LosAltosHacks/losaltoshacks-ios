@@ -11,7 +11,7 @@ protocol JSONEncodable {
 }
 
 protocol JSONDecodable {
-    init(json: Any)
+    init?(json: Any)
 }
 
 protocol JSONConvertible: JSONEncodable, JSONDecodable {}

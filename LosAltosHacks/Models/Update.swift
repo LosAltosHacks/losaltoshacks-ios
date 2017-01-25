@@ -9,7 +9,7 @@
 import Foundation
 
 struct Update {
-    let date: Date
+    let time: Date
     let title: String
     let description: String
     let tag: Tag
@@ -26,27 +26,35 @@ extension Update: Cacheable {
 extension Update: JSONConvertible {
     var asJSON: [String:Any] {
         return [
-            "time": date.timeIntervalSince1970 as AnyObject,
+            "time": time.timeIntervalSince1970 as AnyObject,
             "title": title as AnyObject,
             "description": description as AnyObject,
             "tag": tag.rawValue as AnyObject
         ]
     }
     
-    init(json: Any) {
-        let json = json as! [String:Any]
-        
+    init?(json: Any) {
+        guard
+            let json = json as? [String:Any],
+            let timeJ = json["time"] as? Int,
+            let time = Optional(Date(timeIntervalSince1970: TimeInterval(timeJ))),
+            let title = json["title"] as? String,
+            let description = json["description"] as? String,
+            let tagJ = json["tag"] as? String,
+            let tag = Tag(rawValue: tagJ.lowercased())
+        else { return nil }
+
         self = Update(
-            date: Date(timeIntervalSince1970: TimeInterval((json["time"]! as AnyObject).int32Value)),
-            title: json["title"] as! String,
-            description: json["description"] as! String,
-            tag: Tag(rawValue: (json["tag"] as! String).lowercased())!
+            time: time,
+            title: title,
+            description: description,
+            tag: tag
         )
     }
 }
 
 extension Update: Sortable {
     static func sort(_ items: [Update]) -> [Update] {
-        return items.sorted { !$0.date.isEarlierThanDate($1.date) }
+        return items.sorted { !$0.time.isEarlierThanDate($1.time) }
     }
 }
