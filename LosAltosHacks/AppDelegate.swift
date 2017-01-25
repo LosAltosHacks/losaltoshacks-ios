@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -24,6 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = UIColor(white: 0.4, alpha: 1.0)
 
         FIRApp.configure()
+
+        // register for notifications
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { _ in })
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
+        }
+        application.registerForRemoteNotifications()
 
         // pipe firebase directly into local cache
         FirebaseManager.shared.events(callback: Event.store)
