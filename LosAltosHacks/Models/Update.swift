@@ -26,7 +26,7 @@ extension Update: Cacheable {
 extension Update: JSONConvertible {
     var asJSON: [String:Any] {
         return [
-            "date": date.timeIntervalSince1970 as AnyObject,
+            "time": date.timeIntervalSince1970 as AnyObject,
             "title": title as AnyObject,
             "description": description as AnyObject,
             "tag": tag.rawValue as AnyObject
@@ -37,7 +37,7 @@ extension Update: JSONConvertible {
         let json = json as! [String:Any]
         
         self = Update(
-            date: Date(timeIntervalSince1970: TimeInterval((json["date"]! as AnyObject).int32Value)),
+            date: Date(timeIntervalSince1970: TimeInterval((json["time"]! as AnyObject).int32Value)),
             title: json["title"] as! String,
             description: json["description"] as! String,
             tag: Tag(rawValue: (json["tag"] as! String).lowercased())!

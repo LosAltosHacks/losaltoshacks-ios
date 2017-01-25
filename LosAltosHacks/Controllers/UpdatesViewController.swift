@@ -24,6 +24,7 @@ class UpdatesViewController: BaseViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
 
         Update.delegates.append(WeakCacheableDelegate(self))
+        didUpdateCache()
     }
     
     override func setupConstraints() {
@@ -59,9 +60,11 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        
+
         if updates.count <= 0 {
-            
+
+            tableView.tableFooterView = UIView()
+
             let container = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 
             container.center = tableView.center
@@ -82,15 +85,16 @@ extension UpdatesViewController: UITableViewDataSource, UITableViewDelegate {
             label.textAlignment = .center
             label.font = UIFont.systemFont(ofSize: 18)
             label.textColor = LAHColor.defaultGreyColor.value
-            
+
             container.addSubview(label)
-            
+
             tableView.backgroundView = container
             return 0
         }
-        
+
+        tableView.tableFooterView = nil
         tableView.backgroundView = nil
-        
+
         return 1
     }
 }

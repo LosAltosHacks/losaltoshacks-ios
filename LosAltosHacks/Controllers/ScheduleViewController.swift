@@ -20,10 +20,8 @@ class ScheduleViewController: BaseViewController {
 
         tableView.dataSource = self
 
-        tableView.estimatedRowHeight = 120.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-
         Event.delegates.append(WeakCacheableDelegate(self))
+        didUpdateCache()
     }
 
     override func setupConstraints() {
@@ -88,7 +86,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
+
         if events.count <= 0 {
 
             tableView.tableFooterView = UIView()

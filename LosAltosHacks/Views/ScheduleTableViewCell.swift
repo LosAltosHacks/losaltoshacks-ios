@@ -12,7 +12,6 @@ import SnapKit
 class ScheduleTableViewCell: UITableViewCell, SnapKitView {
 
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var clockImage: UIImageView!
@@ -27,7 +26,6 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
     
     func updateContent() {
         titleLabel.text = event.event
-        descriptionLabel.text = ""
         
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
@@ -44,8 +42,8 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
         super.awakeFromNib()
         // Initialization code
 
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.sizeToFit()
+        titleLabel.numberOfLines = 0
+        titleLabel.sizeToFit()
         dateLabel.sizeToFit()
         locationLabel.sizeToFit()
 
