@@ -616,26 +616,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-Xi-8jf">
-                                <rect key="frame" x="0.0" y="64" width="375" height="546"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-Xi-8jf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="campus-map" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-XG-NeO">
-                                        <rect key="frame" x="20" y="84" width="335" height="250"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="campus-map" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-XG-NeO">
+                                        <rect key="frame" x="37.5" y="30" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" placeholder="YES" id="2jX-eA-egb"/>
+                                            <constraint firstAttribute="width" constant="300" placeholder="YES" id="e2d-xI-hq7"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="centerX" secondItem="hvg-Xi-8jf" secondAttribute="centerX" id="2Es-7P-Uie"/>
-                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="centerY" secondItem="hvg-Xi-8jf" secondAttribute="centerY" id="fk5-Pm-rkG"/>
+                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="centerX" secondItem="hvg-Xi-8jf" secondAttribute="centerX" id="Kf1-zH-64o"/>
+                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="top" secondItem="hvg-Xi-8jf" secondAttribute="top" constant="30" id="Zcp-hn-Qrr"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="leading" secondItem="78N-f9-Xth" secondAttribute="leading" id="5qw-Ut-N9c"/>
-                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="top" secondItem="a4g-aO-ysr" secondAttribute="bottom" id="DH6-ug-Ri0"/>
-                            <constraint firstAttribute="trailing" secondItem="hvg-Xi-8jf" secondAttribute="trailing" id="oRp-xS-DAe"/>
-                            <constraint firstItem="iad-aE-DlO" firstAttribute="top" secondItem="hvg-Xi-8jf" secondAttribute="bottom" id="w3h-ha-kPt"/>
-                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="leading" secondItem="78N-f9-Xth" secondAttribute="leading" id="zTJ-qp-RRa"/>
+                            <constraint firstItem="iad-aE-DlO" firstAttribute="top" secondItem="hvg-Xi-8jf" secondAttribute="bottom" id="Eit-sS-hXd"/>
+                            <constraint firstAttribute="trailing" secondItem="hvg-Xi-8jf" secondAttribute="trailing" id="FER-t2-sNw"/>
+                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="leading" secondItem="78N-f9-Xth" secondAttribute="leading" id="s05-fH-cMt"/>
+                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="top" secondItem="a4g-aO-ysr" secondAttribute="bottom" id="s0d-TA-XVk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CAMPUS MAP" id="FZD-hb-HY3"/>
@@ -672,7 +675,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5i-BG-tVp">
-                                                    <rect key="frame" x="38" y="30" width="315" height="20.5"/>
+                                                    <rect key="frame" x="38" y="30" width="315" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -786,7 +789,7 @@
     </scenes>
     <resources>
         <image name="campus" width="25" height="25"/>
-        <image name="campus-map" width="16" height="16"/>
+        <image name="campus-map" width="359" height="288"/>
         <image name="clock" width="19" height="19"/>
         <image name="dashboard" width="30" height="30"/>
         <image name="fb" width="22" height="22"/>
