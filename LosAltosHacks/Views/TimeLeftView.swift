@@ -58,11 +58,11 @@ class TimeLeftView: BaseView {
     func initializeTimer() {
 
         // Time leading up to LAH
-        if Date().isEarlierThanDate(LAHConstants.LAHStartDate) {
+        if Date().isEarlierThanDate(.startDate) {
             timeRemainingLabel.text = "TIME UNTIL LOS ALTOS HACKS"
         }
 
-        progressView.startProgress(LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate) {
+        progressView.startProgress(startDate: .startDate, endDate: .endDate) {
             self.countdownLabel.text = $0.hour + ":" + $0.minute
         }
     }

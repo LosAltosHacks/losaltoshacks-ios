@@ -15,7 +15,7 @@ enum Tag: String {
     case workshop = "workshop"
     case none = ""
     
-    var color: LAHColor {
+    var color: UIColor {
         switch self {
         case .food: return .food
         case .logistics: return .logistics

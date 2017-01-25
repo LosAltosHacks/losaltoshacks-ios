@@ -53,15 +53,11 @@ extension Event: Sortable {
 
 extension Event {
     var isOnSaturday: Bool {
-        let afterStart = !self.time.isEarlierThanDate(LAHConstants.LAHStartDate)
-        let beforeSunday = self.time.isEarlierThanDate(LAHConstants.Sunday)
-        return afterStart && beforeSunday
+        return self.time.isEarlierThanDate(.sunday)
     }
     
     var isOnSunday: Bool {
-        let afterStartOfSunday = !self.time.isEarlierThanDate(LAHConstants.Sunday)
-        let beforeEnd = self.time.isEarlierThanDate(LAHConstants.LAHEndDate)
-        return afterStartOfSunday && beforeEnd
+        return !self.time.isEarlierThanDate(.sunday)
     }
 }
 

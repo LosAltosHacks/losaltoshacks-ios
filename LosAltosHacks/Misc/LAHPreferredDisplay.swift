@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct LAHPreferredDisplay {
-    
+extension Date {
     /// ```
     /// <1-60/1-24/1-infinity> <minute(s)/hour(s)/day(s)>
     /// ```
@@ -18,11 +17,10 @@ struct LAHPreferredDisplay {
     /// ex: 1 hour ago
     ///
     /// ex: 98 days ago
-    /// 
+    ///
     /// ex: in 10 days
-    static func from(_ date: Date) -> String {
-        
-        let seconds = -date.timeIntervalSinceNow
+    var displayDescription: String {
+        let seconds = -timeIntervalSinceNow
         
         let time: Date.Time
         
@@ -42,10 +40,5 @@ struct LAHPreferredDisplay {
         } else {
             return "\(Int(time.amount)) \(time.typeDescription) ago"
         }
-    }
-    
-    static func range(_ dateFrom: Date, dateTo: Date) -> String {
-        
-        return "From \(dateFrom) to \(dateTo)"
     }
 }

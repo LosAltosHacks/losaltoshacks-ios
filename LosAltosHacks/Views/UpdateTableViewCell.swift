@@ -20,10 +20,10 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
     func updateContent() {
         titleLabel.text = update.title
         descriptionLabel.text = update.description
-        dateLabel.text = LAHPreferredDisplay.from(update.date)
+        dateLabel.text = update.date.displayDescription
         iconView.image = update.tag.image
         
-        splotchView.backgroundColor = update.tag.color.value
+        splotchView.backgroundColor = update.tag.color
     }
 
     @IBOutlet weak var splotchView: UIView!

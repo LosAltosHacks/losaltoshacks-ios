@@ -35,7 +35,7 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
         
         locationLabel.text = event.location
         
-        leftSplotch.backgroundColor = event.tag.color.value
+        leftSplotch.backgroundColor = event.tag.color
     }
 
     override func awakeFromNib() {

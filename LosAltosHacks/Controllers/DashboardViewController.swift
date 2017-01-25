@@ -92,7 +92,7 @@ extension DashboardViewController: SocialMediaViewDelegate, SlackButtonDelegate 
         openURL(socialMedia.url as URL)
     }
     func onTap(_ button: SlackButton) {
-        openURL(URL(string: LAHConstants.SlackURLString)!)
+        openURL(URL(string: .slackURLString)!)
     }
 }
 

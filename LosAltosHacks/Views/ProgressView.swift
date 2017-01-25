@@ -26,7 +26,7 @@ class ProgressView: BaseView {
     }
 
     // Color of interior progress bar
-    var barTintColor: UIColor = LAHColor.defaultColor.value.withAlphaComponent(0.9)
+    var barTintColor = UIColor.defaultColor.withAlphaComponent(0.9)
 
     // Center label that shows the % of progress
     @IBOutlet weak var percentLabel: UILabel!
@@ -67,7 +67,7 @@ class ProgressView: BaseView {
 
         cornerRadius = rect.size.height / 2 // rounded rect effect
         percentLabel.text = "\(Int(progress * 100))%"
-        percentLabel.textColor = LAHColor.defaultDarkGreyColor.value
+        percentLabel.textColor = .defaultDarkGreyColor
         percentLabel.clipsToBounds = true
         percentLabel.layer.cornerRadius = percentLabel.frame.size.height / 2
 
@@ -75,7 +75,7 @@ class ProgressView: BaseView {
 
         self.layer.borderWidth = BorderWidth
         self.layer.cornerRadius = cornerRadius
-        self.layer.borderColor = LAHColor.defaultGreyColor.value.cgColor
+        self.layer.borderColor = UIColor.defaultGreyColor.cgColor
 
         // Inner Rect
 
@@ -112,7 +112,7 @@ class ProgressView: BaseView {
     typealias countdownInfo = (hour: String, minute: String)
     
     var onUpdate: ((countdownInfo) -> Void)!
-    func startProgress(_ startDate: Date, endDate: Date, onUpdate: @escaping (countdownInfo) -> Void) {
+    func startProgress(startDate: Date, endDate: Date, onUpdate: @escaping (countdownInfo) -> Void) {
         
         let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self,
             selector: #selector(ProgressView.tick(_:)), userInfo: nil, repeats: true)
@@ -125,16 +125,16 @@ class ProgressView: BaseView {
     
     func tick(_ timer: Timer) {
         
-        var timeLeft = LAHConstants.LAHEndDate.timeIntervalSinceNow
+        var timeLeft = Date.endDate.timeIntervalSinceNow
         
         // Update progress view
-        if Date().isEarlierThanDate(LAHConstants.LAHStartDate) {
-            timeLeft = LAHConstants.LAHStartDate.timeIntervalSinceNow
+        if Date().isEarlierThanDate(.startDate) {
+            timeLeft = Date.startDate.timeIntervalSinceNow
         } else {
-            updateProgressWithTimer(timer, startDate: LAHConstants.LAHStartDate as Date, endDate: LAHConstants.LAHEndDate as Date)
+            updateProgressWithTimer(timer, startDate: .startDate as Date, endDate: .endDate as Date)
         }
         
-        if !Date().isEarlierThanDate(LAHConstants.LAHEndDate) && timer.isValid {
+        if !Date().isEarlierThanDate(.endDate) && timer.isValid {
             timer.invalidate()
             onUpdate((hour: "00", minute: "00"))
             return
