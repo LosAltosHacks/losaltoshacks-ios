@@ -9,10 +9,10 @@
 import UIKit
 
 struct LAHConstants {
-    static let LAHStartDate = Date.specificDate(year: 2016, month: 1, day: 30, hour: 9)
-    static let LAHEndDate = Date.specificDate(year: 2016, month: 1, day: 31, hour: 16)
-    static let Saturday = Date.specificDate(year: 2016, month: 1, day: 30, hour: 0)
-    static let Sunday = Date.specificDate(year: 2016, month: 1, day: 31, hour: 0)
+    static let LAHStartDate = Date(year: 2017, month: 2, day: 4, hour: 9)
+    static let LAHEndDate = Date(year: 2017, month: 2, day: 5, hour: 16)
+    static let Saturday = Date(year: 2017, month: 2, day: 4, hour: 0)
+    static let Sunday = Date(year: 2017, month: 2, day: 5, hour: 0)
 
     static let SlackURLString = "https://slack.losaltoshacks.com/"
 }

@@ -61,7 +61,7 @@ extension Date {
         }
     }
         
-    static func specificDate(year: Int, month: Int, day: Int, hour: Int) -> Date {
+    init(year: Int, month: Int, day: Int, hour: Int) {
         var gregorian = Calendar(identifier: Calendar.Identifier.gregorian)
         gregorian.timeZone = TimeZone(identifier: "PST")!
         var components = DateComponents()
@@ -69,7 +69,7 @@ extension Date {
         components.day = day
         components.year = year
         components.hour = hour
-        return gregorian.date(from: components)!
+        self = gregorian.date(from: components)!
     }
 
     func isEarlierThanDate(_ date: Date) -> Bool {
