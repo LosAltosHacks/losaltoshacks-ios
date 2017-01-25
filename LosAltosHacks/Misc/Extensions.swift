@@ -62,8 +62,8 @@ extension Date {
     }
         
     init(year: Int, month: Int, day: Int, hour: Int) {
-        var gregorian = Calendar(identifier: Calendar.Identifier.gregorian)
-        gregorian.timeZone = TimeZone(identifier: "PST")!
+        var gregorian = Calendar(identifier: .gregorian)
+        gregorian.timeZone = TimeZone(identifier: "GMT")!
         var components = DateComponents()
         components.month = month
         components.day = day
