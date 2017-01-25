@@ -616,44 +616,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cVa-mz-qo4">
-                                <rect key="frame" x="232" y="72" width="137" height="29"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="Lk4-U0-wnV"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="FLOOR 1"/>
-                                    <segment title="FLOOR 2"/>
-                                </segments>
-                                <connections>
-                                    <action selector="changeFloor:" destination="6LP-vq-eoI" eventType="valueChanged" id="ywA-52-jSe"/>
-                                </connections>
-                            </segmentedControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-Xi-8jf">
-                                <rect key="frame" x="0.0" y="100" width="600" height="443"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-Xi-8jf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="546"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="floor1" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-XG-NeO">
-                                        <rect key="frame" x="15" y="9" width="570" height="426"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="campus-map" translatesAutoresizingMaskIntoConstraints="NO" id="kR8-XG-NeO">
+                                        <rect key="frame" x="20" y="84" width="335" height="250"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="top" secondItem="hvg-Xi-8jf" secondAttribute="top" constant="9" id="16a-hS-gzp"/>
-                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="leading" secondItem="hvg-Xi-8jf" secondAttribute="leading" constant="15" id="M8Y-iT-80L"/>
-                                    <constraint firstAttribute="trailing" secondItem="kR8-XG-NeO" secondAttribute="trailing" constant="15" id="OLe-t5-ScW"/>
-                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="centerX" secondItem="hvg-Xi-8jf" secondAttribute="centerX" id="RUl-ml-GCB"/>
-                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="centerY" secondItem="hvg-Xi-8jf" secondAttribute="centerY" id="kYZ-bQ-8sX"/>
-                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="bottom" secondItem="hvg-Xi-8jf" secondAttribute="bottomMargin" id="wsA-u8-jzU"/>
+                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="centerX" secondItem="hvg-Xi-8jf" secondAttribute="centerX" id="2Es-7P-Uie"/>
+                                    <constraint firstItem="kR8-XG-NeO" firstAttribute="centerY" secondItem="hvg-Xi-8jf" secondAttribute="centerY" id="fk5-Pm-rkG"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cVa-mz-qo4" firstAttribute="top" secondItem="a4g-aO-ysr" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="76v-Gt-kDS"/>
-                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="centerX" secondItem="cVa-mz-qo4" secondAttribute="centerX" id="8yZ-uJ-R7q"/>
-                            <constraint firstItem="cVa-mz-qo4" firstAttribute="centerX" secondItem="78N-f9-Xth" secondAttribute="centerX" placeholder="YES" id="Dp6-x6-dmk"/>
-                            <constraint firstItem="iad-aE-DlO" firstAttribute="top" secondItem="hvg-Xi-8jf" secondAttribute="bottom" constant="8" symbolic="YES" id="Otn-mJ-q0K"/>
-                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="top" secondItem="cVa-mz-qo4" secondAttribute="bottom" id="Rwb-Md-UYb"/>
+                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="leading" secondItem="78N-f9-Xth" secondAttribute="leading" id="5qw-Ut-N9c"/>
+                            <constraint firstItem="hvg-Xi-8jf" firstAttribute="top" secondItem="a4g-aO-ysr" secondAttribute="bottom" id="DH6-ug-Ri0"/>
+                            <constraint firstAttribute="trailing" secondItem="hvg-Xi-8jf" secondAttribute="trailing" id="oRp-xS-DAe"/>
+                            <constraint firstItem="iad-aE-DlO" firstAttribute="top" secondItem="hvg-Xi-8jf" secondAttribute="bottom" id="w3h-ha-kPt"/>
                             <constraint firstItem="hvg-Xi-8jf" firstAttribute="leading" secondItem="78N-f9-Xth" secondAttribute="leading" id="zTJ-qp-RRa"/>
                         </constraints>
                     </view>
@@ -661,12 +642,11 @@
                     <connections>
                         <outlet property="imageView" destination="kR8-XG-NeO" id="hyg-qf-xFk"/>
                         <outlet property="scrollView" destination="hvg-Xi-8jf" id="R6I-fv-cdt"/>
-                        <outlet property="segmentedControl" destination="cVa-mz-qo4" id="v6V-7A-MzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vP-20-zA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-516" y="1905"/>
+            <point key="canvasLocation" x="-516" y="1904.7976011994006"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="mN0-t3-9EK">
@@ -806,10 +786,10 @@
     </scenes>
     <resources>
         <image name="campus" width="25" height="25"/>
+        <image name="campus-map" width="16" height="16"/>
         <image name="clock" width="19" height="19"/>
         <image name="dashboard" width="30" height="30"/>
         <image name="fb" width="22" height="22"/>
-        <image name="floor1" width="800" height="789"/>
         <image name="header" width="125" height="34"/>
         <image name="instagram" width="22" height="22"/>
         <image name="map" width="22" height="22"/>
