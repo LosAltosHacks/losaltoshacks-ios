@@ -13,7 +13,7 @@ extension String {
 }
 
 extension Date {
-    static let startDate = Date(year: 2017, month: 2, day: 4, hour: 9)
+    static let startDate = Date(year: 2017, month: 2, day: 4, hour: 10)
     static let endDate = Date(year: 2017, month: 2, day: 5, hour: 16)
     static let saturday = Date(year: 2017, month: 2, day: 4, hour: 0)
     static let sunday = Date(year: 2017, month: 2, day: 5, hour: 0)
