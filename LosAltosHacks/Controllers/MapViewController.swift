@@ -26,13 +26,12 @@ class MapViewController: BaseViewController {
 
         mapView.delegate = self
 
-        let LAH = CLLocation(latitude: 37.413639, longitude: -122.071918)
-        centerMapOnLocation(LAH)
+        centerMapOnLocation(.venue)
 
         let annotation = MKPointAnnotation()
-        annotation.coordinate = LAH.coordinate
-        annotation.title = "Microsoft SV Campus"
-        annotation.subtitle = "1065 La Avenida Street, Mountain View, CA 94043"
+        annotation.coordinate = CLLocation.venue.coordinate
+        annotation.title = "Evernote Corporation"
+        annotation.subtitle = "305 Walnut Street, Redwood City, CA 94063"
 
         mapView.addAnnotation(annotation)
         mapView.selectAnnotation(annotation, animated: true)

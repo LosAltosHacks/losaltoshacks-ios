@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
+
+extension CLLocation {
+    static let venue = CLLocation(latitude: 37.492093, longitude: -122.222345)
+}
 
 extension String {
     static let slackURLString = "https://slack.losaltoshacks.com/"
