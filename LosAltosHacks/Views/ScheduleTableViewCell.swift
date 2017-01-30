@@ -12,7 +12,6 @@ import SnapKit
 class ScheduleTableViewCell: UITableViewCell, SnapKitView {
 
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var clockImage: UIImageView!
@@ -27,25 +26,24 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
     
     func updateContent() {
         titleLabel.text = event.event
-        descriptionLabel.text = nil
         
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
-        formatter.timeZone = NSTimeZone(name: "PST")!
+        formatter.timeZone = TimeZone(identifier: "GMT")!
         
-        dateLabel.text = formatter.stringFromDate(self.event.time)
+        dateLabel.text = formatter.string(from: self.event.time)
         
         locationLabel.text = event.location
         
-        leftSplotch.backgroundColor = event.tag.color.value
+        leftSplotch.backgroundColor = event.tag.color
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
 
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.sizeToFit()
+        titleLabel.numberOfLines = 0
+        titleLabel.sizeToFit()
         dateLabel.sizeToFit()
         locationLabel.sizeToFit()
 
@@ -54,7 +52,7 @@ class ScheduleTableViewCell: UITableViewCell, SnapKitView {
 
     func setupConstraints() {}
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

@@ -11,13 +11,13 @@ import UIKit
 
 extension UIImage {
 
-    func scaledToSize(size: CGSize) -> UIImage {
+    func scaledToSize(_ size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-        self.drawInRect(CGRectMake(0, 0, size.width, size.height))
+        self.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        return newImage
+        return newImage!
     }
 
 }
@@ -31,53 +31,53 @@ extension Double {
     }
 }
 
-extension NSDate {
+extension Date {
 
     enum Time {
-        case Second(Double)
-        case Minute(Double)
-        case Hour(Double)
-        case Day(Double)
-        case Year(Double)
+        case second(Double)
+        case minute(Double)
+        case hour(Double)
+        case day(Double)
+        case year(Double)
         
         var typeDescription: String {
             switch self {
-            case .Second(let s): return "second\(s.sAtEnd)"
-            case .Minute(let m): return "minute\(m.sAtEnd)"
-            case .Hour(let h): return "hour\(h.sAtEnd)"
-            case .Day(let d): return "day\(d.sAtEnd)"
-            case .Year(let y): return "year\(y.sAtEnd)"
+            case .second(let s): return "second\(s.sAtEnd)"
+            case .minute(let m): return "minute\(m.sAtEnd)"
+            case .hour(let h): return "hour\(h.sAtEnd)"
+            case .day(let d): return "day\(d.sAtEnd)"
+            case .year(let y): return "year\(y.sAtEnd)"
             }
         }
         
         var amount: Double {
             switch self {
-            case .Second(let s): return s
-            case .Minute(let m): return m
-            case .Hour(let h): return h
-            case .Day(let d): return d
-            case .Year(let y): return y
+            case .second(let s): return s
+            case .minute(let m): return m
+            case .hour(let h): return h
+            case .day(let d): return d
+            case .year(let y): return y
             }
         }
     }
         
-    static func specificDate(year year: Int, month: Int, day: Int, hour: Int) -> NSDate {
-        let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        gregorian?.timeZone = NSTimeZone(name: "PST")!
-        let components = NSDateComponents()
+    init(year: Int, month: Int, day: Int, hour: Int) {
+        var gregorian = Calendar(identifier: .gregorian)
+        gregorian.timeZone = TimeZone(identifier: "GMT")!
+        var components = DateComponents()
         components.month = month
         components.day = day
         components.year = year
         components.hour = hour
-        return gregorian!.dateFromComponents(components)!
+        self = gregorian.date(from: components)!
     }
 
-    func isEarlierThanDate(date: NSDate) -> Bool {
-        return (self.compare(date) == .OrderedAscending)
+    func isEarlierThanDate(_ date: Date) -> Bool {
+        return (self.compare(date) == .orderedAscending)
     }
 }
 
-extension NSTimeInterval {
+extension TimeInterval {
     var hours: Int {
         return Int(self) / 3600
 //        return hours < 10 ? "0\(hours)" : "\(hours)"
@@ -90,5 +90,22 @@ extension NSTimeInterval {
 //        return "\(Int(self % 60))"
         return Int(self) % 60
 //        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
+    }
+}
+
+
+import SnapKit
+
+enum ConstraintPriorityTargetiOS: Int {
+    case required = 1000
+    case high = 750
+    case medium = 500
+    case low = 250
+}
+
+extension ConstraintMakerPriortizable {
+    @discardableResult
+    func priority(_ amount: ConstraintPriorityTargetiOS) -> ConstraintMakerFinalizable {
+        return priority(amount.rawValue)
     }
 }

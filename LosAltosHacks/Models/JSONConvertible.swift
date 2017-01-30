@@ -7,11 +7,11 @@
 //
 
 protocol JSONEncodable {
-    func toJSON() -> String
+    var asJSON: [String:Any] {get}
 }
 
 protocol JSONDecodable {
-    static func parse(json: AnyObject) -> Self
+    init?(json: Any)
 }
 
 protocol JSONConvertible: JSONEncodable, JSONDecodable {}

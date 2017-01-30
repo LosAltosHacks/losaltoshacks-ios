@@ -9,16 +9,12 @@
 import Foundation
 
 struct Update {
-    let date: NSDate
+    let time: Date
     let title: String
     let description: String
     let tag: Tag
-}
 
-extension Update: Fetchable {
-    static var path: String {
-        return "updates.json"
-    }
+    static var delegates = [CacheableDelegate]()
 }
 
 extension Update: Cacheable {
@@ -28,34 +24,37 @@ extension Update: Cacheable {
 }
 
 extension Update: JSONConvertible {
-    func toJSON() -> String {
-        
-        let dict: [String:AnyObject] = [
-            "date": date.timeIntervalSince1970,
-            "title": title,
-            "description": description,
-            "tag": tag.rawValue
+    var asJSON: [String:Any] {
+        return [
+            "time": time.timeIntervalSince1970 as AnyObject,
+            "title": title as AnyObject,
+            "description": description as AnyObject,
+            "tag": tag.rawValue as AnyObject
         ]
-        
-        let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
-        
-        return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
     }
     
-    static func parse(json: AnyObject) -> Update {
-        let json = json as! [String:AnyObject]
-        
-        return Update(
-            date: NSDate(timeIntervalSince1970: NSTimeInterval(json["date"]!.intValue)),
-            title: json["title"] as! String,
-            description: json["description"] as! String,
-            tag: Tag(rawValue: (json["tag"] as! String).lowercaseString)!
+    init?(json: Any) {
+        guard
+            let json = json as? [String:Any],
+            let timeJ = json["time"] as? Int,
+            let time = Optional(Date(timeIntervalSince1970: TimeInterval(timeJ))),
+            let title = json["title"] as? String,
+            let description = json["description"] as? String,
+            let tagJ = json["tag"] as? String,
+            let tag = Tag(rawValue: tagJ.lowercased())
+        else { return nil }
+
+        self = Update(
+            time: time,
+            title: title,
+            description: description,
+            tag: tag
         )
     }
 }
 
 extension Update: Sortable {
-    static func sort(items: [Update]) -> [Update] {
-        return items.sort { !$0.date.isEarlierThanDate($1.date) }
+    static func sort(_ items: [Update]) -> [Update] {
+        return items.sorted { !$0.time.isEarlierThanDate($1.time) }
     }
 }

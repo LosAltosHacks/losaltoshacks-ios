@@ -19,30 +19,31 @@ class MentorView: BaseView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        slackButton.addTarget(self, action: "tapped:", forControlEvents: .TouchUpInside)
+        slackButton.addTarget(self, action: #selector(MentorView.tapped(_:)), for: .touchUpInside)
     }
     
-    func tapped(sender: UIButton) {
+    func tapped(_ sender: UIButton) {
         self.slackButtonDelgate?.onTap(sender as! SlackButton)
     }
 
     override func setupConstraints() {
         // Help text
-        helpLabel.snp_makeConstraints { make in
-            make.width.equalTo(self.snp_width).multipliedBy(0.75)
+        helpLabel.snp.makeConstraints { make in
+            make.width.equalTo(self.snp.width).multipliedBy(0.75)
             make.height.equalTo(21)
             
-            make.center.equalTo(self.snp_center).offset(CGPoint(x: 0, y: -30))
-//            make.top.equalTo(self.snp_top).offset(10)
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).offset(-30)
+//            make.top.equalTo(self.snp.top).offset(10)
         }
         
         // Slack button
-        slackButton.snp_makeConstraints { make in
-            make.width.equalTo(self.snp_width).multipliedBy(0.8)
+        slackButton.snp.makeConstraints { make in
+            make.width.equalTo(self.snp.width).multipliedBy(0.8)
             make.height.equalTo(44)
             
-            make.centerX.equalTo(helpLabel.snp_centerX)
-            make.top.equalTo(helpLabel.snp_bottom).offset(15)
+            make.centerX.equalTo(helpLabel.snp.centerX)
+            make.top.equalTo(helpLabel.snp.bottom).offset(15)
         }
     }
 }

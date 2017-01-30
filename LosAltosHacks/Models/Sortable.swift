@@ -7,5 +7,5 @@
 //
 
 protocol Sortable {
-    static func sort(items: [Self]) -> [Self]
+    static func sort(_ items: [Self]) -> [Self]
 }

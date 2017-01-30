@@ -7,57 +7,46 @@
 //
 
 import UIKit
-import OneSignal
+import Firebase
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        // Application Styles
-        UITabBar.appearance().tintColor = LAHColor.DefaultColor.value
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        if #available(iOS 9.0, *) {
-            UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).font = UIFont.systemFontOfSize(14)
-            UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = UIColor(white: 0.4, alpha: 1.0)
+        // Application Styles
+        UITabBar.appearance().tintColor = .defaultColor
+
+        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).font = UIFont.systemFont(ofSize: 14)
+        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = UIColor(white: 0.4, alpha: 1.0)
+
+        FIRApp.configure()
+
+        // register for notifications
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { _ in })
+            UNUserNotificationCenter.current().delegate = self
         } else {
-            UILabel.LAH_appearanceWhenContainedIn(UITableViewHeaderFooterView.self).font = UIFont.systemFontOfSize(14)
-            UILabel.LAH_appearanceWhenContainedIn(UITableViewHeaderFooterView.self).textColor = UIColor(white: 0.4, alpha: 1.0)
+            application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
         }
-        
-        // Push Notifications
-        let handleNotification: OneSignalHandleNotificationBlock = { [weak self] message, data, isActive in
-            print("message: \(message)")
-            print("additional data: \(data)")
-            print("isActive: \(isActive)")
-            
-            guard let updatesVC: UpdatesViewController = self?.getVCWithType() else { return }
-            updatesVC.refresh()
-        }
-        
-        let client = OneSignal(launchOptions: launchOptions, appId: "YOUR-API-KEY-HERE", handleNotification: handleNotification)
-        client.enableInAppAlertNotification(true)
-        
-        
-        if Event.cached() == nil {
-            Event.updateCache(sort: true, error: {})
-        }
-        if Update.cached() == nil {
-            Update.updateCache(sort: true, error: {})
-        }
-        
-        
+        application.registerForRemoteNotifications()
+
+        // pipe firebase directly into local cache
+        FirebaseManager.shared.events(callback: Event.store)
+        FirebaseManager.shared.updates(callback: Update.store)
+
         return true
     }
     
     func getVCWithType<T>() -> T? {
         
         guard let rootVC = self.window?.rootViewController,
-            tabVC = rootVC as? UITabBarController,
-            tabs = tabVC.viewControllers else {
+            let tabVC = rootVC as? UITabBarController,
+            let tabs = tabVC.viewControllers else {
             return nil
         }
         
@@ -74,25 +63,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return nil
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 

@@ -13,40 +13,45 @@ class UpcomingEventView: BaseView {
     @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var latestEventView: UIView!
     var latestEventCell: ScheduleTableViewCell!
-
     override func awakeFromNib() {
-        
+        let cell = fetchScheduleTableViewCell()
+
+        latestEventView.addSubview(cell)
+        latestEventCell = cell
+
+        updateCell()
+
+        super.awakeFromNib()
+    }
+
+    func updateCell() {
         guard let events = Event.cached(sort: true),
-            first = events.first else {
-            // cache is empty
-            self.hidden = true // hide just in case
+            let first = events.first else {
+            isHidden = true
             return
         }
-        
-        // awakeFromNib might be called programatically (from DashboardViewController)
-        self.hidden = false
-        
+        isHidden = false
+
+        if latestEventCell == nil {
+            latestEventCell = fetchScheduleTableViewCell()
+            latestEventView.addSubview(latestEventCell)
+        }
+
         // gets the first event AFTER now, or the first if there are none after now
         let nextEvent = events.reduce(first) { latest, event in
-            
+
             // if latest is before now, return the event
-            if latest.time.isEarlierThanDate(NSDate()) {
+            if latest.time.isEarlierThanDate(Date()) {
                 return event
             }
-            
+
             // otherwise, return latest
             return latest
         }
-        
-        let cell = fetchScheduleTableViewCell()
-        
-        cell.event = nextEvent
-        latestEventView.addSubview(cell)
-        latestEventCell = cell
-        
-        super.awakeFromNib()
+
+        latestEventCell.event = nextEvent
     }
-    
+
     func fetchScheduleTableViewCell() -> ScheduleTableViewCell {
         // /puke
         
@@ -55,11 +60,11 @@ class UpcomingEventView: BaseView {
             scheduleVC.view = nil
             scheduleVC.tableView = nil
             scheduleVC.didReceiveMemoryWarning()
-            scheduleVC.dismissViewControllerAnimated(false, completion: nil)
+            scheduleVC.dismiss(animated: false, completion: nil)
         }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let scheduleVC = storyboard.instantiateViewControllerWithIdentifier("scheduleVC") as! ScheduleViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let scheduleVC = storyboard.instantiateViewController(withIdentifier: "scheduleVC") as! ScheduleViewController
         
         if #available(iOS 9.0, *) {
             scheduleVC.loadViewIfNeeded()
@@ -67,35 +72,33 @@ class UpcomingEventView: BaseView {
             scheduleVC.loadView()
         }
         
-        return scheduleVC.tableView.dequeueReusableCellWithIdentifier(ScheduleViewController.cellIdentifier) as! ScheduleTableViewCell
+        let cell = scheduleVC.tableView.dequeueReusableCell(withIdentifier: ScheduleViewController.cellIdentifier) as! ScheduleTableViewCell
+        cell.awakeFromNib()
+        return cell
     }
 
     override func setupConstraints() {
-        sectionLabel.snp_makeConstraints { make in
-            make.top.equalTo(self.snp_top)
+        sectionLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.top)
             make.height.equalTo(28)
-            make.centerX.equalTo(self.snp_centerX)
-            make.left.equalTo(self.snp_left)
-            make.right.equalTo(self.snp_right)
+            make.centerX.equalTo(self.snp.centerX)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
         }
         
-        latestEventView.snp_makeConstraints { make in
-            make.top.equalTo(sectionLabel.snp_bottom).offset(10)
-            make.left.equalTo(self.snp_left)
-            make.right.equalTo(self.snp_right)
-            make.bottom.equalTo(self.snp_bottom)
+        latestEventView.snp.makeConstraints { make in
+            make.top.equalTo(sectionLabel.snp.bottom).offset(10)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+            make.bottom.equalTo(self.snp.bottom)
         }
         
-        latestEventCell.snp_makeConstraints { make in
-            if latestEventCell.descriptionLabel?.text == "" {
-                make.height.equalTo(80).priorityHigh()
-            }
+        latestEventCell.snp.makeConstraints { make in
             // should always be at the top of the view
-            make.top.equalTo(latestEventView.snp_top).priorityHigh()
-            
+//            make.top.equalTo(latestEventView.snp.top).priority(.high)
             // make size "dynamic"
-            make.edges.equalTo(latestEventView.snp_edges).priorityMedium()
-            make.size.equalTo(latestEventView.snp_size).priorityMedium()
+//            make.edges.equalTo(latestEventView.snp.edges).priority(.medium)
+//            make.size.equalTo(latestEventView.snp.size).priority(.medium)
         }
     }
 }

@@ -15,20 +15,22 @@ class TopView: BaseView {
     @IBOutlet weak var titleLabel: UILabel!
     
     override func setupConstraints() {
-        headerImageView.snp_makeConstraints { make in
-            make.top.equalTo(self.snp_top)
-            make.bottom.equalTo(self.snp_bottom)
-            make.right.equalTo(self.snp_right)
-            make.left.equalTo(self.snp_left)
+        headerImageView.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.top)
+            make.bottom.equalTo(self.snp.bottom)
+            make.right.equalTo(self.snp.right)
+            make.left.equalTo(self.snp.left)
         }
         
-        upperLabel.snp_makeConstraints { make in
-            make.center.equalTo(self.snp_center).offset(CGPointMake(0, -12.0))
+        upperLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).offset(-12)
         }
         
-        titleLabel.snp_makeConstraints { make in
-            make.width.equalTo(self.snp_width)
-            make.center.equalTo(self.snp_center).offset(CGPointMake(0, 12.0))
+        titleLabel.snp.makeConstraints { make in
+            make.width.equalTo(self.snp.width)
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).offset(12)
         }
     }
 }

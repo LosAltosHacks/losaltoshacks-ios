@@ -20,10 +20,10 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
     func updateContent() {
         titleLabel.text = update.title
         descriptionLabel.text = update.description
-        dateLabel.text = LAHPreferredDisplay.from(update.date)
+        dateLabel.text = update.time.displayDescription
         iconView.image = update.tag.image
         
-        splotchView.backgroundColor = update.tag.color.value
+        splotchView.backgroundColor = update.tag.color
     }
 
     @IBOutlet weak var splotchView: UIView!
@@ -38,7 +38,7 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
 
         splotchView.layer.cornerRadius = splotchView.frame.size.height / 2
 
-        splotchView.contentMode = .ScaleAspectFill
+        splotchView.contentMode = .scaleAspectFill
         splotchView.clipsToBounds = true
         
         titleLabel.numberOfLines = 0
@@ -57,7 +57,7 @@ class UpdateTableViewCell: UITableViewCell, SnapKitView {
 
     func setupConstraints() {}
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

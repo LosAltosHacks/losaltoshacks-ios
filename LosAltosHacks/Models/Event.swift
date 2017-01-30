@@ -11,16 +11,10 @@ import Foundation
 struct Event {
     let event: String
     let location: String
-    let time: NSDate
+    let time: Date
     let tag: Tag
 
     static var delegates = [CacheableDelegate]()
-}
-
-extension Event: Fetchable {
-    static var path: String {
-        return "schedule.json"
-    }
 }
 
 extension Event: Cacheable {
@@ -30,52 +24,52 @@ extension Event: Cacheable {
 }
 
 extension Event: JSONConvertible {
-    func toJSON() -> String {
-        
-        let dict: [String:AnyObject] = [
-            "event": event,
-            "time": time.timeIntervalSince1970,
-            "location": location,
-            "tag": tag.rawValue
+    var asJSON: [String:Any] {
+        return [
+            "event": event as AnyObject,
+            "time": time.timeIntervalSince1970 as AnyObject,
+            "location": location as AnyObject,
+            "tag": tag.rawValue as AnyObject
         ]
-        
-        let jsonObject = try! NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
-        
-        return String(data: jsonObject, encoding: NSUTF8StringEncoding)!
     }
-    
-    static func parse(json: AnyObject) -> Event {
-        let json = json as! [String:AnyObject]
-        return Event(
-            event: json["event"] as! String,
-            location: json["location"] as! String,
-            time: NSDate(timeIntervalSince1970: NSTimeInterval(json["time"]!.intValue)),
-            tag: Tag(rawValue: (json["tag"] as! String).lowercaseString)!
+
+    init?(json: Any) {
+        guard
+            let json = json as? [String:Any],
+            let event = json["event"] as? String,
+            let location = json["location"] as? String,
+            let timeJ = json["time"] as? Int,
+            let time = Optional(Date(timeIntervalSince1970: TimeInterval(timeJ))),
+            let tagJ = json["tag"] as? String,
+            let tag = Tag(rawValue: tagJ.lowercased())
+        else { return nil }
+
+        self = Event(
+            event: event,
+            location: location,
+            time: time,
+            tag: tag
         )
     }
 }
 
 extension Event: Sortable {
-    static func sort(items: [Event]) -> [Event] {
-         return items.sort { $0.time.isEarlierThanDate($1.time) }
+    static func sort(_ items: [Event]) -> [Event] {
+         return items.sorted { $0.time.isEarlierThanDate($1.time) }
     }
 }
 
 extension Event {
     var isOnSaturday: Bool {
-        let afterStart = !self.time.isEarlierThanDate(LAHConstants.LAHStartDate)
-        let beforeSunday = self.time.isEarlierThanDate(LAHConstants.Sunday)
-        return afterStart && beforeSunday
+        return self.time.isEarlierThanDate(.sunday)
     }
     
     var isOnSunday: Bool {
-        let afterStartOfSunday = !self.time.isEarlierThanDate(LAHConstants.Sunday)
-        let beforeEnd = self.time.isEarlierThanDate(LAHConstants.LAHEndDate)
-        return afterStartOfSunday && beforeEnd
+        return !self.time.isEarlierThanDate(.sunday)
     }
 }
 
-extension SequenceType where Generator.Element == Event {
+extension Sequence where Iterator.Element == Event {
     var onSaturday: [Event] {
         return self.filter { $0.isOnSaturday }
     }

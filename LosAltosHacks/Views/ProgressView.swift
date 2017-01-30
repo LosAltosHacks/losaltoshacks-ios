@@ -26,7 +26,7 @@ class ProgressView: BaseView {
     }
 
     // Color of interior progress bar
-    var barTintColor: UIColor = LAHColor.DefaultColor.value.colorWithAlphaComponent(0.9)
+    var barTintColor = UIColor.defaultColor.withAlphaComponent(0.9)
 
     // Center label that shows the % of progress
     @IBOutlet weak var percentLabel: UILabel!
@@ -37,27 +37,27 @@ class ProgressView: BaseView {
     var originalWidth: CGFloat!
     
     override func setupConstraints() {
-        percentLabel.snp_makeConstraints { make in
-            make.center.equalTo(self.snp_center)
-            make.width.equalTo(self.snp_width).dividedBy(4.8)
+        percentLabel.snp.makeConstraints { make in
+            make.center.equalTo(self.snp.center)
+            make.width.equalTo(self.snp.width).dividedBy(4.8)
         }
         
         //        maskingView.backgroundColor = UIColor.blackColor()
-        maskingView.snp_makeConstraints { make in
-            make.center.equalTo(self.snp_center)
-            make.left.equalTo(self.snp_left).offset(4)
-            make.right.equalTo(self.snp_right).offset(-4)
-            make.top.equalTo(self.snp_top).offset(6)
-            make.bottom.equalTo(self.snp_bottom).offset(-6)
+        maskingView.snp.makeConstraints { make in
+            make.center.equalTo(self.snp.center)
+            make.left.equalTo(self.snp.left).offset(4)
+            make.right.equalTo(self.snp.right).offset(-4)
+            make.top.equalTo(self.snp.top).offset(6)
+            make.bottom.equalTo(self.snp.bottom).offset(-6)
         }
     }
     
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
 
         // Custom view code
 
-        if self.hidden {
+        if self.isHidden {
             return
         }
 
@@ -67,7 +67,7 @@ class ProgressView: BaseView {
 
         cornerRadius = rect.size.height / 2 // rounded rect effect
         percentLabel.text = "\(Int(progress * 100))%"
-        percentLabel.textColor = LAHColor.DefaultDarkGreyColor.value
+        percentLabel.textColor = .defaultDarkGreyColor
         percentLabel.clipsToBounds = true
         percentLabel.layer.cornerRadius = percentLabel.frame.size.height / 2
 
@@ -75,20 +75,20 @@ class ProgressView: BaseView {
 
         self.layer.borderWidth = BorderWidth
         self.layer.cornerRadius = cornerRadius
-        self.layer.borderColor = LAHColor.DefaultGreyColor.value.CGColor
+        self.layer.borderColor = UIColor.defaultGreyColor.cgColor
 
         // Inner Rect
 
         let offset = Int(progress * originalWidth) + Int(ProgressBarInset)
-        maskingView.frame = CGRectMake(CGFloat(offset),
-                                       maskingView.frame.origin.y,
-                                       maskingView.frame.size.width,
-                                       maskingView.frame.size.height)
+        maskingView.frame = CGRect(x: CGFloat(offset),
+                                       y: maskingView.frame.origin.y,
+                                       width: maskingView.frame.size.width,
+                                       height: maskingView.frame.size.height)
 
-        let innerRect = CGRectMake(ProgressBarInset + 1,
-                                   ProgressBarInset,
-                                   rect.size.width - 2 * ProgressBarInset - 2,
-                                   rect.size.height - 2 * ProgressBarInset)
+        let innerRect = CGRect(x: ProgressBarInset + 1,
+                                   y: ProgressBarInset,
+                                   width: rect.size.width - 2 * ProgressBarInset - 2,
+                                   height: rect.size.height - 2 * ProgressBarInset)
         drawInnerRect(rect: innerRect)
     }
 
@@ -98,11 +98,11 @@ class ProgressView: BaseView {
         bezier.fill()
     }
 
-    func updateProgressWithTimer(timer: NSTimer, startDate: NSDate, endDate: NSDate) {
+    func updateProgressWithTimer(_ timer: Timer, startDate: Date, endDate: Date) {
 
-        if !NSDate().isEarlierThanDate(startDate) {
-            let interval = endDate.timeIntervalSinceDate(startDate)
-            let progressedInterval = NSDate().timeIntervalSinceDate(startDate)
+        if !Date().isEarlierThanDate(startDate) {
+            let interval = endDate.timeIntervalSince(startDate)
+            let progressedInterval = Date().timeIntervalSince(startDate)
 
             progress = CGFloat(progressedInterval / interval)
             self.setNeedsDisplay()
@@ -111,11 +111,11 @@ class ProgressView: BaseView {
     
     typealias countdownInfo = (hour: String, minute: String)
     
-    var onUpdate: (countdownInfo -> Void)!
-    func startProgress(startDate: NSDate, endDate: NSDate, onUpdate: countdownInfo -> Void) {
+    var onUpdate: ((countdownInfo) -> Void)!
+    func startProgress(startDate: Date, endDate: Date, onUpdate: @escaping (countdownInfo) -> Void) {
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,
-            selector: "tick:", userInfo: nil, repeats: true)
+        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self,
+            selector: #selector(ProgressView.tick(_:)), userInfo: nil, repeats: true)
         
         self.onUpdate = onUpdate
         
@@ -123,18 +123,18 @@ class ProgressView: BaseView {
         
     }
     
-    func tick(timer: NSTimer) {
+    func tick(_ timer: Timer) {
         
-        var timeLeft = LAHConstants.LAHEndDate.timeIntervalSinceNow
+        var timeLeft = Date.endDate.timeIntervalSinceNow
         
         // Update progress view
-        if NSDate().isEarlierThanDate(LAHConstants.LAHStartDate) {
-            timeLeft = LAHConstants.LAHStartDate.timeIntervalSinceNow
+        if Date().isEarlierThanDate(.startDate) {
+            timeLeft = Date.startDate.timeIntervalSinceNow
         } else {
-            updateProgressWithTimer(timer, startDate: LAHConstants.LAHStartDate, endDate: LAHConstants.LAHEndDate)
+            updateProgressWithTimer(timer, startDate: .startDate as Date, endDate: .endDate as Date)
         }
         
-        if !NSDate().isEarlierThanDate(LAHConstants.LAHEndDate) && timer.valid {
+        if !Date().isEarlierThanDate(.endDate) && timer.isValid {
             timer.invalidate()
             onUpdate((hour: "00", minute: "00"))
             return

@@ -13,49 +13,36 @@ class ScheduleViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     static let cellIdentifier = "scheduleCell"
 
-    let refreshControl = UIRefreshControl()
-
     var events = Event.cached(sort: true) ?? []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.dataSource = self
 
-        refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refreshControl)
-
-        tableView.estimatedRowHeight = 120.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-
-        if events.isEmpty {
-            refreshControl.beginRefreshing()
-            refresh()
-        }
-    }
-
-    func refresh() {
-        Event.fetch(error: {[weak self] in self?.refreshControl.endRefreshing()}) { [weak self] events  in
-            self?.events = events
-            self?.tableView?.reloadData()
-            self?.refreshControl.endRefreshing()
-            
-            // update cache
-            Event.store(events)
-        }
+        Event.delegates.append(WeakCacheableDelegate(self))
+        didUpdateCache()
     }
 
     override func setupConstraints() {
-        tableView.snp_makeConstraints { make in
-            make.margins.equalTo(view.snp_margins).priorityMedium()
-            make.topMargin.equalTo(view.snp_topMargin).offset(9).priorityHigh()
-//            make.bottomMargin.equalTo(snp_bottomLayoutGuideTop).offset(-9).priorityHigh()
+        tableView.snp.makeConstraints { make in
+            make.margins.equalTo(view.snp.margins).priority(.medium)
+            make.topMargin.equalTo(view.snp.topMargin).offset(9).priority(.high)
+//            make.bottomMargin.equalTo(snp.bottomLayoutGuideTop).offset(-9).priority(.high)
         }
     }
 }
 
+extension ScheduleViewController: CacheableDelegate {
+    func didUpdateCache() {
+        guard let events = Event.cached() else { return }
+        self.events = events
+        tableView?.reloadData()
+    }
+}
+
 extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return events.onSaturday.count
@@ -66,8 +53,8 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ScheduleViewController.cellIdentifier)! as! ScheduleTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ScheduleViewController.cellIdentifier)! as! ScheduleTableViewCell
 
         let index = indexPath.row
         let event: Event
@@ -85,7 +72,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var header: String
         switch(section) {
         case 0: // Saturday
@@ -98,32 +85,32 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         return header
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
+    func numberOfSections(in tableView: UITableView) -> Int {
+
         if events.count <= 0 {
 
             tableView.tableFooterView = UIView()
 
-            let container = UIView(frame: CGRectMake(0, 0, 200, 200))
+            let container = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 
             container.center = tableView.center
 
             let image = UIImageView(image: UIImage(named: "empty")!)
 
-            image.contentMode = .ScaleAspectFill
-            image.frame = CGRectMake(0, 0, 60, 60)
-            image.center = CGPointMake(container.center.x, container.center.y - 30)
+            image.contentMode = .scaleAspectFill
+            image.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+            image.center = CGPoint(x: container.center.x, y: container.center.y - 30)
 
             container.addSubview(image)
 
-            let label = UILabel(frame: CGRectMake(0, 0, 200, 44))
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
 
-            label.center = CGPointMake(container.center.x, container.center.y + 30)
+            label.center = CGPoint(x: container.center.x, y: container.center.y + 30)
             label.text = "Check back later for updates."
             label.numberOfLines = 0
-            label.textAlignment = .Center
-            label.font = UIFont.systemFontOfSize(18)
-            label.textColor = LAHColor.DefaultGreyColor.value
+            label.textAlignment = .center
+            label.font = UIFont.systemFont(ofSize: 18)
+            label.textColor = .defaultGreyColor
 
             container.addSubview(label)
 
