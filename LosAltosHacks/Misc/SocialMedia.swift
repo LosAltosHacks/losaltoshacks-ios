@@ -21,7 +21,7 @@ enum SocialMedia {
         case .twitter:
             url = "https://twitter.com/losaltoshacks"
         case .facebook:
-            url = "https://www.facebook.com/events/584690041683677"
+            url = "https://www.facebook.com/events/162912320853197"
         case .instagram:
             url = "https://www.instagram.com/losaltoshacks"
         }
