@@ -26,7 +26,13 @@ class UpdatesViewController: BaseViewController {
         Update.delegates.append(WeakCacheableDelegate(self))
         didUpdateCache()
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        // if the tableview is empty, it adds a background view, which
+        // needs to be visible so that the view is centered properly
+        _ = numberOfSections(in: tableView)
+    }
+
     override func setupConstraints() {
         tableView.snp.makeConstraints { make in
             make.margins.equalTo(view.snp.margins).priority(.medium)
