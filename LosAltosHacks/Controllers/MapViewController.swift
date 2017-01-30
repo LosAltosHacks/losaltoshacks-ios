@@ -30,7 +30,7 @@ class MapViewController: BaseViewController {
 
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocation.venue.coordinate
-        annotation.title = "Evernote Corporation"
+        annotation.title = "Evernote HQ"
         annotation.subtitle = "305 Walnut Street, Redwood City, CA 94063"
 
         mapView.addAnnotation(annotation)
