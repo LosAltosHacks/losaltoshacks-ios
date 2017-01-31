@@ -282,7 +282,7 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vlm-O2-sWV" customClass="UpcomingEventView" customModule="LAH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="223" width="600" height="162"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UPCOMING EVENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7w-sW-UOk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UP NEXT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7w-sW-UOk">
                                                 <rect key="frame" x="0.0" y="8" width="600" height="21"/>
                                                 <color key="backgroundColor" red="0.96028124999999998" green="0.96028124999999998" blue="0.96028124999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
